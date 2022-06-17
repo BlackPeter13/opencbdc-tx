@@ -1,5 +1,11 @@
 var NAVTREEINDEX10 =
 {
+"structcbdc_1_1atomizer_1_1prune__request.html#ab1e2a482505a5a5626d8c1be09ae74b2":[0,0,0,1,10,0],
+"structcbdc_1_1atomizer_1_1prune__request.html#ab1e2a482505a5a5626d8c1be09ae74b2":[1,0,0,1,10,0],
+"structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html":[1,0,0,1,11,0],
+"structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html":[0,0,0,1,11,0],
+"structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html#a3316e539a222153cc47ae3851d446aa0":[0,0,0,1,11,0,1],
+"structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html#a3316e539a222153cc47ae3851d446aa0":[1,0,0,1,11,0,1],
 "structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html#a4e0bff09c44c0e289da6f1bcfbfe32ec":[0,0,0,1,11,0,0],
 "structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html#a4e0bff09c44c0e289da6f1bcfbfe32ec":[1,0,0,1,11,0,0],
 "structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html#aa8f4cd1613021637ceb0354a1f846c7a":[1,0,0,1,11,0,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX10 =
 "structcbdc_1_1transaction_1_1compact__tx.html#a06cfd3f28ccd44791ff428073e0b0423":[1,0,0,13,1,8],
 "structcbdc_1_1transaction_1_1compact__tx.html#a06cfd3f28ccd44791ff428073e0b0423":[0,0,0,13,1,8],
 "structcbdc_1_1transaction_1_1compact__tx.html#a0a03fa29a4be3bbb95a677749957356f":[1,0,0,13,1,6],
-"structcbdc_1_1transaction_1_1compact__tx.html#a0a03fa29a4be3bbb95a677749957356f":[0,0,0,13,1,6],
-"structcbdc_1_1transaction_1_1compact__tx.html#a0a5b97de289c8a649cd759779011a7c7":[0,0,0,13,1,7],
-"structcbdc_1_1transaction_1_1compact__tx.html#a0a5b97de289c8a649cd759779011a7c7":[1,0,0,13,1,7],
-"structcbdc_1_1transaction_1_1compact__tx.html#a11b20af40647c13e01393a04f58345b4":[0,0,0,13,1,9],
-"structcbdc_1_1transaction_1_1compact__tx.html#a11b20af40647c13e01393a04f58345b4":[1,0,0,13,1,9],
-"structcbdc_1_1transaction_1_1compact__tx.html#a1210eb13faff2ba8cc62ff1dced6b108":[0,0,0,13,1,2],
-"structcbdc_1_1transaction_1_1compact__tx.html#a1210eb13faff2ba8cc62ff1dced6b108":[1,0,0,13,1,2]
+"structcbdc_1_1transaction_1_1compact__tx.html#a0a03fa29a4be3bbb95a677749957356f":[0,0,0,13,1,6]
 };

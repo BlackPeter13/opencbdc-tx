@@ -11,6 +11,7 @@ var classcbdc_1_1coordinator_1_1state__machine =
     [ "state_machine", "classcbdc_1_1coordinator_1_1state__machine.html#a6c17902d8ef886190b7d00552afe8ab3", null ],
     [ "apply_snapshot", "classcbdc_1_1coordinator_1_1state__machine.html#a19afb5032261d872d863d4e453af68b5", null ],
     [ "commit", "classcbdc_1_1coordinator_1_1state__machine.html#a22d427b07a90994d063259fa12686c9e", null ],
+    [ "commit_config", "classcbdc_1_1coordinator_1_1state__machine.html#a22d04bcc11d2e8ab0ae9028f2be0c667", null ],
     [ "create_snapshot", "classcbdc_1_1coordinator_1_1state__machine.html#a90b3e266c42a74492b77fdeb90be6966", null ],
     [ "last_commit_index", "classcbdc_1_1coordinator_1_1state__machine.html#a8ae8e47cc54f5d9b8a8b84726216d30c", null ],
     [ "last_snapshot", "classcbdc_1_1coordinator_1_1state__machine.html#a7e020b0c4a5155f4c59b8b4390b00e05", null ]

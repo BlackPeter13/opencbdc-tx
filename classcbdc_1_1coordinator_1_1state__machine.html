@@ -141,6 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a22d427b07a90994d063259fa12686c9e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1coordinator_1_1state__machine.html#a22d427b07a90994d063259fa12686c9e">commit</a> (uint64_t log_idx, nuraft::buffer &amp;data) -&gt; nuraft::ptr&lt; nuraft::buffer &gt; override</td></tr>
 <tr class="memdesc:a22d427b07a90994d063259fa12686c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commits a state machine command.  <a href="classcbdc_1_1coordinator_1_1state__machine.html#a22d427b07a90994d063259fa12686c9e">More...</a><br /></td></tr>
 <tr class="separator:a22d427b07a90994d063259fa12686c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d04bcc11d2e8ab0ae9028f2be0c667"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1coordinator_1_1state__machine.html#a22d04bcc11d2e8ab0ae9028f2be0c667">commit_config</a> (nuraft::ulong log_idx, nuraft::ptr&lt; nuraft::cluster_config &gt; &amp;) override</td></tr>
+<tr class="memdesc:a22d04bcc11d2e8ab0ae9028f2be0c667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for the raft cluster configuration changes.  <a href="classcbdc_1_1coordinator_1_1state__machine.html#a22d04bcc11d2e8ab0ae9028f2be0c667">More...</a><br /></td></tr>
+<tr class="separator:a22d04bcc11d2e8ab0ae9028f2be0c667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19afb5032261d872d863d4e453af68b5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1coordinator_1_1state__machine.html#a19afb5032261d872d863d4e453af68b5">apply_snapshot</a> (nuraft::snapshot &amp;) -&gt; bool override</td></tr>
 <tr class="memdesc:a19afb5032261d872d863d4e453af68b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented for coordinators.  <a href="classcbdc_1_1coordinator_1_1state__machine.html#a19afb5032261d872d863d4e453af68b5">More...</a><br /></td></tr>
 <tr class="separator:a19afb5032261d872d863d4e453af68b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,7 +235,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00114">114</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00122">122</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -264,7 +267,7 @@ Public Member Functions</h2></td></tr>
 <p>Not implemented for coordinators. </p>
 <dl class="section return"><dt>Returns</dt><dd>false (unconditionally). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00093">93</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00101">101</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -328,6 +331,52 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a22d04bcc11d2e8ab0ae9028f2be0c667" name="a22d04bcc11d2e8ab0ae9028f2be0c667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d04bcc11d2e8ab0ae9028f2be0c667">&#9670;&nbsp;</a></span>commit_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cbdc::coordinator::state_machine::commit_config </td>
+          <td>(</td>
+          <td class="paramtype">nuraft::ulong&#160;</td>
+          <td class="paramname"><em>log_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">nuraft::ptr&lt; nuraft::cluster_config &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handler for the raft cluster configuration changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log_idx</td><td>Raft log number of the configuration change. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00094">94</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a90b3e266c42a74492b77fdeb90be6966" name="a90b3e266c42a74492b77fdeb90be6966"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90b3e266c42a74492b77fdeb90be6966">&#9670;&nbsp;</a></span>create_snapshot()</h2>
 
@@ -364,7 +413,7 @@ Here is the call graph for this function:</div>
 
 <p>Not implemented for coordinators. </p>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00106">106</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00114">114</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -393,7 +442,7 @@ Here is the call graph for this function:</div>
 
 <p>Returns the index of the last-committed command. </p>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00102">102</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00110">110</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -423,7 +472,7 @@ Here is the call graph for this function:</div>
 <p>Not implemented for coordinators. </p>
 <dl class="section return"><dt>Returns</dt><dd>nullptr (unconditionally). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00098">98</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html#l00106">106</a> of file <a class="el" href="twophase_2coordinator_2state__machine_8cpp_source.html">twophase/coordinator/state_machine.cpp</a>.</p>
 
 </div>
 </div>

@@ -7,6 +7,7 @@ var classcbdc_1_1atomizer_1_1state__machine =
     [ "state_machine", "classcbdc_1_1atomizer_1_1state__machine.html#a62ff66cec2f778bf728117714ccefc15", null ],
     [ "apply_snapshot", "classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6", null ],
     [ "commit", "classcbdc_1_1atomizer_1_1state__machine.html#a158239b64b3a88b6641529323678f047", null ],
+    [ "commit_config", "classcbdc_1_1atomizer_1_1state__machine.html#ae4ef3358fc2bbc4e5c9ce016d39b76d1", null ],
     [ "create_snapshot", "classcbdc_1_1atomizer_1_1state__machine.html#a7805f50400d5338e8fc296dea6bb2731", null ],
     [ "last_commit_index", "classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4", null ],
     [ "last_snapshot", "classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b", null ],

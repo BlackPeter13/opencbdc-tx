@@ -128,299 +128,308 @@ $(document).ready(function(){initNavTree('atomizer_2atomizer_2state__machine_8cp
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#a158239b64b3a88b6641529323678f047">   42</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a158239b64b3a88b6641529323678f047">state_machine::commit</a>(nuraft::ulong log_idx, nuraft::buffer&amp; data)</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        -&gt; nuraft::ptr&lt;nuraft::buffer&gt; {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        m_last_committed_idx = log_idx;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">auto</span> req = from_buffer&lt;request&gt;(data);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        assert(req.has_value());</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">auto</span> resp = std::visit(</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <a class="code hl_struct" href="structcbdc_1_1overloaded.html">overloaded</a>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                [&amp;](<a class="code hl_struct" href="structcbdc_1_1atomizer_1_1aggregate__tx__notify__request.html">aggregate_tx_notify_request</a>&amp; r)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                    -&gt; std::optional&lt;response&gt; {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    <span class="keyword">auto</span> errs = <a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a79be2e465ad97592840bd36713b943f2">errors</a>();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp;&amp; msg : r.m_agg_txs) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                        <span class="keyword">auto</span> err = m_atomizer-&gt;insert_complete(</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                            msg.m_oldest_attestation,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                            std::move(msg.m_tx));</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                        <span class="keywordflow">if</span>(err.has_value()) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                            errs.push_back(*err);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                        }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                        m_tx_notify_count++;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                    <span class="keywordflow">if</span>(!errs.empty()) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                        <span class="keywordflow">return</span> errs;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                },</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1make__block__request.html">make_block_request</a>&amp; <span class="comment">/* r */</span>)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                    -&gt; std::optional&lt;response&gt; {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    <span class="keyword">auto</span> [blk, errs] = m_atomizer-&gt;make_block();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    m_blocks-&gt;emplace(blk.m_height, blk);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    <span class="keywordflow">return</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1make__block__response.html">make_block_response</a>{blk, errs};</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                },</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1get__block__request.html">get_block_request</a>&amp; r) -&gt; std::optional&lt;response&gt; {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    <span class="keyword">auto</span> it = m_blocks-&gt;find(r.m_block_height);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    <span class="keywordflow">if</span>(it != m_blocks-&gt;end()) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1get__block__response.html">get_block_response</a>{it-&gt;second};</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                },</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1prune__request.html">prune_request</a>&amp; r) -&gt; std::optional&lt;response&gt; {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = m_blocks-&gt;begin(); it != m_blocks-&gt;end();) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                        <span class="keywordflow">if</span>(it-&gt;second.m_height &lt; r.m_block_height) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                            it = m_blocks-&gt;erase(it);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                            it++;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                        }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                },</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            },</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            req.value());</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">if</span>(!resp.has_value()) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> make_buffer&lt;response, nuraft::ptr&lt;nuraft::buffer&gt;&gt;(</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            resp.value());</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">auto</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">  103</a></span>    <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">state_machine::read_logical_snp_obj</a>(nuraft::snapshot&amp; s,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                        <span class="keywordtype">void</span>*&amp; <span class="comment">/* user_snp_ctx */</span>,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                        nuraft::ulong <span class="comment">/* obj_id */</span>,</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                                        nuraft::ptr&lt;nuraft::buffer&gt;&amp; data_out,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                        <span class="keywordtype">bool</span>&amp; is_last_obj) -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keyword">auto</span> path = get_snapshot_path(s.get_last_log_idx());</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            std::shared_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keyword">auto</span> ss = std::ifstream(path, std::ios::in | std::ios::binary);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="comment">// Requested snapshot doesn&#39;t exit anymore, not fatal</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keyword">auto</span> err = std::error_code();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <span class="keyword">auto</span> sz = std::filesystem::file_size(path, err);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">if</span>(err) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                <span class="comment">// If we got this far, this should work unless our system is</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                <span class="comment">// broken</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keyword">auto</span> buf = nuraft::buffer::alloc(sz);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keyword">auto</span> read_vec = std::vector&lt;char&gt;(sz);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            ss.read(read_vec.data(),</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    <span class="keyword">static_cast&lt;</span>std::streamsize<span class="keyword">&gt;</span>(buf-&gt;size()));</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="comment">// If we got this far, this should work unless our system is</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <span class="comment">// broken</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            std::memcpy(buf-&gt;data_begin(), read_vec.data(), sz);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            data_out = std::move(buf);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="comment">// TODO: send and receive in chunks</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        is_last_obj = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#ae60641139b77b0638c2de0bd33b7ef94">  142</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#ae60641139b77b0638c2de0bd33b7ef94">state_machine::save_logical_snp_obj</a>(nuraft::snapshot&amp; s,</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                                             nuraft::ulong&amp; obj_id,</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                                             nuraft::buffer&amp; data,</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                                             <span class="keywordtype">bool</span> <span class="comment">/* is_first_obj */</span>,</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                                             <span class="keywordtype">bool</span> <span class="comment">/* is_last_obj */</span>) {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        assert(obj_id == 0);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keyword">auto</span> tmp_path = get_tmp_path();</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        {</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            std::unique_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            <span class="keyword">auto</span> ss = std::ofstream(tmp_path,</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                                    std::ios::out | std::ios::trunc</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                                        | std::ios::binary);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="comment">// Since we&#39;re the exclusive writer, this should work</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keyword">auto</span> write_vec = std::vector&lt;char&gt;(data.size());</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            std::memcpy(write_vec.data(), data.data_begin(), data.size());</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            ss.write(write_vec.data(),</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                     <span class="keyword">static_cast&lt;</span>std::streamsize<span class="keyword">&gt;</span>(data.size()));</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        assert(log_idx == m_last_committed_idx + 1);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        m_last_committed_idx = log_idx;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">auto</span> req = from_buffer&lt;request&gt;(data);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        assert(req.has_value());</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">auto</span> resp = std::visit(</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <a class="code hl_struct" href="structcbdc_1_1overloaded.html">overloaded</a>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                [&amp;](<a class="code hl_struct" href="structcbdc_1_1atomizer_1_1aggregate__tx__notify__request.html">aggregate_tx_notify_request</a>&amp; r)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    -&gt; std::optional&lt;response&gt; {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    <span class="keyword">auto</span> errs = <a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a79be2e465ad97592840bd36713b943f2">errors</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp;&amp; msg : r.m_agg_txs) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                        <span class="keyword">auto</span> err = m_atomizer-&gt;insert_complete(</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                            msg.m_oldest_attestation,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                            std::move(msg.m_tx));</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        <span class="keywordflow">if</span>(err.has_value()) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                            errs.push_back(*err);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                        m_tx_notify_count++;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                    <span class="keywordflow">if</span>(!errs.empty()) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                        <span class="keywordflow">return</span> errs;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                },</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1make__block__request.html">make_block_request</a>&amp; <span class="comment">/* r */</span>)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    -&gt; std::optional&lt;response&gt; {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    <span class="keyword">auto</span> [blk, errs] = m_atomizer-&gt;make_block();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    m_blocks-&gt;emplace(blk.m_height, blk);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    <span class="keywordflow">return</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1make__block__response.html">make_block_response</a>{blk, errs};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                },</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1get__block__request.html">get_block_request</a>&amp; r) -&gt; std::optional&lt;response&gt; {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    <span class="keyword">auto</span> it = m_blocks-&gt;find(r.m_block_height);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                    <span class="keywordflow">if</span>(it != m_blocks-&gt;end()) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                        <span class="keywordflow">return</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1get__block__response.html">get_block_response</a>{it-&gt;second};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                },</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1prune__request.html">prune_request</a>&amp; r) -&gt; std::optional&lt;response&gt; {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> it = m_blocks-&gt;begin(); it != m_blocks-&gt;end();) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                        <span class="keywordflow">if</span>(it-&gt;second.m_height &lt; r.m_block_height) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                            it = m_blocks-&gt;erase(it);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                            it++;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                },</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            },</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            req.value());</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span>(!resp.has_value()) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">return</span> make_buffer&lt;response, nuraft::ptr&lt;nuraft::buffer&gt;&gt;(</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            resp.value());</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#ae4ef3358fc2bbc4e5c9ce016d39b76d1">  103</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#ae4ef3358fc2bbc4e5c9ce016d39b76d1">state_machine::commit_config</a>(</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keyword">const</span> nuraft::ulong log_idx,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        nuraft::ptr&lt;nuraft::cluster_config&gt;&amp; <span class="comment">/*new_conf*/</span>) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        assert(log_idx == m_last_committed_idx + 1);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        m_last_committed_idx = log_idx;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">auto</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">  111</a></span>    <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">state_machine::read_logical_snp_obj</a>(nuraft::snapshot&amp; s,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                                        <span class="keywordtype">void</span>*&amp; <span class="comment">/* user_snp_ctx */</span>,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                                        nuraft::ulong <span class="comment">/* obj_id */</span>,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                                        nuraft::ptr&lt;nuraft::buffer&gt;&amp; data_out,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                        <span class="keywordtype">bool</span>&amp; is_last_obj) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keyword">auto</span> path = get_snapshot_path(s.get_last_log_idx());</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            std::shared_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keyword">auto</span> ss = std::ifstream(path, std::ios::in | std::ios::binary);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                <span class="comment">// Requested snapshot doesn&#39;t exit anymore, not fatal</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keyword">auto</span> err = std::error_code();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keyword">auto</span> sz = std::filesystem::file_size(path, err);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">if</span>(err) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                <span class="comment">// If we got this far, this should work unless our system is</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                <span class="comment">// broken</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keyword">auto</span> buf = nuraft::buffer::alloc(sz);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keyword">auto</span> read_vec = std::vector&lt;char&gt;(sz);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            ss.read(read_vec.data(),</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                    <span class="keyword">static_cast&lt;</span>std::streamsize<span class="keyword">&gt;</span>(buf-&gt;size()));</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                <span class="comment">// If we got this far, this should work unless our system is</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                <span class="comment">// broken</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            std::memcpy(buf-&gt;data_begin(), read_vec.data(), sz);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            data_out = std::move(buf);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="comment">// TODO: send and receive in chunks</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        is_last_obj = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#ae60641139b77b0638c2de0bd33b7ef94">  150</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#ae60641139b77b0638c2de0bd33b7ef94">state_machine::save_logical_snp_obj</a>(nuraft::snapshot&amp; s,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                                             nuraft::ulong&amp; obj_id,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                                             nuraft::buffer&amp; data,</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                                             <span class="keywordtype">bool</span> <span class="comment">/* is_first_obj */</span>,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                                             <span class="keywordtype">bool</span> <span class="comment">/* is_last_obj */</span>) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        assert(obj_id == 0);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keyword">auto</span> tmp_path = get_tmp_path();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            std::unique_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keyword">auto</span> ss = std::ofstream(tmp_path,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                                    std::ios::out | std::ios::trunc</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                                        | std::ios::binary);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                <span class="comment">// Since we&#39;re the exclusive writer, this should work</span></div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                std::exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            }</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            ss.flush();</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            ss.close();</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keyword">auto</span> path = get_snapshot_path(s.get_last_log_idx());</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keyword">auto</span> err = std::error_code();</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            std::filesystem::rename(tmp_path, path, err);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="keywordflow">if</span>(err) {</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keyword">auto</span> write_vec = std::vector&lt;char&gt;(data.size());</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            std::memcpy(write_vec.data(), data.data_begin(), data.size());</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            ss.write(write_vec.data(),</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                     <span class="keyword">static_cast&lt;</span>std::streamsize<span class="keyword">&gt;</span>(data.size()));</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            ss.flush();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            ss.close();</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        obj_id++;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6">  181</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6">state_machine::apply_snapshot</a>(nuraft::snapshot&amp; s) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keyword">auto</span> snp = read_snapshot(s.get_last_log_idx());</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">if</span>(snp) {</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            m_blocks = snp-&gt;m_blocks;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            m_atomizer = snp-&gt;m_atomizer;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            m_last_committed_idx = s.get_last_log_idx();</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        }</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">return</span> snp.has_value();</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b">  191</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b">state_machine::last_snapshot</a>() -&gt; nuraft::ptr&lt;nuraft::snapshot&gt; {</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keyword">auto</span> snp = read_snapshot(0);</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">if</span>(!snp) {</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keyword">auto</span> path = get_snapshot_path(s.get_last_log_idx());</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keyword">auto</span> err = std::error_code();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            std::filesystem::rename(tmp_path, path, err);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">if</span>(err) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        obj_id++;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6">  189</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6">state_machine::apply_snapshot</a>(nuraft::snapshot&amp; s) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keyword">auto</span> snp = read_snapshot(s.get_last_log_idx());</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">if</span>(snp) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            m_blocks = snp-&gt;m_blocks;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            m_atomizer = snp-&gt;m_atomizer;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            m_last_committed_idx = s.get_last_log_idx();</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        }</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">return</span> snp-&gt;m_snp;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">return</span> snp.has_value();</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    }</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">  199</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">state_machine::last_commit_index</a>() -&gt; nuraft::ulong {</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">return</span> m_last_committed_idx;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#a7805f50400d5338e8fc296dea6bb2731">  203</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a7805f50400d5338e8fc296dea6bb2731">state_machine::create_snapshot</a>(</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        nuraft::snapshot&amp; s,</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_enumeration" href="namespacecbdc_1_1rpc.html#a99de594296f8d84984dc7cf1506d72a9">nuraft::async_result&lt;bool&gt;::handler_type</a>&amp; when_done) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        assert(s.get_last_log_idx() == <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">last_commit_index</a>());</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        nuraft::ptr&lt;std::exception&gt; except(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordtype">bool</span> ret = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keyword">auto</span> snp_ser = s.serialize();</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keyword">auto</span> snp = <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html">snapshot</a>{m_atomizer,</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                            nuraft::snapshot::deserialize(*snp_ser),</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                            m_blocks};</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keyword">auto</span> tmp_path = get_tmp_path();</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keyword">auto</span> path = get_snapshot_path(s.get_last_log_idx());</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            std::unique_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keyword">auto</span> ss = std::ofstream(tmp_path,</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                                    std::ios::out | std::ios::trunc</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                                        | std::ios::binary);</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                <span class="comment">// We&#39;re the exclusive writer so these file operations should</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <span class="comment">// work</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            }</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <span class="keyword">auto</span> ser = <a class="code hl_class" href="classcbdc_1_1ostream__serializer.html">cbdc::ostream_serializer</a>(ss);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <span class="keywordflow">if</span>(!(ser &lt;&lt; snp)) {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            }</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            ss.flush();</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            ss.close();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b">  199</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b">state_machine::last_snapshot</a>() -&gt; nuraft::ptr&lt;nuraft::snapshot&gt; {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keyword">auto</span> snp = read_snapshot(0);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">if</span>(!snp) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordflow">return</span> snp-&gt;m_snp;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">  207</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">state_machine::last_commit_index</a>() -&gt; nuraft::ulong {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">return</span> m_last_committed_idx;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#a7805f50400d5338e8fc296dea6bb2731">  211</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a7805f50400d5338e8fc296dea6bb2731">state_machine::create_snapshot</a>(</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        nuraft::snapshot&amp; s,</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <a class="code hl_enumeration" href="namespacecbdc_1_1rpc.html#a99de594296f8d84984dc7cf1506d72a9">nuraft::async_result&lt;bool&gt;::handler_type</a>&amp; when_done) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        assert(s.get_last_log_idx() == <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">last_commit_index</a>());</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        nuraft::ptr&lt;std::exception&gt; except(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordtype">bool</span> ret = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keyword">auto</span> snp_ser = s.serialize();</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keyword">auto</span> snp = <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html">snapshot</a>{m_atomizer,</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                            nuraft::snapshot::deserialize(*snp_ser),</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                            m_blocks};</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keyword">auto</span> tmp_path = get_tmp_path();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keyword">auto</span> path = get_snapshot_path(s.get_last_log_idx());</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            std::unique_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keyword">auto</span> ss = std::ofstream(tmp_path,</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                                    std::ios::out | std::ios::trunc</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                                        | std::ios::binary);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keywordflow">if</span>(!ss.good()) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                <span class="comment">// We&#39;re the exclusive writer so these file operations should</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                <span class="comment">// work</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            }</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keyword">auto</span> err = std::error_code();</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            std::filesystem::rename(tmp_path, path, err);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keywordflow">if</span>(err) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            }</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p :</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                std::filesystem::directory_iterator(m_snapshot_dir)) {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                <span class="keyword">auto</span> name = p.path().filename().generic_string();</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                <span class="keywordflow">if</span>(name == m_tmp_file</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                   || std::stoull(name) &lt; s.get_last_log_idx()) {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                    std::filesystem::remove(p, err);</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    <span class="keywordflow">if</span>(err) {</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                        std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                    }</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                }</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            }</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        when_done(ret, except);</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    }</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#a4a835d5d6312d12fd9df6c9f369023f1">  258</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a4a835d5d6312d12fd9df6c9f369023f1">state_machine::tx_notify_count</a>() -&gt; uint64_t {</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">return</span> m_tx_notify_count;</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    }</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keyword">auto</span> state_machine::get_snapshot_path(uint64_t idx) <span class="keyword">const</span> -&gt; std::string {</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">return</span> m_snapshot_dir + <span class="stringliteral">&quot;/&quot;</span> + <a class="code hl_function" href="namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e">std::to_string</a>(idx);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keyword">auto</span> ser = <a class="code hl_class" href="classcbdc_1_1ostream__serializer.html">cbdc::ostream_serializer</a>(ss);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="keywordflow">if</span>(!(ser &lt;&lt; snp)) {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            ss.flush();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            ss.close();</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keyword">auto</span> err = std::error_code();</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            std::filesystem::rename(tmp_path, path, err);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keywordflow">if</span>(err) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p :</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                std::filesystem::directory_iterator(m_snapshot_dir)) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                <span class="keyword">auto</span> name = p.path().filename().generic_string();</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                <span class="keywordflow">if</span>(name == m_tmp_file</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                   || std::stoull(name) &lt; s.get_last_log_idx()) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    std::filesystem::remove(p, err);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                    <span class="keywordflow">if</span>(err) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                        std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        when_done(ret, except);</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    }</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keyword">auto</span> state_machine::get_tmp_path() const -&gt; std::<span class="keywordtype">string</span> {</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">return</span> m_snapshot_dir + <span class="stringliteral">&quot;/&quot;</span> + m_tmp_file;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer_1_1state__machine.html#a4a835d5d6312d12fd9df6c9f369023f1">  266</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer_1_1state__machine.html#a4a835d5d6312d12fd9df6c9f369023f1">state_machine::tx_notify_count</a>() -&gt; uint64_t {</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">return</span> m_tx_notify_count;</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keyword">auto</span> state_machine::read_snapshot(uint64_t idx)</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        -&gt; std::optional&lt;snapshot&gt; {</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        std::shared_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keyword">auto</span> open_fail_fatal = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordflow">if</span>(idx == 0) {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            uint64_t max_idx{0};</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keyword">auto</span> err = std::error_code();</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p :</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                std::filesystem::directory_iterator(m_snapshot_dir, err)) {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                <span class="keywordflow">if</span>(err) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                    std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                <span class="keyword">auto</span> name = p.path().filename().generic_string();</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                <span class="keywordflow">if</span>(name == m_tmp_file) {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                }</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                <span class="keyword">auto</span> f_idx = std::stoull(name);</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                <span class="keywordflow">if</span>(f_idx &gt; max_idx) {</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                    max_idx = f_idx;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keyword">auto</span> state_machine::get_snapshot_path(uint64_t idx) <span class="keyword">const</span> -&gt; std::string {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">return</span> m_snapshot_dir + <span class="stringliteral">&quot;/&quot;</span> + <a class="code hl_function" href="namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e">std::to_string</a>(idx);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keyword">auto</span> state_machine::get_tmp_path() const -&gt; std::<span class="keywordtype">string</span> {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">return</span> m_snapshot_dir + <span class="stringliteral">&quot;/&quot;</span> + m_tmp_file;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keyword">auto</span> state_machine::read_snapshot(uint64_t idx)</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        -&gt; std::optional&lt;snapshot&gt; {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        std::shared_lock&lt;std::shared_mutex&gt; l(m_snp_mut);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keyword">auto</span> open_fail_fatal = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keywordflow">if</span>(idx == 0) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            uint64_t max_idx{0};</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <span class="keyword">auto</span> err = std::error_code();</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p :</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                std::filesystem::directory_iterator(m_snapshot_dir, err)) {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                <span class="keywordflow">if</span>(err) {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                    std::exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                }</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            }</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <span class="keywordflow">if</span>(max_idx == 0) {</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            }</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            idx = max_idx;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>            open_fail_fatal = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                <span class="keyword">auto</span> name = p.path().filename().generic_string();</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                <span class="keywordflow">if</span>(name == m_tmp_file) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                <span class="keyword">auto</span> f_idx = std::stoull(name);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                <span class="keywordflow">if</span>(f_idx &gt; max_idx) {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                    max_idx = f_idx;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            }</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keyword">auto</span> path = get_snapshot_path(idx);</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keyword">auto</span> ss = std::ifstream(path, std::ios::in | std::ios::binary);</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keywordflow">if</span>(!ss.good()) {</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <span class="keywordflow">if</span>(open_fail_fatal) {</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            }</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        }</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="keyword">auto</span> err = std::error_code();</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="keyword">auto</span> sz = std::filesystem::file_size(path, err);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">if</span>(err) {</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            std::exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        }</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keyword">auto</span> deser = <a class="code hl_class" href="classcbdc_1_1istream__serializer.html">cbdc::istream_serializer</a>(ss);</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <span class="keyword">auto</span> new_atm = std::make_shared&lt;atomizer&gt;(0, m_stxo_cache_depth);</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <span class="keyword">auto</span> new_blocks = std::make_shared&lt;decltype(m_blocks)::element_type&gt;();</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keyword">auto</span> snp</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            = snapshot{std::move(new_atm), <span class="keyword">nullptr</span>, std::move(new_blocks)};</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <span class="keywordflow">if</span>(!(deser &gt;&gt; snp)) {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            <span class="keywordflow">if</span>(max_idx == 0) {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            }</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            idx = max_idx;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            open_fail_fatal = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keyword">auto</span> path = get_snapshot_path(idx);</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="keyword">auto</span> ss = std::ifstream(path, std::ios::in | std::ios::binary);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">if</span>(!ss.good()) {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <span class="keywordflow">if</span>(open_fail_fatal) {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            }</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        }</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keyword">auto</span> err = std::error_code();</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        <span class="keyword">auto</span> sz = std::filesystem::file_size(path, err);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <span class="keywordflow">if</span>(err) {</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>            std::exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        }</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        snp.m_snp-&gt;set_size(sz);</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <span class="keywordflow">return</span> snp;</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    }</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>}</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <span class="keyword">auto</span> deser = <a class="code hl_class" href="classcbdc_1_1istream__serializer.html">cbdc::istream_serializer</a>(ss);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        <span class="keyword">auto</span> new_atm = std::make_shared&lt;atomizer&gt;(0, m_stxo_cache_depth);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keyword">auto</span> new_blocks = std::make_shared&lt;decltype(m_blocks)::element_type&gt;();</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        <span class="keyword">auto</span> snp</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            = snapshot{std::move(new_atm), <span class="keyword">nullptr</span>, std::move(new_blocks)};</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        <span class="keywordflow">if</span>(!(deser &gt;&gt; snp)) {</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            std::exit(EXIT_FAILURE);</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        }</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        snp.m_snp-&gt;set_size(sz);</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keywordflow">return</span> snp;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    }</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>}</div>
 <div class="ttc" id="aatomizer_8hpp_html"><div class="ttname"><a href="atomizer_8hpp.html">atomizer.hpp</a></div></div>
 <div class="ttc" id="aatomizer__raft_8hpp_html"><div class="ttname"><a href="atomizer__raft_8hpp.html">atomizer_raft.hpp</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a158239b64b3a88b6641529323678f047"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a158239b64b3a88b6641529323678f047">cbdc::atomizer::state_machine::commit</a></div><div class="ttdeci">auto commit(nuraft::ulong log_idx, nuraft::buffer &amp;data) -&gt; nuraft::ptr&lt; nuraft::buffer &gt; override</div><div class="ttdoc">Executes the committed the raft log entry at the given index and return the state machine execution r...</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00042">atomizer/atomizer/state_machine.cpp:42</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a4a835d5d6312d12fd9df6c9f369023f1"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a4a835d5d6312d12fd9df6c9f369023f1">cbdc::atomizer::state_machine::tx_notify_count</a></div><div class="ttdeci">auto tx_notify_count() -&gt; uint64_t</div><div class="ttdoc">Returns the total number of transaction notifications which the state machine has processed.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00258">atomizer/atomizer/state_machine.cpp:258</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a4a835d5d6312d12fd9df6c9f369023f1"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a4a835d5d6312d12fd9df6c9f369023f1">cbdc::atomizer::state_machine::tx_notify_count</a></div><div class="ttdeci">auto tx_notify_count() -&gt; uint64_t</div><div class="ttdoc">Returns the total number of transaction notifications which the state machine has processed.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00266">atomizer/atomizer/state_machine.cpp:266</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a62ff66cec2f778bf728117714ccefc15"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a62ff66cec2f778bf728117714ccefc15">cbdc::atomizer::state_machine::state_machine</a></div><div class="ttdeci">state_machine(size_t stxo_cache_depth, std::string snapshot_dir)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00023">atomizer/atomizer/state_machine.cpp:23</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a75e84ec1334c5653b10d52beb8088ab4"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">cbdc::atomizer::state_machine::last_commit_index</a></div><div class="ttdeci">auto last_commit_index() -&gt; nuraft::ulong override</div><div class="ttdoc">Returns the index of the most recently committed log entry.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00199">atomizer/atomizer/state_machine.cpp:199</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a7805f50400d5338e8fc296dea6bb2731"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a7805f50400d5338e8fc296dea6bb2731">cbdc::atomizer::state_machine::create_snapshot</a></div><div class="ttdeci">void create_snapshot(nuraft::snapshot &amp;s, nuraft::async_result&lt; bool &gt;::handler_type &amp;when_done) override</div><div class="ttdoc">Creates a snapshot with the given metadata.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00203">atomizer/atomizer/state_machine.cpp:203</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_abc07963cc52953e94b6108a1f00e67c6"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6">cbdc::atomizer::state_machine::apply_snapshot</a></div><div class="ttdeci">auto apply_snapshot(nuraft::snapshot &amp;s) -&gt; bool override</div><div class="ttdoc">Replaces the state of the state machine with the state stored in the snapshot referenced by the given...</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00181">atomizer/atomizer/state_machine.cpp:181</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_ad6176dfb38a67699a257e0b230de0975"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">cbdc::atomizer::state_machine::read_logical_snp_obj</a></div><div class="ttdeci">auto read_logical_snp_obj(nuraft::snapshot &amp;s, void *&amp;user_snp_ctx, nuraft::ulong obj_id, nuraft::ptr&lt; nuraft::buffer &gt; &amp;data_out, bool &amp;is_last_obj) -&gt; int override</div><div class="ttdoc">Read the portion of the state machine snapshot associated with the given metadata and object ID into ...</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00103">atomizer/atomizer/state_machine.cpp:103</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_ae60641139b77b0638c2de0bd33b7ef94"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#ae60641139b77b0638c2de0bd33b7ef94">cbdc::atomizer::state_machine::save_logical_snp_obj</a></div><div class="ttdeci">void save_logical_snp_obj(nuraft::snapshot &amp;s, nuraft::ulong &amp;obj_id, nuraft::buffer &amp;data, bool is_first_obj, bool is_last_obj) override</div><div class="ttdoc">Saves the portion of the state machine snapshot associated with the given metadata and object ID into...</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00142">atomizer/atomizer/state_machine.cpp:142</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_ae81f026e70b7fd2a956940b94b37eb1b"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b">cbdc::atomizer::state_machine::last_snapshot</a></div><div class="ttdeci">auto last_snapshot() -&gt; nuraft::ptr&lt; nuraft::snapshot &gt; override</div><div class="ttdoc">Returns the most recent snapshot metadata.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00191">atomizer/atomizer/state_machine.cpp:191</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a75e84ec1334c5653b10d52beb8088ab4"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a75e84ec1334c5653b10d52beb8088ab4">cbdc::atomizer::state_machine::last_commit_index</a></div><div class="ttdeci">auto last_commit_index() -&gt; nuraft::ulong override</div><div class="ttdoc">Returns the index of the most recently committed log entry.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00207">atomizer/atomizer/state_machine.cpp:207</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_a7805f50400d5338e8fc296dea6bb2731"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#a7805f50400d5338e8fc296dea6bb2731">cbdc::atomizer::state_machine::create_snapshot</a></div><div class="ttdeci">void create_snapshot(nuraft::snapshot &amp;s, nuraft::async_result&lt; bool &gt;::handler_type &amp;when_done) override</div><div class="ttdoc">Creates a snapshot with the given metadata.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00211">atomizer/atomizer/state_machine.cpp:211</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_abc07963cc52953e94b6108a1f00e67c6"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6">cbdc::atomizer::state_machine::apply_snapshot</a></div><div class="ttdeci">auto apply_snapshot(nuraft::snapshot &amp;s) -&gt; bool override</div><div class="ttdoc">Replaces the state of the state machine with the state stored in the snapshot referenced by the given...</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00189">atomizer/atomizer/state_machine.cpp:189</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_ad6176dfb38a67699a257e0b230de0975"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">cbdc::atomizer::state_machine::read_logical_snp_obj</a></div><div class="ttdeci">auto read_logical_snp_obj(nuraft::snapshot &amp;s, void *&amp;user_snp_ctx, nuraft::ulong obj_id, nuraft::ptr&lt; nuraft::buffer &gt; &amp;data_out, bool &amp;is_last_obj) -&gt; int override</div><div class="ttdoc">Read the portion of the state machine snapshot associated with the given metadata and object ID into ...</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00111">atomizer/atomizer/state_machine.cpp:111</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_ae4ef3358fc2bbc4e5c9ce016d39b76d1"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#ae4ef3358fc2bbc4e5c9ce016d39b76d1">cbdc::atomizer::state_machine::commit_config</a></div><div class="ttdeci">void commit_config(nuraft::ulong log_idx, nuraft::ptr&lt; nuraft::cluster_config &gt; &amp;) override</div><div class="ttdoc">Handler for the raft cluster configuration changes.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00103">atomizer/atomizer/state_machine.cpp:103</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_ae60641139b77b0638c2de0bd33b7ef94"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#ae60641139b77b0638c2de0bd33b7ef94">cbdc::atomizer::state_machine::save_logical_snp_obj</a></div><div class="ttdeci">void save_logical_snp_obj(nuraft::snapshot &amp;s, nuraft::ulong &amp;obj_id, nuraft::buffer &amp;data, bool is_first_obj, bool is_last_obj) override</div><div class="ttdoc">Saves the portion of the state machine snapshot associated with the given metadata and object ID into...</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00150">atomizer/atomizer/state_machine.cpp:150</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer_1_1state__machine_html_ae81f026e70b7fd2a956940b94b37eb1b"><div class="ttname"><a href="classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b">cbdc::atomizer::state_machine::last_snapshot</a></div><div class="ttdeci">auto last_snapshot() -&gt; nuraft::ptr&lt; nuraft::snapshot &gt; override</div><div class="ttdoc">Returns the most recent snapshot metadata.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00199">atomizer/atomizer/state_machine.cpp:199</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1istream__serializer_html"><div class="ttname"><a href="classcbdc_1_1istream__serializer.html">cbdc::istream_serializer</a></div><div class="ttdoc">Implementation of serializer for reading from a std::istream.</div><div class="ttdef"><b>Definition:</b> <a href="istream__serializer_8hpp_source.html#l00016">istream_serializer.hpp:16</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1ostream__serializer_html"><div class="ttname"><a href="classcbdc_1_1ostream__serializer.html">cbdc::ostream_serializer</a></div><div class="ttdoc">Implementation of serializer for writing to a std::ostream.</div><div class="ttdef"><b>Definition:</b> <a href="ostream__serializer_8hpp_source.html#l00015">ostream_serializer.hpp:15</a></div></div>
 <div class="ttc" id="aistream__serializer_8hpp_html"><div class="ttname"><a href="istream__serializer_8hpp.html">istream_serializer.hpp</a></div></div>
@@ -438,7 +447,7 @@ $(document).ready(function(){initNavTree('atomizer_2atomizer_2state__machine_8cp
 <div class="ttc" id="astructcbdc_1_1atomizer_1_1make__block__request_html"><div class="ttname"><a href="structcbdc_1_1atomizer_1_1make__block__request.html">cbdc::atomizer::make_block_request</a></div><div class="ttdoc">Placeholder struct for a make block state machine request.</div><div class="ttdef"><b>Definition:</b> <a href="uhs_2atomizer_2atomizer_2messages_8hpp_source.html#l00065">uhs/atomizer/atomizer/messages.hpp:65</a></div></div>
 <div class="ttc" id="astructcbdc_1_1atomizer_1_1make__block__response_html"><div class="ttname"><a href="structcbdc_1_1atomizer_1_1make__block__response.html">cbdc::atomizer::make_block_response</a></div><div class="ttdoc">Response from atomizer state machine to a make block request.</div><div class="ttdef"><b>Definition:</b> <a href="uhs_2atomizer_2atomizer_2messages_8hpp_source.html#l00083">uhs/atomizer/atomizer/messages.hpp:83</a></div></div>
 <div class="ttc" id="astructcbdc_1_1atomizer_1_1prune__request_html"><div class="ttname"><a href="structcbdc_1_1atomizer_1_1prune__request.html">cbdc::atomizer::prune_request</a></div><div class="ttdoc">Prune blocks request for RPC and state machine.</div><div class="ttdef"><b>Definition:</b> <a href="uhs_2atomizer_2atomizer_2messages_8hpp_source.html#l00068">uhs/atomizer/atomizer/messages.hpp:68</a></div></div>
-<div class="ttc" id="astructcbdc_1_1atomizer_1_1state__machine_1_1snapshot_html"><div class="ttname"><a href="structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html">cbdc::atomizer::state_machine::snapshot</a></div><div class="ttdoc">Represents a snapshot of the state machine with associated metadata.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8hpp_source.html#l00117">atomizer/atomizer/state_machine.hpp:117</a></div></div>
+<div class="ttc" id="astructcbdc_1_1atomizer_1_1state__machine_1_1snapshot_html"><div class="ttname"><a href="structcbdc_1_1atomizer_1_1state__machine_1_1snapshot.html">cbdc::atomizer::state_machine::snapshot</a></div><div class="ttdoc">Represents a snapshot of the state machine with associated metadata.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2atomizer_2state__machine_8hpp_source.html#l00123">atomizer/atomizer/state_machine.hpp:123</a></div></div>
 <div class="ttc" id="astructcbdc_1_1overloaded_html"><div class="ttname"><a href="structcbdc_1_1overloaded.html">cbdc::overloaded</a></div><div class="ttdoc">Variant handler template.</div><div class="ttdef"><b>Definition:</b> <a href="variant__overloaded_8hpp_source.html#l00032">variant_overloaded.hpp:32</a></div></div>
 <div class="ttc" id="atwophase_2locking__shard_2state__machine_8hpp_html"><div class="ttname"><a href="twophase_2locking__shard_2state__machine_8hpp.html">state_machine.hpp</a></div></div>
 <div class="ttc" id="autil_2serialization_2format_8hpp_html"><div class="ttname"><a href="util_2serialization_2format_8hpp.html">format.hpp</a></div></div>

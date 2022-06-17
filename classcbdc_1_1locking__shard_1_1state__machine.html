@@ -129,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af530b154e59ac62bedd643ebf4abf1ff"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1locking__shard_1_1state__machine.html#af530b154e59ac62bedd643ebf4abf1ff">commit</a> (uint64_t log_idx, nuraft::buffer &amp;data) -&gt; nuraft::ptr&lt; nuraft::buffer &gt; override</td></tr>
 <tr class="memdesc:af530b154e59ac62bedd643ebf4abf1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commit the given raft log entry at the given log index, and return the result.  <a href="classcbdc_1_1locking__shard_1_1state__machine.html#af530b154e59ac62bedd643ebf4abf1ff">More...</a><br /></td></tr>
 <tr class="separator:af530b154e59ac62bedd643ebf4abf1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be6798bc83bfbfd7bcd8ceb1a617def"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1locking__shard_1_1state__machine.html#a1be6798bc83bfbfd7bcd8ceb1a617def">commit_config</a> (nuraft::ulong log_idx, nuraft::ptr&lt; nuraft::cluster_config &gt; &amp;) override</td></tr>
+<tr class="memdesc:a1be6798bc83bfbfd7bcd8ceb1a617def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for the raft cluster configuration changes.  <a href="classcbdc_1_1locking__shard_1_1state__machine.html#a1be6798bc83bfbfd7bcd8ceb1a617def">More...</a><br /></td></tr>
+<tr class="separator:a1be6798bc83bfbfd7bcd8ceb1a617def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4f2c860e4fe8597c990662f28014e8e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1locking__shard_1_1state__machine.html#ac4f2c860e4fe8597c990662f28014e8e">apply_snapshot</a> (nuraft::snapshot &amp;) -&gt; bool override</td></tr>
 <tr class="memdesc:ac4f2c860e4fe8597c990662f28014e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not implemented for locking shard.  <a href="classcbdc_1_1locking__shard_1_1state__machine.html#ac4f2c860e4fe8597c990662f28014e8e">More...</a><br /></td></tr>
 <tr class="separator:ac4f2c860e4fe8597c990662f28014e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -307,7 +310,7 @@ Here is the call graph for this function:</div>
 <p>Not implemented for locking shard. </p>
 <dl class="section return"><dt>Returns</dt><dd>false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00048">48</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00056">56</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -359,6 +362,52 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a1be6798bc83bfbfd7bcd8ceb1a617def" name="a1be6798bc83bfbfd7bcd8ceb1a617def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be6798bc83bfbfd7bcd8ceb1a617def">&#9670;&nbsp;</a></span>commit_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cbdc::locking_shard::state_machine::commit_config </td>
+          <td>(</td>
+          <td class="paramtype">nuraft::ulong&#160;</td>
+          <td class="paramname"><em>log_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">nuraft::ptr&lt; nuraft::cluster_config &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handler for the raft cluster configuration changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log_idx</td><td>Raft log number of the configuration change. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00049">49</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a14d9a8d800678011cdbc399765c0e10a" name="a14d9a8d800678011cdbc399765c0e10a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14d9a8d800678011cdbc399765c0e10a">&#9670;&nbsp;</a></span>create_snapshot()</h2>
 
@@ -395,7 +444,7 @@ Here is the call graph for this function:</div>
 
 <p>Not implemented for locking shard. </p>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00060">60</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00068">68</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -417,7 +466,7 @@ Here is the call graph for this function:</div>
 <p>Returns a pointer to the locking shard instance managed by this state machine. </p>
 <dl class="section return"><dt>Returns</dt><dd>locking shard instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00068">68</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00076">76</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,7 +496,7 @@ Here is the call graph for this function:</div>
 <p>Returns the most recently committed log entry index. </p>
 <dl class="section return"><dt>Returns</dt><dd>log entry index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00056">56</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00064">64</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -477,7 +526,7 @@ Here is the call graph for this function:</div>
 <p>Not implemented for locking shard. </p>
 <dl class="section return"><dt>Returns</dt><dd>nullptr. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00052">52</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html#l00060">60</a> of file <a class="el" href="twophase_2locking__shard_2state__machine_8cpp_source.html">twophase/locking_shard/state_machine.cpp</a>.</p>
 
 </div>
 </div>

@@ -139,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a158239b64b3a88b6641529323678f047"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1atomizer_1_1state__machine.html#a158239b64b3a88b6641529323678f047">commit</a> (nuraft::ulong log_idx, nuraft::buffer &amp;data) -&gt; nuraft::ptr&lt; nuraft::buffer &gt; override</td></tr>
 <tr class="memdesc:a158239b64b3a88b6641529323678f047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the committed the raft log entry at the given index and return the state machine execution result.  <a href="classcbdc_1_1atomizer_1_1state__machine.html#a158239b64b3a88b6641529323678f047">More...</a><br /></td></tr>
 <tr class="separator:a158239b64b3a88b6641529323678f047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4ef3358fc2bbc4e5c9ce016d39b76d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1atomizer_1_1state__machine.html#ae4ef3358fc2bbc4e5c9ce016d39b76d1">commit_config</a> (nuraft::ulong log_idx, nuraft::ptr&lt; nuraft::cluster_config &gt; &amp;) override</td></tr>
+<tr class="memdesc:ae4ef3358fc2bbc4e5c9ce016d39b76d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for the raft cluster configuration changes.  <a href="classcbdc_1_1atomizer_1_1state__machine.html#ae4ef3358fc2bbc4e5c9ce016d39b76d1">More...</a><br /></td></tr>
+<tr class="separator:ae4ef3358fc2bbc4e5c9ce016d39b76d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6176dfb38a67699a257e0b230de0975"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">read_logical_snp_obj</a> (nuraft::snapshot &amp;s, void *&amp;user_snp_ctx, nuraft::ulong obj_id, nuraft::ptr&lt; nuraft::buffer &gt; &amp;data_out, bool &amp;is_last_obj) -&gt; int override</td></tr>
 <tr class="memdesc:ad6176dfb38a67699a257e0b230de0975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the portion of the state machine snapshot associated with the given metadata and object ID into a buffer.  <a href="classcbdc_1_1atomizer_1_1state__machine.html#ad6176dfb38a67699a257e0b230de0975">More...</a><br /></td></tr>
 <tr class="separator:ad6176dfb38a67699a257e0b230de0975"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,7 +184,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Maps block heights to blocks. </p>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8hpp_source.html#l00112">112</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8hpp_source.html">atomizer/atomizer/state_machine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8hpp_source.html#l00118">118</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8hpp_source.html">atomizer/atomizer/state_machine.hpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +298,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the operation successfully applied the snapshot. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00181">181</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00189">189</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -347,6 +350,52 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae4ef3358fc2bbc4e5c9ce016d39b76d1" name="ae4ef3358fc2bbc4e5c9ce016d39b76d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ef3358fc2bbc4e5c9ce016d39b76d1">&#9670;&nbsp;</a></span>commit_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cbdc::atomizer::state_machine::commit_config </td>
+          <td>(</td>
+          <td class="paramtype">nuraft::ulong&#160;</td>
+          <td class="paramname"><em>log_idx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">nuraft::ptr&lt; nuraft::cluster_config &gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handler for the raft cluster configuration changes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">log_idx</td><td>Raft log number of the configuration change. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00103">103</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a7805f50400d5338e8fc296dea6bb2731" name="a7805f50400d5338e8fc296dea6bb2731"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7805f50400d5338e8fc296dea6bb2731">&#9670;&nbsp;</a></span>create_snapshot()</h2>
 
@@ -390,9 +439,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00203">203</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00211">211</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00199">last_commit_index()</a>.</p>
+<p class="reference">References <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00207">last_commit_index()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -431,9 +480,9 @@ Here is the call graph for this function:</div>
 <p>Returns the index of the most recently committed log entry. </p>
 <dl class="section return"><dt>Returns</dt><dd>log index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00199">199</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00207">207</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00203">create_snapshot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00211">create_snapshot()</a>.</p>
 
 </div>
 </div>
@@ -463,7 +512,7 @@ Here is the call graph for this function:</div>
 <p>Returns the most recent snapshot metadata. </p>
 <dl class="section return"><dt>Returns</dt><dd>snapshot metadata, or nullptr if there is no snapshot. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00191">191</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00199">199</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -532,7 +581,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if the object was read successfully. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00103">103</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00111">111</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -600,7 +649,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00142">142</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00150">150</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
 
 </div>
 </div>
@@ -622,7 +671,7 @@ Here is the call graph for this function:</div>
 <p>Returns the total number of transaction notifications which the state machine has processed. </p>
 <dl class="section return"><dt>Returns</dt><dd>transaction notification count. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00258">258</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html#l00266">266</a> of file <a class="el" href="atomizer_2atomizer_2state__machine_8cpp_source.html">atomizer/atomizer/state_machine.cpp</a>.</p>
 
 </div>
 </div>
