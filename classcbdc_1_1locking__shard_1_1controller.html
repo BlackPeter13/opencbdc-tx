@@ -95,9 +95,9 @@ $(document).ready(function(){initNavTree('classcbdc_1_1locking__shard_1_1control
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aff76cc81c9a1f54aacf403afa79fb3e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1locking__shard_1_1controller.html#aff76cc81c9a1f54aacf403afa79fb3e3">controller</a> (size_t shard_id, size_t node_id, const <a class="el" href="structcbdc_1_1config_1_1options.html">cbdc::config::options</a> &amp;opts, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger)</td></tr>
-<tr class="memdesc:aff76cc81c9a1f54aacf403afa79fb3e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1locking__shard_1_1controller.html#aff76cc81c9a1f54aacf403afa79fb3e3">More...</a><br /></td></tr>
-<tr class="separator:aff76cc81c9a1f54aacf403afa79fb3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57f68e94e8000c8fe8ff1cba6be821f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1locking__shard_1_1controller.html#ad57f68e94e8000c8fe8ff1cba6be821f">controller</a> (size_t shard_id, size_t node_id, <a class="el" href="structcbdc_1_1config_1_1options.html">config::options</a> opts, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger)</td></tr>
+<tr class="memdesc:ad57f68e94e8000c8fe8ff1cba6be821f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1locking__shard_1_1controller.html#ad57f68e94e8000c8fe8ff1cba6be821f">More...</a><br /></td></tr>
+<tr class="separator:ad57f68e94e8000c8fe8ff1cba6be821f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9a124fc8ab89a7728c51d12717ed3c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1locking__shard_1_1controller.html#aa9a124fc8ab89a7728c51d12717ed3c5">~controller</a> ()=default</td></tr>
 <tr class="separator:aa9a124fc8ab89a7728c51d12717ed3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af24436c6efaac4b8feb51b0163d10acc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1locking__shard_1_1controller.html#af24436c6efaac4b8feb51b0163d10acc">controller</a> ()=delete</td></tr>
@@ -119,8 +119,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2controller_8hpp_source.html#l00019">19</a> of file <a class="el" href="twophase_2locking__shard_2controller_8hpp_source.html">twophase/locking_shard/controller.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aff76cc81c9a1f54aacf403afa79fb3e3" name="aff76cc81c9a1f54aacf403afa79fb3e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff76cc81c9a1f54aacf403afa79fb3e3">&#9670;&nbsp;</a></span>controller() <span class="overload">[1/4]</span></h2>
+<a id="ad57f68e94e8000c8fe8ff1cba6be821f" name="ad57f68e94e8000c8fe8ff1cba6be821f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57f68e94e8000c8fe8ff1cba6be821f">&#9670;&nbsp;</a></span>controller() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +140,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structcbdc_1_1config_1_1options.html">cbdc::config::options</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structcbdc_1_1config_1_1options.html">config::options</a>&#160;</td>
           <td class="paramname"><em>opts</em>, </td>
         </tr>
         <tr>
@@ -293,7 +293,18 @@ Public Member Functions</h2></td></tr>
 <p>Initializes the locking shard by reading the pre-seed file if applicable, initializing the raft cluster, and starting listeners on the client and status client endpoints. </p>
 <p >Opens the audit log and starts a periodic supply auditing thread. </p><dl class="section return"><dt>Returns</dt><dd>false if initialization fails. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2controller_8cpp_source.html#l00052">52</a> of file <a class="el" href="twophase_2locking__shard_2controller_8cpp_source.html">twophase/locking_shard/controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="twophase_2locking__shard_2controller_8cpp_source.html#l00032">32</a> of file <a class="el" href="twophase_2locking__shard_2controller_8cpp_source.html">twophase/locking_shard/controller.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="sentinel_2interface_8cpp_source.html#l00015">cbdc::sentinel::to_string()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcbdc_1_1locking__shard_1_1controller_a69dbc0d6a9615af59882ae8ac683dc3a_cgraph.png" border="0" usemap="#aclasscbdc_1_1locking__shard_1_1controller_a69dbc0d6a9615af59882ae8ac683dc3a_cgraph" alt=""/></div>
+<map name="aclasscbdc_1_1locking__shard_1_1controller_a69dbc0d6a9615af59882ae8ac683dc3a_cgraph" id="aclasscbdc_1_1locking__shard_1_1controller_a69dbc0d6a9615af59882ae8ac683dc3a_cgraph">
+<area shape="rect" title="Initializes the locking shard by reading the pre&#45;seed file if applicable, initializing the raft clust..." alt="" coords="5,5,141,47"/>
+<area shape="rect" href="namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="189,5,308,47"/>
+</map>
+</div>
 
 </div>
 </div>

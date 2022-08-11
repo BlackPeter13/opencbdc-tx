@@ -1,0 +1,4 @@
+<map id="cbdc::locking_shard::controller::init" name="cbdc::locking_shard::controller::init">
+<area shape="rect" id="node1" title="Initializes the locking shard by reading the pre&#45;seed file if applicable, initializing the raft clust..." alt="" coords="5,5,141,47"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="189,5,308,47"/>
+</map>
