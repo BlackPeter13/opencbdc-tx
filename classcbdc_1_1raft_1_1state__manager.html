@@ -113,9 +113,9 @@ Collaboration diagram for cbdc::raft::state_manager:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a10e0bae7d0837d5cb8d353cf4799bc4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1state__manager.html#a10e0bae7d0837d5cb8d353cf4799bc4a">state_manager</a> (int32_t srv_id, std::string endpoint, std::string log_dir, std::string config_file, std::string state_file)</td></tr>
-<tr class="memdesc:a10e0bae7d0837d5cb8d353cf4799bc4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1raft_1_1state__manager.html#a10e0bae7d0837d5cb8d353cf4799bc4a">More...</a><br /></td></tr>
-<tr class="separator:a10e0bae7d0837d5cb8d353cf4799bc4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e8fa113a2ea62bb4bf0bdd9b1b8ef7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1state__manager.html#a03e8fa113a2ea62bb4bf0bdd9b1b8ef7">state_manager</a> (int32_t srv_id, std::string log_dir, std::string config_file, std::string state_file, std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt; raft_endpoints)</td></tr>
+<tr class="memdesc:a03e8fa113a2ea62bb4bf0bdd9b1b8ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1raft_1_1state__manager.html#a03e8fa113a2ea62bb4bf0bdd9b1b8ef7">More...</a><br /></td></tr>
+<tr class="separator:a03e8fa113a2ea62bb4bf0bdd9b1b8ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb2d28a273c74371a6c65fb98be2bd2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1state__manager.html#aeb2d28a273c74371a6c65fb98be2bd2b">~state_manager</a> () override=default</td></tr>
 <tr class="separator:aeb2d28a273c74371a6c65fb98be2bd2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa48b9a771db23d5e197e04ae369c0ee7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1state__manager.html#aa48b9a771db23d5e197e04ae369c0ee7">state_manager</a> (const <a class="el" href="classcbdc_1_1raft_1_1state__manager.html">state_manager</a> &amp;other)=delete</td></tr>
@@ -151,10 +151,10 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Implementation of nuraft::state_mgr using a file. </p>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8hpp_source.html#l00015">15</a> of file <a class="el" href="state__manager_8hpp_source.html">state_manager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8hpp_source.html#l00016">16</a> of file <a class="el" href="state__manager_8hpp_source.html">state_manager.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a10e0bae7d0837d5cb8d353cf4799bc4a" name="a10e0bae7d0837d5cb8d353cf4799bc4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10e0bae7d0837d5cb8d353cf4799bc4a">&#9670;&nbsp;</a></span>state_manager() <span class="overload">[1/3]</span></h2>
+<a id="a03e8fa113a2ea62bb4bf0bdd9b1b8ef7" name="a03e8fa113a2ea62bb4bf0bdd9b1b8ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e8fa113a2ea62bb4bf0bdd9b1b8ef7">&#9670;&nbsp;</a></span>state_manager() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,12 +164,6 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int32_t&#160;</td>
           <td class="paramname"><em>srv_id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>endpoint</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -187,7 +181,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>state_file</em>&#160;</td>
+          <td class="paramname"><em>state_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt;&#160;</td>
+          <td class="paramname"><em>raft_endpoints</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,10 +201,10 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">srv_id</td><td>ID of the raft node. </td></tr>
-    <tr><td class="paramname">endpoint</td><td>raft endpoint. </td></tr>
     <tr><td class="paramname">log_dir</td><td>directory for the raft log. </td></tr>
     <tr><td class="paramname">config_file</td><td>file for the cluster configuration. </td></tr>
     <tr><td class="paramname">state_file</td><td>file for the server state. </td></tr>
+    <tr><td class="paramname">raft_endpoints</td><td>list of initial node endpoints in the cluster. </td></tr>
   </table>
   </dd>
 </dl>
@@ -317,7 +317,18 @@ Public Member Functions</h2></td></tr>
 <p>Read and deserialize the cluster configuration. </p>
 <dl class="section return"><dt>Returns</dt><dd>cluster configuration, or nullptr if the file is empty. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00065">65</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00066">66</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="sentinel_2interface_8cpp_source.html#l00015">cbdc::sentinel::to_string()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classcbdc_1_1raft_1_1state__manager_a6d9d39710748fa4044b669a6bff7b5f0_cgraph.png" border="0" usemap="#aclasscbdc_1_1raft_1_1state__manager_a6d9d39710748fa4044b669a6bff7b5f0_cgraph" alt=""/></div>
+<map name="aclasscbdc_1_1raft_1_1state__manager_a6d9d39710748fa4044b669a6bff7b5f0_cgraph" id="aclasscbdc_1_1raft_1_1state__manager_a6d9d39710748fa4044b669a6bff7b5f0_cgraph">
+<area shape="rect" title="Read and deserialize the cluster configuration." alt="" coords="5,5,172,47"/>
+<area shape="rect" href="namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="220,5,339,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -347,7 +358,7 @@ Public Member Functions</h2></td></tr>
 <p>Load and return the log store. </p>
 <dl class="section return"><dt>Returns</dt><dd>log store instance, or nullptr if loading failed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00091">91</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00101">101</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
 
 </div>
 </div>
@@ -429,7 +440,7 @@ Public Member Functions</h2></td></tr>
 <p>Read and deserialize the server state. </p>
 <dl class="section return"><dt>Returns</dt><dd>server state, or nullptr if the file is empty. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00086">86</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00096">96</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
 
 </div>
 </div>
@@ -465,9 +476,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00078">78</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00088">88</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="state__manager_8cpp_source.html#l00028">cbdc::raft::save_object()</a>.</p>
+<p class="reference">References <a class="el" href="state__manager_8cpp_source.html#l00029">cbdc::raft::save_object()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -512,9 +523,9 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00082">82</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00092">92</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="state__manager_8cpp_source.html#l00028">cbdc::raft::save_object()</a>.</p>
+<p class="reference">References <a class="el" href="state__manager_8cpp_source.html#l00029">cbdc::raft::save_object()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -553,7 +564,7 @@ Here is the call graph for this function:</div>
 <p>Return the server ID. </p>
 <dl class="section return"><dt>Returns</dt><dd>server ID. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00100">100</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00110">110</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +600,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00104">104</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="state__manager_8cpp_source.html#l00114">114</a> of file <a class="el" href="state__manager_8cpp_source.html">state_manager.cpp</a>.</p>
 
 </div>
 </div>

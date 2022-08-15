@@ -114,9 +114,9 @@ Collaboration diagram for cbdc::atomizer::atomizer_raft:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abb1332a478c7c93536fb991e55decf44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1atomizer_1_1atomizer__raft.html#abb1332a478c7c93536fb991e55decf44">atomizer_raft</a> (uint32_t atomizer_id, const <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &amp;raft_endpoint, size_t stxo_cache_depth, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger, <a class="el" href="structcbdc_1_1config_1_1options.html">config::options</a> opts, nuraft::cb_func::func_type raft_callback, bool wait_for_followers)</td></tr>
-<tr class="memdesc:abb1332a478c7c93536fb991e55decf44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1atomizer_1_1atomizer__raft.html#abb1332a478c7c93536fb991e55decf44">More...</a><br /></td></tr>
-<tr class="separator:abb1332a478c7c93536fb991e55decf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f2c77cddb6adc027b69e7d17805591"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1atomizer_1_1atomizer__raft.html#ae1f2c77cddb6adc027b69e7d17805591">atomizer_raft</a> (uint32_t atomizer_id, std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt; raft_endpoints, size_t stxo_cache_depth, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger, <a class="el" href="structcbdc_1_1config_1_1options.html">config::options</a> opts, nuraft::cb_func::func_type raft_callback)</td></tr>
+<tr class="memdesc:ae1f2c77cddb6adc027b69e7d17805591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1atomizer_1_1atomizer__raft.html#ae1f2c77cddb6adc027b69e7d17805591">More...</a><br /></td></tr>
+<tr class="separator:ae1f2c77cddb6adc027b69e7d17805591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb06fb2e56acf7f6b55f68eec132caed"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1atomizer_1_1atomizer__raft.html#aeb06fb2e56acf7f6b55f68eec132caed">make_request</a> (const <a class="el" href="classcbdc_1_1atomizer_1_1state__machine.html#a3c7f09bc91e1eebed003b9de02870898">state_machine::request</a> &amp;r, const <a class="el" href="namespacecbdc_1_1raft.html#a43ab09dff479a0cd2cf72256d65295f6">raft::callback_type</a> &amp;result_fn) -&gt; bool</td></tr>
 <tr class="memdesc:aeb06fb2e56acf7f6b55f68eec132caed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize and replicate the given request in the atomizer raft cluster.  <a href="classcbdc_1_1atomizer_1_1atomizer__raft.html#aeb06fb2e56acf7f6b55f68eec132caed">More...</a><br /></td></tr>
 <tr class="separator:aeb06fb2e56acf7f6b55f68eec132caed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,17 +143,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af8074a77d5583663113d40e609637b81 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa119d866bcae5140a5df7fd463ae159b inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#aa119d866bcae5140a5df7fd463ae159b">operator=</a> (<a class="el" href="classcbdc_1_1raft_1_1node.html">node</a> &amp;&amp;) -&gt; <a class="el" href="classcbdc_1_1raft_1_1node.html">node</a> &amp;=delete</td></tr>
 <tr class="separator:aa119d866bcae5140a5df7fd463ae159b inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40b2b8af167c21e81b37a1409d8122bb inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#a40b2b8af167c21e81b37a1409d8122bb">node</a> (int node_id, const <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &amp;raft_endpoint, const std::string &amp;node_type, bool blocking, nuraft::ptr&lt; nuraft::state_machine &gt; sm, size_t asio_thread_pool_size, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger, nuraft::cb_func::func_type raft_cb, bool wait_for_followers)</td></tr>
-<tr class="memdesc:a40b2b8af167c21e81b37a1409d8122bb inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1raft_1_1node.html#a40b2b8af167c21e81b37a1409d8122bb">More...</a><br /></td></tr>
-<tr class="separator:a40b2b8af167c21e81b37a1409d8122bb inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc307ab99348b857d261daaad75b49a6 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#abc307ab99348b857d261daaad75b49a6">node</a> (int node_id, std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt; raft_endpoints, const std::string &amp;node_type, bool blocking, nuraft::ptr&lt; nuraft::state_machine &gt; sm, size_t asio_thread_pool_size, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger, nuraft::cb_func::func_type raft_cb)</td></tr>
+<tr class="memdesc:abc307ab99348b857d261daaad75b49a6 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1raft_1_1node.html#abc307ab99348b857d261daaad75b49a6">More...</a><br /></td></tr>
+<tr class="separator:abc307ab99348b857d261daaad75b49a6 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af21d4f5c1cc27b349c0d001c9e915881 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#af21d4f5c1cc27b349c0d001c9e915881">~node</a> ()</td></tr>
 <tr class="separator:af21d4f5c1cc27b349c0d001c9e915881 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83d290f7ecf7dd8eab3750c6f92d08da inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#a83d290f7ecf7dd8eab3750c6f92d08da">init</a> (const nuraft::raft_params &amp;raft_params) -&gt; bool</td></tr>
 <tr class="memdesc:a83d290f7ecf7dd8eab3750c6f92d08da inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the NuRaft instance with the given state machine and raft parameters.  <a href="classcbdc_1_1raft_1_1node.html#a83d290f7ecf7dd8eab3750c6f92d08da">More...</a><br /></td></tr>
 <tr class="separator:a83d290f7ecf7dd8eab3750c6f92d08da inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a84662e48f3c41d79d0bcd2d1d197cd inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#a5a84662e48f3c41d79d0bcd2d1d197cd">build_cluster</a> (const std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt; &amp;raft_servers) -&gt; bool</td></tr>
-<tr class="memdesc:a5a84662e48f3c41d79d0bcd2d1d197cd inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to each of the given raft nodes and join them to the cluster.  <a href="classcbdc_1_1raft_1_1node.html#a5a84662e48f3c41d79d0bcd2d1d197cd">More...</a><br /></td></tr>
-<tr class="separator:a5a84662e48f3c41d79d0bcd2d1d197cd inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe482635f025ff46a7c31c9f38d4d512 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#afe482635f025ff46a7c31c9f38d4d512">is_leader</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:afe482635f025ff46a7c31c9f38d4d512 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this node is the current raft leader.  <a href="classcbdc_1_1raft_1_1node.html#afe482635f025ff46a7c31c9f38d4d512">More...</a><br /></td></tr>
 <tr class="separator:afe482635f025ff46a7c31c9f38d4d512 inherit pub_methods_classcbdc_1_1raft_1_1node"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,8 +176,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="atomizer__raft_8hpp_source.html#l00021">21</a> of file <a class="el" href="atomizer__raft_8hpp_source.html">atomizer_raft.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abb1332a478c7c93536fb991e55decf44" name="abb1332a478c7c93536fb991e55decf44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb1332a478c7c93536fb991e55decf44">&#9670;&nbsp;</a></span>atomizer_raft()</h2>
+<a id="ae1f2c77cddb6adc027b69e7d17805591" name="ae1f2c77cddb6adc027b69e7d17805591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f2c77cddb6adc027b69e7d17805591">&#9670;&nbsp;</a></span>atomizer_raft()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,8 +191,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>raft_endpoint</em>, </td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt;&#160;</td>
+          <td class="paramname"><em>raft_endpoints</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -219,13 +216,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">nuraft::cb_func::func_type&#160;</td>
-          <td class="paramname"><em>raft_callback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>wait_for_followers</em>&#160;</td>
+          <td class="paramname"><em>raft_callback</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -239,12 +230,11 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">atomizer_id</td><td>ID of the raft node. </td></tr>
-    <tr><td class="paramname">raft_endpoint</td><td>endpoint for raft communications. </td></tr>
+    <tr><td class="paramname">raft_endpoints</td><td>node endpoints for raft communications. </td></tr>
     <tr><td class="paramname">stxo_cache_depth</td><td>number of blocks in the spent output cache. </td></tr>
     <tr><td class="paramname">logger</td><td>log instance. </td></tr>
     <tr><td class="paramname">opts</td><td>configuration options. </td></tr>
     <tr><td class="paramname">raft_callback</td><td>NuRaft callback for raft events. </td></tr>
-    <tr><td class="paramname">wait_for_followers</td><td>true if the leader raft node should re-attempt to add all followers to the cluster until success. </td></tr>
   </table>
   </dd>
 </dl>
@@ -272,7 +262,7 @@ Public Member Functions</h2></td></tr>
 <p>Return a pointer to the state machine replicated by this raft node. </p>
 <dl class="section return"><dt>Returns</dt><dd>state machine pointer. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00036">36</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00035">35</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
 
 </div>
 </div>
@@ -312,7 +302,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the replication was initiated successfully. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00043">43</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00042">42</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +331,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the command was accepted for replication. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00123">123</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00122">122</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
 
 </div>
 </div>
@@ -369,9 +359,9 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00056">56</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00055">55</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="validation_8cpp_source.html#l00407">cbdc::transaction::validation::check_attestations()</a>, <a class="el" href="config_8hpp_source.html#l00266">cbdc::config::options::m_attestation_threshold</a>, <a class="el" href="config_8hpp_source.html#l00263">cbdc::config::options::m_sentinel_public_keys</a>, and <a class="el" href="hash_8cpp_source.html#l00015">cbdc::to_string()</a>.</p>
+<p class="reference">References <a class="el" href="validation_8cpp_source.html#l00407">cbdc::transaction::validation::check_attestations()</a>, <a class="el" href="config_8hpp_source.html#l00260">cbdc::config::options::m_attestation_threshold</a>, <a class="el" href="config_8hpp_source.html#l00257">cbdc::config::options::m_sentinel_public_keys</a>, and <a class="el" href="hash_8cpp_source.html#l00015">cbdc::to_string()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -403,7 +393,7 @@ Here is the call graph for this function:</div>
 <p>Return the number of transaction notifications handled by the state machine. </p>
 <dl class="section return"><dt>Returns</dt><dd>number of transaction notifications. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00052">52</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atomizer__raft_8cpp_source.html#l00051">51</a> of file <a class="el" href="atomizer__raft_8cpp_source.html">atomizer_raft.cpp</a>.</p>
 
 </div>
 </div>

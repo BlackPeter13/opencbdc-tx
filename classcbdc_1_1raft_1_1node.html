@@ -114,17 +114,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af8074a77d5583663113d40e609637b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa119d866bcae5140a5df7fd463ae159b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#aa119d866bcae5140a5df7fd463ae159b">operator=</a> (<a class="el" href="classcbdc_1_1raft_1_1node.html">node</a> &amp;&amp;) -&gt; <a class="el" href="classcbdc_1_1raft_1_1node.html">node</a> &amp;=delete</td></tr>
 <tr class="separator:aa119d866bcae5140a5df7fd463ae159b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40b2b8af167c21e81b37a1409d8122bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#a40b2b8af167c21e81b37a1409d8122bb">node</a> (int node_id, const <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &amp;raft_endpoint, const std::string &amp;node_type, bool blocking, nuraft::ptr&lt; nuraft::state_machine &gt; sm, size_t asio_thread_pool_size, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger, nuraft::cb_func::func_type raft_cb, bool wait_for_followers)</td></tr>
-<tr class="memdesc:a40b2b8af167c21e81b37a1409d8122bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1raft_1_1node.html#a40b2b8af167c21e81b37a1409d8122bb">More...</a><br /></td></tr>
-<tr class="separator:a40b2b8af167c21e81b37a1409d8122bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc307ab99348b857d261daaad75b49a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#abc307ab99348b857d261daaad75b49a6">node</a> (int node_id, std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt; raft_endpoints, const std::string &amp;node_type, bool blocking, nuraft::ptr&lt; nuraft::state_machine &gt; sm, size_t asio_thread_pool_size, std::shared_ptr&lt; <a class="el" href="classcbdc_1_1logging_1_1log.html">logging::log</a> &gt; logger, nuraft::cb_func::func_type raft_cb)</td></tr>
+<tr class="memdesc:abc307ab99348b857d261daaad75b49a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classcbdc_1_1raft_1_1node.html#abc307ab99348b857d261daaad75b49a6">More...</a><br /></td></tr>
+<tr class="separator:abc307ab99348b857d261daaad75b49a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af21d4f5c1cc27b349c0d001c9e915881"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#af21d4f5c1cc27b349c0d001c9e915881">~node</a> ()</td></tr>
 <tr class="separator:af21d4f5c1cc27b349c0d001c9e915881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83d290f7ecf7dd8eab3750c6f92d08da"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#a83d290f7ecf7dd8eab3750c6f92d08da">init</a> (const nuraft::raft_params &amp;raft_params) -&gt; bool</td></tr>
 <tr class="memdesc:a83d290f7ecf7dd8eab3750c6f92d08da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the NuRaft instance with the given state machine and raft parameters.  <a href="classcbdc_1_1raft_1_1node.html#a83d290f7ecf7dd8eab3750c6f92d08da">More...</a><br /></td></tr>
 <tr class="separator:a83d290f7ecf7dd8eab3750c6f92d08da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a84662e48f3c41d79d0bcd2d1d197cd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#a5a84662e48f3c41d79d0bcd2d1d197cd">build_cluster</a> (const std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt; &amp;raft_servers) -&gt; bool</td></tr>
-<tr class="memdesc:a5a84662e48f3c41d79d0bcd2d1d197cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to each of the given raft nodes and join them to the cluster.  <a href="classcbdc_1_1raft_1_1node.html#a5a84662e48f3c41d79d0bcd2d1d197cd">More...</a><br /></td></tr>
-<tr class="separator:a5a84662e48f3c41d79d0bcd2d1d197cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe482635f025ff46a7c31c9f38d4d512"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1raft_1_1node.html#afe482635f025ff46a7c31c9f38d4d512">is_leader</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:afe482635f025ff46a7c31c9f38d4d512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this node is the current raft leader.  <a href="classcbdc_1_1raft_1_1node.html#afe482635f025ff46a7c31c9f38d4d512">More...</a><br /></td></tr>
 <tr class="separator:afe482635f025ff46a7c31c9f38d4d512"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,8 +224,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a40b2b8af167c21e81b37a1409d8122bb" name="a40b2b8af167c21e81b37a1409d8122bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40b2b8af167c21e81b37a1409d8122bb">&#9670;&nbsp;</a></span>node() <span class="overload">[4/4]</span></h2>
+<a id="abc307ab99348b857d261daaad75b49a6" name="abc307ab99348b857d261daaad75b49a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc307ab99348b857d261daaad75b49a6">&#9670;&nbsp;</a></span>node() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,8 +239,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>raft_endpoint</em>, </td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt;&#160;</td>
+          <td class="paramname"><em>raft_endpoints</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -279,13 +276,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">nuraft::cb_func::func_type&#160;</td>
-          <td class="paramname"><em>raft_cb</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>wait_for_followers</em>&#160;</td>
+          <td class="paramname"><em>raft_cb</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -299,14 +290,13 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">node_id</td><td>identifier of the node in the raft cluster. Must be 0 or greater. </td></tr>
-    <tr><td class="paramname">raft_endpoint</td><td>TCP endpoint upon which to listen for incoming raft connections. </td></tr>
+    <tr><td class="paramname">raft_endpoints</td><td>TCP endpoints of nodes in the cluster. </td></tr>
     <tr><td class="paramname">node_type</td><td>name of the raft cluster this node will be part of. </td></tr>
     <tr><td class="paramname">blocking</td><td>true if replication calls should block until the state machine makes an execution result available. </td></tr>
     <tr><td class="paramname">sm</td><td>pointer to the state machine replicated by the cluster. </td></tr>
     <tr><td class="paramname">asio_thread_pool_size</td><td>number of threads for processing raft messages. Set to 0 to use the number of cores on the system. </td></tr>
     <tr><td class="paramname">logger</td><td>log instance NuRaft should use. </td></tr>
     <tr><td class="paramname">raft_cb</td><td>NuRaft callback to report raft events. </td></tr>
-    <tr><td class="paramname">wait_for_followers</td><td>true if the leader raft node should re-attempt to add all followers to the cluster until success. </td></tr>
   </table>
   </dd>
 </dl>
@@ -330,9 +320,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00186">186</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00098">98</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="node_8cpp_source.html#l00198">stop()</a>.</p>
+<p class="reference">References <a class="el" href="node_8cpp_source.html#l00110">stop()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -346,35 +336,6 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5a84662e48f3c41d79d0bcd2d1d197cd" name="a5a84662e48f3c41d79d0bcd2d1d197cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a84662e48f3c41d79d0bcd2d1d197cd">&#9670;&nbsp;</a></span>build_cluster()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto cbdc::raft::node::build_cluster </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">network::endpoint_t</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>raft_servers</em></td><td>)</td>
-          <td> -&gt; bool</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Connect to each of the given raft nodes and join them to the cluster. </p>
-<p >If this node is not node 0, this method blocks until node 0 joins this node to the cluster. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">raft_servers</td><td>node endpoints of the other raft nodes in the cluster. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if adding the nodes to the raft cluster succeeded. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00130">130</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
-
-</div>
-</div>
 <a id="a835d234929a5723ec2c0ba647a0ae651" name="a835d234929a5723ec2c0ba647a0ae651"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a835d234929a5723ec2c0ba647a0ae651">&#9670;&nbsp;</a></span>get_sm()</h2>
 
@@ -393,7 +354,7 @@ Here is the call graph for this function:</div>
 <p>Returns a pointer to the state machine replicated by this raft node. </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to the state machine. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00194">194</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00106">106</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
 </div>
 </div>
@@ -422,7 +383,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the raft node initialized successfully. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00038">38</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00035">35</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
 </div>
 </div>
@@ -444,7 +405,7 @@ Here is the call graph for this function:</div>
 <p>Indicates whether this node is the current raft leader. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if this node is the leader. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00157">157</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00069">69</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
 </div>
 </div>
@@ -466,7 +427,7 @@ Here is the call graph for this function:</div>
 <p>Returns the last replicated log index. </p>
 <dl class="section return"><dt>Returns</dt><dd>log index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00190">190</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00102">102</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
 </div>
 </div>
@@ -558,7 +519,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the log entry was accepted for replication. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00161">161</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00073">73</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
 </div>
 </div>
@@ -587,7 +548,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>result from state machine or empty optional if replication failed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00175">175</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00087">87</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
 </div>
 </div>
@@ -608,9 +569,9 @@ Here is the call graph for this function:</div>
 
 <p>Shut down the NuRaft instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00198">198</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="node_8cpp_source.html#l00110">110</a> of file <a class="el" href="node_8cpp_source.html">node.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="atomizer_2atomizer_2controller_8cpp_source.html#l00035">cbdc::atomizer::controller::~controller()</a>, and <a class="el" href="node_8cpp_source.html#l00186">~node()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="atomizer_2atomizer_2controller_8cpp_source.html#l00034">cbdc::atomizer::controller::~controller()</a>, and <a class="el" href="node_8cpp_source.html#l00098">~node()</a>.</p>
 
 </div>
 </div>

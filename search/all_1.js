@@ -34,6 +34,5 @@ var searchData=
   ['buffer_2ehpp_31',['buffer.hpp',['../buffer_8hpp.html',1,'']]],
   ['buffer_5fserializer_32',['buffer_serializer',['../classcbdc_1_1buffer__serializer.html#abcc7298bae3c848f7dfc6ded9f14751b',1,'cbdc::buffer_serializer::buffer_serializer()'],['../classcbdc_1_1buffer__serializer.html',1,'cbdc::buffer_serializer']]],
   ['buffer_5fserializer_2ecpp_33',['buffer_serializer.cpp',['../buffer__serializer_8cpp.html',1,'']]],
-  ['buffer_5fserializer_2ehpp_34',['buffer_serializer.hpp',['../buffer__serializer_8hpp.html',1,'']]],
-  ['build_5fcluster_35',['build_cluster',['../classcbdc_1_1raft_1_1node.html#a5a84662e48f3c41d79d0bcd2d1d197cd',1,'cbdc::raft::node']]]
+  ['buffer_5fserializer_2ehpp_34',['buffer_serializer.hpp',['../buffer__serializer_8hpp.html',1,'']]]
 ];

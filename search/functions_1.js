@@ -12,6 +12,5 @@ var searchData=
   ['blocking_5fserver_9',['blocking_server',['../classcbdc_1_1rpc_1_1blocking__server.html#a4ee4d59584b670981120feadc50c01e2',1,'cbdc::rpc::blocking_server::blocking_server()=default'],['../classcbdc_1_1rpc_1_1blocking__server.html#aed006ba4958d495bfac79b7602525ef9',1,'cbdc::rpc::blocking_server::blocking_server(blocking_server &amp;&amp;) noexcept=default'],['../classcbdc_1_1rpc_1_1blocking__server.html#a8dee475b806e30bbe708c31968bbf315',1,'cbdc::rpc::blocking_server::blocking_server(const blocking_server &amp;)=default']]],
   ['broadcast_10',['broadcast',['../classcbdc_1_1network_1_1connection__manager.html#ae58313e9fc728ca452f96dd661d84c8f',1,'cbdc::network::connection_manager::broadcast(const std::shared_ptr&lt; buffer &gt; &amp;data)'],['../classcbdc_1_1network_1_1connection__manager.html#a52da93e0b8a17cd71af99921dd8d7b11',1,'cbdc::network::connection_manager::broadcast(const Ta &amp;data)']]],
   ['buffer_11',['buffer',['../classcbdc_1_1buffer.html#a7e4eaa0ace29deea54b6a65eb3587db9',1,'cbdc::buffer']]],
-  ['buffer_5fserializer_12',['buffer_serializer',['../classcbdc_1_1buffer__serializer.html#abcc7298bae3c848f7dfc6ded9f14751b',1,'cbdc::buffer_serializer']]],
-  ['build_5fcluster_13',['build_cluster',['../classcbdc_1_1raft_1_1node.html#a5a84662e48f3c41d79d0bcd2d1d197cd',1,'cbdc::raft::node']]]
+  ['buffer_5fserializer_12',['buffer_serializer',['../classcbdc_1_1buffer__serializer.html#abcc7298bae3c848f7dfc6ded9f14751b',1,'cbdc::buffer_serializer']]]
 ];
