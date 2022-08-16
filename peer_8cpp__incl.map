@@ -1,7 +1,8 @@
 <map id="peer.cpp" name="peer.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="583,5,654,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="633,5,703,32"/>
 <area shape="rect" id="node2" href="$peer_8hpp.html" title=" " alt="" coords="541,80,611,107"/>
-<area shape="rect" id="node23" title=" " alt="" coords="635,80,687,107"/>
+<area shape="rect" id="node23" title=" " alt="" coords="635,80,701,107"/>
+<area shape="rect" id="node24" title=" " alt="" coords="725,80,777,107"/>
 <area shape="rect" id="node3" href="$tcp__socket_8hpp.html" title=" " alt="" coords="289,162,399,189"/>
 <area shape="rect" id="node16" title=" " alt="" coords="472,251,533,278"/>
 <area shape="rect" id="node17" href="$blocking__queue_8hpp.html" title=" " alt="" coords="597,155,742,196"/>

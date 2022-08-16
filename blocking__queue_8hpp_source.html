@@ -153,16 +153,22 @@ $(document).ready(function(){initNavTree('blocking__queue_8hpp_source.html','');
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            m_cv.notify_all();</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        std::queue&lt;T&gt; m_buffer;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        std::mutex m_mut;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        std::condition_variable m_cv;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordtype">bool</span> m_wake{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    };</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classcbdc_1_1blocking__queue.html#a0a35422a67284da6cf469303ae888f01">   89</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1blocking__queue.html#a0a35422a67284da6cf469303ae888f01">reset</a>() {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            std::unique_lock l(m_mut);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            m_wake = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif </span><span class="comment">// OPENCBDC_TX_SRC_COMMON_BLOCKING_QUEUE_H_</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        std::queue&lt;T&gt; m_buffer;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        std::mutex m_mut;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        std::condition_variable m_cv;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">bool</span> m_wake{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    };</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif </span><span class="comment">// OPENCBDC_TX_SRC_COMMON_BLOCKING_QUEUE_H_</span></div>
 <div class="ttc" id="aclasscbdc_1_1blocking__queue_html"><div class="ttname"><a href="classcbdc_1_1blocking__queue.html">cbdc::blocking_queue</a></div><div class="ttdoc">Thread-safe producer-consumer FIFO queue supporting multiple concurrent producers and consumers.</div><div class="ttdef"><b>Definition:</b> <a href="blocking__queue_8hpp_source.html#l00019">blocking_queue.hpp:19</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1blocking__queue_html_a0a35422a67284da6cf469303ae888f01"><div class="ttname"><a href="classcbdc_1_1blocking__queue.html#a0a35422a67284da6cf469303ae888f01">cbdc::blocking_queue::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Removes the wakeup flag for consumers.</div><div class="ttdef"><b>Definition:</b> <a href="blocking__queue_8hpp_source.html#l00089">blocking_queue.hpp:89</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1blocking__queue_html_a3892724b8bd6c3644067d05a9cd85374"><div class="ttname"><a href="classcbdc_1_1blocking__queue.html#a3892724b8bd6c3644067d05a9cd85374">cbdc::blocking_queue::blocking_queue</a></div><div class="ttdeci">blocking_queue(blocking_queue &amp;&amp;)=delete</div></div>
 <div class="ttc" id="aclasscbdc_1_1blocking__queue_html_a545725ae9c7b4643d91d690b05d9d2f0"><div class="ttname"><a href="classcbdc_1_1blocking__queue.html#a545725ae9c7b4643d91d690b05d9d2f0">cbdc::blocking_queue::push</a></div><div class="ttdeci">void push(const T &amp;item)</div><div class="ttdoc">Pushes an element onto the queue and notifies at most one waiting consumer.</div><div class="ttdef"><b>Definition:</b> <a href="blocking__queue_8hpp_source.html#l00039">blocking_queue.hpp:39</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1blocking__queue_html_a8827ae97fc8e820bd61175697105dbe9"><div class="ttname"><a href="classcbdc_1_1blocking__queue.html#a8827ae97fc8e820bd61175697105dbe9">cbdc::blocking_queue::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the queue and unblocks waiting consumers.</div><div class="ttdef"><b>Definition:</b> <a href="blocking__queue_8hpp_source.html#l00077">blocking_queue.hpp:77</a></div></div>

@@ -8,5 +8,6 @@ var classcbdc_1_1blocking__queue =
     [ "operator=", "classcbdc_1_1blocking__queue.html#a942715d7fde3cab541a12ac88e89173a", null ],
     [ "operator=", "classcbdc_1_1blocking__queue.html#aebc853f22946193ba3e45bd230e4c445", null ],
     [ "pop", "classcbdc_1_1blocking__queue.html#aee9ad0be281a70877f05470aa25b09f8", null ],
-    [ "push", "classcbdc_1_1blocking__queue.html#a545725ae9c7b4643d91d690b05d9d2f0", null ]
+    [ "push", "classcbdc_1_1blocking__queue.html#a545725ae9c7b4643d91d690b05d9d2f0", null ],
+    [ "reset", "classcbdc_1_1blocking__queue.html#a0a35422a67284da6cf469303ae888f01", null ]
 ];

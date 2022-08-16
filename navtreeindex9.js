@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"namespacecbdc_1_1transaction_1_1validation.html#a2c57cbac3b820a28bf023d516f92260b":[0,0,0,13,0,28],
+"namespacecbdc_1_1transaction_1_1validation.html#a52fdff156ea9b66122ad1e02b03c84f5":[0,0,0,13,0,27],
 "namespacecbdc_1_1transaction_1_1validation.html#a5afc81b59fbabed2784969c32b332c56":[0,0,0,13,0,20],
 "namespacecbdc_1_1transaction_1_1validation.html#a6036a137d32c6ee72a9d6dd33588a81f":[0,0,0,13,0,9],
 "namespacecbdc_1_1transaction_1_1validation.html#a710658dd0de1424a932488cc81fdea20":[0,0,0,13,0,30],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "structcbdc_1_1atomizer_1_1make__block__response.html#ab4ab19a9e1279d50455a9c86df982985":[0,0,0,1,9,1],
 "structcbdc_1_1atomizer_1_1make__block__response.html#ab4ab19a9e1279d50455a9c86df982985":[1,0,0,1,9,1],
 "structcbdc_1_1atomizer_1_1prune__request.html":[0,0,0,1,10],
-"structcbdc_1_1atomizer_1_1prune__request.html":[1,0,0,1,10],
-"structcbdc_1_1atomizer_1_1prune__request.html#ab1e2a482505a5a5626d8c1be09ae74b2":[0,0,0,1,10,0],
-"structcbdc_1_1atomizer_1_1prune__request.html#ab1e2a482505a5a5626d8c1be09ae74b2":[1,0,0,1,10,0]
+"structcbdc_1_1atomizer_1_1prune__request.html":[1,0,0,1,10]
 };
