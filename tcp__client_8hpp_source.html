@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('tcp__client_8hpp_source.html',''); ini
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classcbdc_1_1rpc_1_1tcp__client.html#ac5a4bab7ec4256cdd197030e6ec5b453">   57</a></span>        [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1rpc_1_1tcp__client.html#ac5a4bab7ec4256cdd197030e6ec5b453">init</a>() -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">if</span>(!m_net.<a class="code hl_function" href="classcbdc_1_1network_1_1connection__manager.html#a3abf1dafbb2003610ba08a0d95f012bf">cluster_connect</a>(m_server_endpoints, <span class="keyword">false</span>)) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">if</span>(!m_net.<a class="code hl_function" href="classcbdc_1_1network_1_1connection__manager.html#a3abf1dafbb2003610ba08a0d95f012bf">cluster_connect</a>(m_server_endpoints, <span class="keyword">true</span>)) {</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
