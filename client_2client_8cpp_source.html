@@ -151,273 +151,271 @@ $(document).ready(function(){initNavTree('client_2client_8cpp_source.html',''); 
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to send mint tx&quot;</span>);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        save();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> mint_tx;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a58036746b09bae0a0a5684f3c7b17ce0">   72</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1client.html#a58036746b09bae0a0a5684f3c7b17ce0">client::sign_transaction</a>(<a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        m_wallet.<a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#aa75ad269110e2b216c9e834d1dcd4da4">sign</a>(tx);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> client::register_pending_tx(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">// Mark all inputs as pending spend</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; in : tx.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1full__tx.html#a57d0521e12c5b47a41b5699cc96c0ea3">m_inputs</a>) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            m_pending_spend.insert({in.hash(), in});</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        save();</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#aa7d80bfa50ae4444522f1462a1dbd00a">   85</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#aa7d80bfa50ae4444522f1462a1dbd00a">client::create_transaction</a>(uint32_t value, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        -&gt; std::optional&lt;transaction::full_tx&gt; {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keyword">auto</span> tx = m_wallet.send_to(value, payee, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span>(!tx.has_value()) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> mint_tx;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a58036746b09bae0a0a5684f3c7b17ce0">   70</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1client.html#a58036746b09bae0a0a5684f3c7b17ce0">client::sign_transaction</a>(<a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        m_wallet.<a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#aa75ad269110e2b216c9e834d1dcd4da4">sign</a>(tx);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> client::register_pending_tx(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">// Mark all inputs as pending spend</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; in : tx.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1full__tx.html#a57d0521e12c5b47a41b5699cc96c0ea3">m_inputs</a>) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            m_pending_spend.insert({in.hash(), in});</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        save();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#aa7d80bfa50ae4444522f1462a1dbd00a">   83</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#aa7d80bfa50ae4444522f1462a1dbd00a">client::create_transaction</a>(uint32_t value, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        -&gt; std::optional&lt;transaction::full_tx&gt; {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keyword">auto</span> tx = m_wallet.send_to(value, payee, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span>(!tx.has_value()) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        register_pending_tx(tx.value());</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        register_pending_tx(tx.value());</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">return</span> tx;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#af183f0fc2d53d4185350b6af771c8d5c">   97</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#af183f0fc2d53d4185350b6af771c8d5c">client::send</a>(uint32_t value, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        -&gt; std::pair&lt;std::optional&lt;transaction::full_tx&gt;,</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                     std::optional&lt;cbdc::sentinel::execute_response&gt;&gt; {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> null_return</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            = std::make_pair(std::nullopt, std::nullopt);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keyword">auto</span> spend_tx = create_transaction(value, payee);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">if</span>(!spend_tx.has_value()) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to generate wallet spend tx.&quot;</span>);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">return</span> null_return;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keyword">auto</span> res = send_transaction(spend_tx.value());</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">if</span>(!res.has_value()) {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keywordflow">return</span> null_return;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> std::make_pair(spend_tx.value(), res.value());</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a013c689f714777857b583acc67a8f791">  117</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a013c689f714777857b583acc67a8f791">client::fan</a>(uint32_t count, uint32_t value, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        -&gt; std::pair&lt;std::optional&lt;transaction::full_tx&gt;,</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                     std::optional&lt;cbdc::sentinel::execute_response&gt;&gt; {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> null_return</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            = std::make_pair(std::nullopt, std::nullopt);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keyword">auto</span> tx = m_wallet.fan(count, value, payee, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">if</span>(!tx.has_value()) {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to generate wallet fan tx&quot;</span>);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">return</span> null_return;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> tx;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#af183f0fc2d53d4185350b6af771c8d5c">   95</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#af183f0fc2d53d4185350b6af771c8d5c">client::send</a>(uint32_t value, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        -&gt; std::pair&lt;std::optional&lt;transaction::full_tx&gt;,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                     std::optional&lt;cbdc::sentinel::execute_response&gt;&gt; {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> null_return</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            = std::make_pair(std::nullopt, std::nullopt);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keyword">auto</span> spend_tx = create_transaction(value, payee);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span>(!spend_tx.has_value()) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to generate wallet spend tx.&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">return</span> null_return;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keyword">auto</span> res = send_transaction(spend_tx.value());</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span>(!res.has_value()) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">return</span> null_return;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">return</span> std::make_pair(spend_tx.value(), res.value());</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a013c689f714777857b583acc67a8f791">  115</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a013c689f714777857b583acc67a8f791">client::fan</a>(uint32_t count, uint32_t value, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        -&gt; std::pair&lt;std::optional&lt;transaction::full_tx&gt;,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                     std::optional&lt;cbdc::sentinel::execute_response&gt;&gt; {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> null_return</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            = std::make_pair(std::nullopt, std::nullopt);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">auto</span> tx = m_wallet.fan(count, value, payee, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">if</span>(!tx.has_value()) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to generate wallet fan tx&quot;</span>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keywordflow">return</span> null_return;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        register_pending_tx(tx.value());</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        register_pending_tx(tx.value());</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keyword">auto</span> res = send_transaction(tx.value());</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">if</span>(!res.has_value()) {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">return</span> null_return;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">return</span> std::make_pair(tx.value(), res.value());</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a86b27aa0a894d10ca06ded3eecb5108f">  139</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a86b27aa0a894d10ca06ded3eecb5108f">client::send_transaction</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx)</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        -&gt; std::optional&lt;cbdc::sentinel::execute_response&gt; {</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        import_transaction(tx);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keyword">auto</span> res = m_sentinel_client.execute_transaction(tx);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span>(!res.has_value()) {</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to send transaction to sentinel.&quot;</span>);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        }</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        m_logger-&gt;info(<span class="stringliteral">&quot;Sentinel responded:&quot;</span>,</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                       <a class="code hl_function" href="namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e">cbdc::sentinel::to_string</a>(res.value().m_tx_status),</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                       <span class="stringliteral">&quot;for&quot;</span>,</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                       <a class="code hl_function" href="namespacecbdc.html#aeca0663c5237402736e3127369854cb5">to_string</a>(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">transaction::tx_id</a>(tx)));</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">if</span>(res.value().m_tx_status == <a class="code hl_enumvalue" href="namespacecbdc_1_1sentinel.html#a8582b428c6d5128e23402f95f03271e5aeda721c5f8c61daee37ca15ce3c4d881">sentinel::tx_status::confirmed</a>) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            confirm_transaction(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">transaction::tx_id</a>(tx));</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288">  161</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288">client::export_send_inputs</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; send_tx,</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                                    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        -&gt; std::vector&lt;transaction::input&gt; {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#a7e3e385aa81e513f3010869375cb8942">transaction::wallet::export_send_inputs</a>(send_tx, payee);</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a7fb0459cc895eb3c3c20b7223050f16b">  167</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1client.html#a7fb0459cc895eb3c3c20b7223050f16b">client::import_send_input</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1input.html">transaction::input</a>&amp; in) {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordflow">if</span>(m_wallet.<a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#ac107d98de6e878cd41d9662d42ec494f">is_spendable</a>(in)) {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            m_pending_inputs.insert({in.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1input.html#a5a678c8254af86fa1e54011a127d7a82">m_prevout</a>.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1out__point.html#a1678a2fbe7dfb22a774f87c1c08ca068">m_tx_id</a>, in});</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            save();</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;Ignoring non-spendable input&quot;</span>);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a34d48b9a1d6df47124403a4abad7ca9e">  176</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a34d48b9a1d6df47124403a4abad7ca9e">client::new_address</a>() -&gt; <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a> {</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keyword">auto</span> addr = m_wallet.generate_key();</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        save();</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">return</span> addr;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a2c40a9b1fa75d8a2a9ccaf692acb863b">  182</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a2c40a9b1fa75d8a2a9ccaf692acb863b">client::balance</a>() -&gt; uint64_t {</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">return</span> m_wallet.balance();</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#abcbe8fe61a5418df6e23b09555ca7f1c">  186</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#abcbe8fe61a5418df6e23b09555ca7f1c">client::utxo_count</a>() -&gt; <span class="keywordtype">size_t</span> {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">return</span> m_wallet.count();</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a0a4d3fe7cd62fb9326735fd7ea3069d4">  190</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a0a4d3fe7cd62fb9326735fd7ea3069d4">client::pending_tx_count</a>() -&gt; <span class="keywordtype">size_t</span> {</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">return</span> m_pending_txs.size();</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#af150545d409bf0312e5e724c49f89984">  194</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#af150545d409bf0312e5e724c49f89984">client::pending_input_count</a>() -&gt; <span class="keywordtype">size_t</span> {</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keywordflow">return</span> m_pending_inputs.size();</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">void</span> client::import_transaction(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx) {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        m_pending_txs.insert({<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">transaction::tx_id</a>(tx), tx});</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        save();</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#aca3e2a73e6593441ec939e97a01118c8">  203</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#aca3e2a73e6593441ec939e97a01118c8">client::check_pending</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1input.html">transaction::input</a>&amp; inp) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="comment">// TODO: This can probably be done more efficiently, but we</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="comment">// might have to keep a secondary map to index the pending tx set on</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="comment">// input hash?</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; it : m_pending_txs) {</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; in : it.second.m_inputs) {</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                <span class="keywordflow">if</span>(in == inp) {</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                }</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            }</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    }</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a5371eb8f02849e3f5d1dffe40e422cef">  217</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a5371eb8f02849e3f5d1dffe40e422cef">client::abandon_transaction</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>&amp; <a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordtype">bool</span> success{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keyword">const</span> <span class="keyword">auto</span> it = m_pending_txs.find(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">if</span>(it != m_pending_txs.end()) {</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keyword">auto</span> tx = it-&gt;second;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            m_pending_txs.erase(it);</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="comment">// Add the used inputs back to the wallet if they are still</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <span class="comment">// pending and not used in any other pending transaction.</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; i : tx.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1full__tx.html#a57d0521e12c5b47a41b5699cc96c0ea3">m_inputs</a>) {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                <span class="keyword">const</span> <span class="keyword">auto</span> ps_it = m_pending_spend.find(i.hash());</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                <span class="keywordflow">if</span>(ps_it != m_pending_spend.end()) {</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                    <span class="keyword">auto</span> pending = check_pending(i);</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                    <span class="keywordflow">if</span>(!pending) {</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                        m_pending_spend.erase(ps_it);</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                        m_wallet.confirm_inputs({i});</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    }</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                }</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            success = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keyword">auto</span> res = send_transaction(tx.value());</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span>(!res.has_value()) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">return</span> null_return;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">return</span> std::make_pair(tx.value(), res.value());</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a86b27aa0a894d10ca06ded3eecb5108f">  137</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a86b27aa0a894d10ca06ded3eecb5108f">client::send_transaction</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        -&gt; std::optional&lt;cbdc::sentinel::execute_response&gt; {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        import_transaction(tx);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keyword">auto</span> res = m_sentinel_client.execute_transaction(tx);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">if</span>(!res.has_value()) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to send transaction to sentinel.&quot;</span>);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        m_logger-&gt;info(<span class="stringliteral">&quot;Sentinel responded:&quot;</span>,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                       <a class="code hl_function" href="namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e">cbdc::sentinel::to_string</a>(res.value().m_tx_status),</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                       <span class="stringliteral">&quot;for&quot;</span>,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                       <a class="code hl_function" href="namespacecbdc.html#aeca0663c5237402736e3127369854cb5">to_string</a>(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">transaction::tx_id</a>(tx)));</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">if</span>(res.value().m_tx_status == <a class="code hl_enumvalue" href="namespacecbdc_1_1sentinel.html#a8582b428c6d5128e23402f95f03271e5aeda721c5f8c61daee37ca15ce3c4d881">sentinel::tx_status::confirmed</a>) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            confirm_transaction(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">transaction::tx_id</a>(tx));</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288">  159</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288">client::export_send_inputs</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; send_tx,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                                    <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a>&amp; payee)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        -&gt; std::vector&lt;transaction::input&gt; {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#a7e3e385aa81e513f3010869375cb8942">transaction::wallet::export_send_inputs</a>(send_tx, payee);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a7fb0459cc895eb3c3c20b7223050f16b">  165</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1client.html#a7fb0459cc895eb3c3c20b7223050f16b">client::import_send_input</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1input.html">transaction::input</a>&amp; in) {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">if</span>(m_wallet.<a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#ac107d98de6e878cd41d9662d42ec494f">is_spendable</a>(in)) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            m_pending_inputs.insert({in.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1input.html#a5a678c8254af86fa1e54011a127d7a82">m_prevout</a>.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1out__point.html#a1678a2fbe7dfb22a774f87c1c08ca068">m_tx_id</a>, in});</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            save();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;Ignoring non-spendable input&quot;</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a34d48b9a1d6df47124403a4abad7ca9e">  174</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a34d48b9a1d6df47124403a4abad7ca9e">client::new_address</a>() -&gt; <a class="code hl_typedef" href="namespacecbdc.html#a6b3c535adc4d8531c511db1f9c6aef83">pubkey_t</a> {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keyword">auto</span> addr = m_wallet.generate_key();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        save();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">return</span> addr;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a2c40a9b1fa75d8a2a9ccaf692acb863b">  180</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a2c40a9b1fa75d8a2a9ccaf692acb863b">client::balance</a>() -&gt; uint64_t {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordflow">return</span> m_wallet.balance();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#abcbe8fe61a5418df6e23b09555ca7f1c">  184</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#abcbe8fe61a5418df6e23b09555ca7f1c">client::utxo_count</a>() -&gt; <span class="keywordtype">size_t</span> {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> m_wallet.count();</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a0a4d3fe7cd62fb9326735fd7ea3069d4">  188</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a0a4d3fe7cd62fb9326735fd7ea3069d4">client::pending_tx_count</a>() -&gt; <span class="keywordtype">size_t</span> {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keywordflow">return</span> m_pending_txs.size();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#af150545d409bf0312e5e724c49f89984">  192</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#af150545d409bf0312e5e724c49f89984">client::pending_input_count</a>() -&gt; <span class="keywordtype">size_t</span> {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">return</span> m_pending_inputs.size();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">void</span> client::import_transaction(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; tx) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        m_pending_txs.insert({<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">transaction::tx_id</a>(tx), tx});</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        save();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    }</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#aca3e2a73e6593441ec939e97a01118c8">  201</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#aca3e2a73e6593441ec939e97a01118c8">client::check_pending</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1input.html">transaction::input</a>&amp; inp) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="comment">// TODO: This can probably be done more efficiently, but we</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="comment">// might have to keep a secondary map to index the pending tx set on</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="comment">// input hash?</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; it : m_pending_txs) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; in : it.second.m_inputs) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                <span class="keywordflow">if</span>(in == inp) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a5371eb8f02849e3f5d1dffe40e422cef">  215</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a5371eb8f02849e3f5d1dffe40e422cef">client::abandon_transaction</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>&amp; <a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordtype">bool</span> success{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keyword">const</span> <span class="keyword">auto</span> it = m_pending_txs.find(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordflow">if</span>(it != m_pending_txs.end()) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keyword">auto</span> tx = it-&gt;second;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            m_pending_txs.erase(it);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <span class="comment">// Add the used inputs back to the wallet if they are still</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            <span class="comment">// pending and not used in any other pending transaction.</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; i : tx.<a class="code hl_variable" href="structcbdc_1_1transaction_1_1full__tx.html#a57d0521e12c5b47a41b5699cc96c0ea3">m_inputs</a>) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                <span class="keyword">const</span> <span class="keyword">auto</span> ps_it = m_pending_spend.find(i.hash());</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                <span class="keywordflow">if</span>(ps_it != m_pending_spend.end()) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                    <span class="keyword">auto</span> pending = check_pending(i);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                    <span class="keywordflow">if</span>(!pending) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                        m_pending_spend.erase(ps_it);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                        m_wallet.confirm_inputs({i});</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                    }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            success = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        save();</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        save();</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">return</span> success;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    }</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a1da589159e3e607a60f228d8ba668a20">  244</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a1da589159e3e607a60f228d8ba668a20">client::confirm_transaction</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>&amp; <a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="comment">// TODO: Should abandon and confirm be combined somehow?</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="comment">// for instance: finish_transaction(hash_t tx_id, bool succeeded)</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordtype">bool</span> success{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <span class="keyword">const</span> <span class="keyword">auto</span> it = m_pending_txs.find(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">if</span>(it != m_pending_txs.end()) {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            m_wallet.confirm_transaction(it-&gt;second);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; i : it-&gt;second.m_inputs) {</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                <span class="keyword">const</span> <span class="keyword">auto</span> ps_it = m_pending_spend.find(i.hash());</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                <span class="keywordflow">if</span>(ps_it != m_pending_spend.end()) {</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    m_pending_spend.erase(ps_it);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                }</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            }</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            m_pending_txs.erase(it);</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            success = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        }</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keyword">const</span> <span class="keyword">auto</span> pi_it = m_pending_inputs.find(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">if</span>(pi_it != m_pending_inputs.end()) {</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            m_wallet.confirm_inputs({pi_it-&gt;second});</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            m_pending_inputs.erase(pi_it);</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            success = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">return</span> success;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a1da589159e3e607a60f228d8ba668a20">  242</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a1da589159e3e607a60f228d8ba668a20">client::confirm_transaction</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>&amp; <a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="comment">// TODO: Should abandon and confirm be combined somehow?</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="comment">// for instance: finish_transaction(hash_t tx_id, bool succeeded)</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordtype">bool</span> success{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keyword">const</span> <span class="keyword">auto</span> it = m_pending_txs.find(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">if</span>(it != m_pending_txs.end()) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            m_wallet.confirm_transaction(it-&gt;second);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; i : it-&gt;second.m_inputs) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                <span class="keyword">const</span> <span class="keyword">auto</span> ps_it = m_pending_spend.find(i.hash());</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                <span class="keywordflow">if</span>(ps_it != m_pending_spend.end()) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                    m_pending_spend.erase(ps_it);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            m_pending_txs.erase(it);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            success = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keyword">const</span> <span class="keyword">auto</span> pi_it = m_pending_inputs.find(<a class="code hl_function" href="namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892">tx_id</a>);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">if</span>(pi_it != m_pending_inputs.end()) {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            m_wallet.confirm_inputs({pi_it-&gt;second});</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            m_pending_inputs.erase(pi_it);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            success = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        save();</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        save();</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <span class="keywordflow">return</span> success;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    }</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordtype">void</span> client::load_client_state() {</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        std::ifstream client_file(m_client_file,</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                                  std::ios::binary | std::ios::in);</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <span class="keywordflow">if</span>(client_file.good()) {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            <span class="keyword">auto</span> deser = <a class="code hl_class" href="classcbdc_1_1istream__serializer.html">cbdc::istream_serializer</a>(client_file);</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            <span class="keywordflow">if</span>(!(deser &gt;&gt; m_pending_txs &gt;&gt; m_pending_inputs</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                 &gt;&gt; m_pending_spend)) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                m_logger-&gt;fatal(<span class="stringliteral">&quot;Error deserializing client file&quot;</span>);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;Existing client file not found&quot;</span>);</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        }</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordtype">void</span> client::save_client_state() {</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        std::ofstream client_file(m_client_file,</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                                  std::ios::binary | std::ios::trunc</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                                      | std::ios::out);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">if</span>(!client_file.good()) {</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            m_logger-&gt;fatal(<span class="stringliteral">&quot;Failed to open client file for saving&quot;</span>);</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        }</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <span class="keyword">auto</span> ser = <a class="code hl_class" href="classcbdc_1_1ostream__serializer.html">cbdc::ostream_serializer</a>(client_file);</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">if</span>(!(ser &lt;&lt; m_pending_txs &lt;&lt; m_pending_inputs &lt;&lt; m_pending_spend)) {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            m_logger-&gt;fatal(<span class="stringliteral">&quot;Failed to write client data&quot;</span>);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        }</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keywordtype">void</span> client::save() {</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        save_client_state();</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        m_wallet.<a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#ab14dad71bfe40f9213c82e8e1d30d1cb">save</a>(m_wallet_file);</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    }</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a6fec831beb2121296dff646a5b33301e">  305</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a6fec831beb2121296dff646a5b33301e">client::pending_txs</a>() const</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        -&gt; std::unordered_map&lt;<a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>, transaction::full_tx, hashing::null&gt; {</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keywordflow">return</span> m_pending_txs;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    }</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a0036a244116de7a22f6d7f9f11db82cd">  310</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a0036a244116de7a22f6d7f9f11db82cd">client::pending_inputs</a>() const</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        -&gt; std::unordered_map&lt;<a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>, transaction::input, hashing::null&gt; {</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="keywordflow">return</span> m_pending_inputs;</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    }</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>}</div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a0036a244116de7a22f6d7f9f11db82cd"><div class="ttname"><a href="classcbdc_1_1client.html#a0036a244116de7a22f6d7f9f11db82cd">cbdc::client::pending_inputs</a></div><div class="ttdeci">auto pending_inputs() const -&gt; std::unordered_map&lt; hash_t, transaction::input, hashing::null &gt;</div><div class="ttdoc">Returns the set of imported inputs from senders.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00310">client/client.cpp:310</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a013c689f714777857b583acc67a8f791"><div class="ttname"><a href="classcbdc_1_1client.html#a013c689f714777857b583acc67a8f791">cbdc::client::fan</a></div><div class="ttdeci">auto fan(uint32_t count, uint32_t value, const pubkey_t &amp;payee) -&gt; std::pair&lt; std::optional&lt; transaction::full_tx &gt;, std::optional&lt; cbdc::sentinel::execute_response &gt; &gt;</div><div class="ttdoc">Send a specified number of fixed-value outputs from this client's wallet to a target address.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00117">client/client.cpp:117</a></div></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keywordflow">return</span> success;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordtype">void</span> client::load_client_state() {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        std::ifstream client_file(m_client_file,</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                                  std::ios::binary | std::ios::in);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordflow">if</span>(client_file.good()) {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            <span class="keyword">auto</span> deser = <a class="code hl_class" href="classcbdc_1_1istream__serializer.html">cbdc::istream_serializer</a>(client_file);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keywordflow">if</span>(!(deser &gt;&gt; m_pending_txs &gt;&gt; m_pending_inputs</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                 &gt;&gt; m_pending_spend)) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                m_logger-&gt;fatal(<span class="stringliteral">&quot;Error deserializing client file&quot;</span>);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            }</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;Existing client file not found&quot;</span>);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        }</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="keywordtype">void</span> client::save_client_state() {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        std::ofstream client_file(m_client_file,</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                                  std::ios::binary | std::ios::trunc</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                                      | std::ios::out);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keywordflow">if</span>(!client_file.good()) {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            m_logger-&gt;fatal(<span class="stringliteral">&quot;Failed to open client file for saving&quot;</span>);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        }</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <span class="keyword">auto</span> ser = <a class="code hl_class" href="classcbdc_1_1ostream__serializer.html">cbdc::ostream_serializer</a>(client_file);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="keywordflow">if</span>(!(ser &lt;&lt; m_pending_txs &lt;&lt; m_pending_inputs &lt;&lt; m_pending_spend)) {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            m_logger-&gt;fatal(<span class="stringliteral">&quot;Failed to write client data&quot;</span>);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    }</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordtype">void</span> client::save() {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        save_client_state();</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        m_wallet.<a class="code hl_function" href="classcbdc_1_1transaction_1_1wallet.html#ab14dad71bfe40f9213c82e8e1d30d1cb">save</a>(m_wallet_file);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a6fec831beb2121296dff646a5b33301e">  303</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a6fec831beb2121296dff646a5b33301e">client::pending_txs</a>() const</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        -&gt; std::unordered_map&lt;<a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>, transaction::full_tx, hashing::null&gt; {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <span class="keywordflow">return</span> m_pending_txs;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno"><a class="line" href="classcbdc_1_1client.html#a0036a244116de7a22f6d7f9f11db82cd">  308</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1client.html#a0036a244116de7a22f6d7f9f11db82cd">client::pending_inputs</a>() const</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        -&gt; std::unordered_map&lt;<a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>, transaction::input, hashing::null&gt; {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="keywordflow">return</span> m_pending_inputs;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>}</div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a0036a244116de7a22f6d7f9f11db82cd"><div class="ttname"><a href="classcbdc_1_1client.html#a0036a244116de7a22f6d7f9f11db82cd">cbdc::client::pending_inputs</a></div><div class="ttdeci">auto pending_inputs() const -&gt; std::unordered_map&lt; hash_t, transaction::input, hashing::null &gt;</div><div class="ttdoc">Returns the set of imported inputs from senders.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00308">client/client.cpp:308</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a013c689f714777857b583acc67a8f791"><div class="ttname"><a href="classcbdc_1_1client.html#a013c689f714777857b583acc67a8f791">cbdc::client::fan</a></div><div class="ttdeci">auto fan(uint32_t count, uint32_t value, const pubkey_t &amp;payee) -&gt; std::pair&lt; std::optional&lt; transaction::full_tx &gt;, std::optional&lt; cbdc::sentinel::execute_response &gt; &gt;</div><div class="ttdoc">Send a specified number of fixed-value outputs from this client's wallet to a target address.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00115">client/client.cpp:115</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1client_html_a05671135bb0528d7c97d0c2085c5e8bc"><div class="ttname"><a href="classcbdc_1_1client.html#a05671135bb0528d7c97d0c2085c5e8bc">cbdc::client::init</a></div><div class="ttdeci">auto init() -&gt; bool</div><div class="ttdoc">Initializes the client.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00033">client/client.cpp:33</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a0a4d3fe7cd62fb9326735fd7ea3069d4"><div class="ttname"><a href="classcbdc_1_1client.html#a0a4d3fe7cd62fb9326735fd7ea3069d4">cbdc::client::pending_tx_count</a></div><div class="ttdeci">auto pending_tx_count() -&gt; size_t</div><div class="ttdoc">Returns the number of unconfirmed transactions.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00190">client/client.cpp:190</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a1da589159e3e607a60f228d8ba668a20"><div class="ttname"><a href="classcbdc_1_1client.html#a1da589159e3e607a60f228d8ba668a20">cbdc::client::confirm_transaction</a></div><div class="ttdeci">auto confirm_transaction(const hash_t &amp;tx_id) -&gt; bool</div><div class="ttdoc">Confirms the transaction with the given ID.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00244">client/client.cpp:244</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a0a4d3fe7cd62fb9326735fd7ea3069d4"><div class="ttname"><a href="classcbdc_1_1client.html#a0a4d3fe7cd62fb9326735fd7ea3069d4">cbdc::client::pending_tx_count</a></div><div class="ttdeci">auto pending_tx_count() -&gt; size_t</div><div class="ttdoc">Returns the number of unconfirmed transactions.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00188">client/client.cpp:188</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a1da589159e3e607a60f228d8ba668a20"><div class="ttname"><a href="classcbdc_1_1client.html#a1da589159e3e607a60f228d8ba668a20">cbdc::client::confirm_transaction</a></div><div class="ttdeci">auto confirm_transaction(const hash_t &amp;tx_id) -&gt; bool</div><div class="ttdoc">Confirms the transaction with the given ID.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00242">client/client.cpp:242</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1client_html_a24c73d12e6f732263a02a300b3149342"><div class="ttname"><a href="classcbdc_1_1client.html#a24c73d12e6f732263a02a300b3149342">cbdc::client::client</a></div><div class="ttdeci">client(cbdc::config::options opts, std::shared_ptr&lt; logging::log &gt; logger, std::string wallet_file, std::string client_file)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00023">client/client.cpp:23</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a2c40a9b1fa75d8a2a9ccaf692acb863b"><div class="ttname"><a href="classcbdc_1_1client.html#a2c40a9b1fa75d8a2a9ccaf692acb863b">cbdc::client::balance</a></div><div class="ttdeci">auto balance() -&gt; uint64_t</div><div class="ttdoc">Returns the balance in this client's wallet.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00182">client/client.cpp:182</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a34d48b9a1d6df47124403a4abad7ca9e"><div class="ttname"><a href="classcbdc_1_1client.html#a34d48b9a1d6df47124403a4abad7ca9e">cbdc::client::new_address</a></div><div class="ttdeci">auto new_address() -&gt; pubkey_t</div><div class="ttdoc">Generates a new wallet address that other clients can use to send money to this client using send.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00176">client/client.cpp:176</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a5371eb8f02849e3f5d1dffe40e422cef"><div class="ttname"><a href="classcbdc_1_1client.html#a5371eb8f02849e3f5d1dffe40e422cef">cbdc::client::abandon_transaction</a></div><div class="ttdeci">auto abandon_transaction(const hash_t &amp;tx_id) -&gt; bool</div><div class="ttdoc">Abandons a transaction currently awaiting confirmation.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00217">client/client.cpp:217</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a58036746b09bae0a0a5684f3c7b17ce0"><div class="ttname"><a href="classcbdc_1_1client.html#a58036746b09bae0a0a5684f3c7b17ce0">cbdc::client::sign_transaction</a></div><div class="ttdeci">void sign_transaction(transaction::full_tx &amp;tx)</div><div class="ttdoc">Signs the given transaction for as far as client's wallet contains the transaction's keys.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00072">client/client.cpp:72</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a6fec831beb2121296dff646a5b33301e"><div class="ttname"><a href="classcbdc_1_1client.html#a6fec831beb2121296dff646a5b33301e">cbdc::client::pending_txs</a></div><div class="ttdeci">auto pending_txs() const -&gt; std::unordered_map&lt; hash_t, transaction::full_tx, hashing::null &gt;</div><div class="ttdoc">Returns the set of transactions pending confirmation.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00305">client/client.cpp:305</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a7fb0459cc895eb3c3c20b7223050f16b"><div class="ttname"><a href="classcbdc_1_1client.html#a7fb0459cc895eb3c3c20b7223050f16b">cbdc::client::import_send_input</a></div><div class="ttdeci">void import_send_input(const transaction::input &amp;in)</div><div class="ttdoc">Imports transaction data from a sender.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00167">client/client.cpp:167</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_a86b27aa0a894d10ca06ded3eecb5108f"><div class="ttname"><a href="classcbdc_1_1client.html#a86b27aa0a894d10ca06ded3eecb5108f">cbdc::client::send_transaction</a></div><div class="ttdeci">auto send_transaction(const transaction::full_tx &amp;tx) -&gt; std::optional&lt; cbdc::sentinel::execute_response &gt;</div><div class="ttdoc">Send the given transaction to the sentinel.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00139">client/client.cpp:139</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_aa7d80bfa50ae4444522f1462a1dbd00a"><div class="ttname"><a href="classcbdc_1_1client.html#aa7d80bfa50ae4444522f1462a1dbd00a">cbdc::client::create_transaction</a></div><div class="ttdeci">auto create_transaction(uint32_t value, const pubkey_t &amp;payee) -&gt; std::optional&lt; transaction::full_tx &gt;</div><div class="ttdoc">Create a new transaction.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00085">client/client.cpp:85</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_ab78fb6f2b72e00d461c07618fedea288"><div class="ttname"><a href="classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288">cbdc::client::export_send_inputs</a></div><div class="ttdeci">static auto export_send_inputs(const transaction::full_tx &amp;send_tx, const pubkey_t &amp;payee) -&gt; std::vector&lt; transaction::input &gt;</div><div class="ttdoc">Extracts the transaction data that recipients need from senders to confirm pending transfers.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00161">client/client.cpp:161</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_abcbe8fe61a5418df6e23b09555ca7f1c"><div class="ttname"><a href="classcbdc_1_1client.html#abcbe8fe61a5418df6e23b09555ca7f1c">cbdc::client::utxo_count</a></div><div class="ttdeci">auto utxo_count() -&gt; size_t</div><div class="ttdoc">Returns the number of UTXOs in this client's wallet.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00186">client/client.cpp:186</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_aca3e2a73e6593441ec939e97a01118c8"><div class="ttname"><a href="classcbdc_1_1client.html#aca3e2a73e6593441ec939e97a01118c8">cbdc::client::check_pending</a></div><div class="ttdeci">auto check_pending(const transaction::input &amp;inp) -&gt; bool</div><div class="ttdoc">Checks the client's pending transaction set for the specified transaction.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00203">client/client.cpp:203</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_af150545d409bf0312e5e724c49f89984"><div class="ttname"><a href="classcbdc_1_1client.html#af150545d409bf0312e5e724c49f89984">cbdc::client::pending_input_count</a></div><div class="ttdeci">auto pending_input_count() -&gt; size_t</div><div class="ttdoc">Returns the number of pending received inputs.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00194">client/client.cpp:194</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1client_html_af183f0fc2d53d4185350b6af771c8d5c"><div class="ttname"><a href="classcbdc_1_1client.html#af183f0fc2d53d4185350b6af771c8d5c">cbdc::client::send</a></div><div class="ttdeci">auto send(uint32_t value, const pubkey_t &amp;payee) -&gt; std::pair&lt; std::optional&lt; transaction::full_tx &gt;, std::optional&lt; cbdc::sentinel::execute_response &gt; &gt;</div><div class="ttdoc">Send a specified amount from this client's wallet to a target address.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00097">client/client.cpp:97</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a2c40a9b1fa75d8a2a9ccaf692acb863b"><div class="ttname"><a href="classcbdc_1_1client.html#a2c40a9b1fa75d8a2a9ccaf692acb863b">cbdc::client::balance</a></div><div class="ttdeci">auto balance() -&gt; uint64_t</div><div class="ttdoc">Returns the balance in this client's wallet.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00180">client/client.cpp:180</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a34d48b9a1d6df47124403a4abad7ca9e"><div class="ttname"><a href="classcbdc_1_1client.html#a34d48b9a1d6df47124403a4abad7ca9e">cbdc::client::new_address</a></div><div class="ttdeci">auto new_address() -&gt; pubkey_t</div><div class="ttdoc">Generates a new wallet address that other clients can use to send money to this client using send.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00174">client/client.cpp:174</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a5371eb8f02849e3f5d1dffe40e422cef"><div class="ttname"><a href="classcbdc_1_1client.html#a5371eb8f02849e3f5d1dffe40e422cef">cbdc::client::abandon_transaction</a></div><div class="ttdeci">auto abandon_transaction(const hash_t &amp;tx_id) -&gt; bool</div><div class="ttdoc">Abandons a transaction currently awaiting confirmation.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00215">client/client.cpp:215</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a58036746b09bae0a0a5684f3c7b17ce0"><div class="ttname"><a href="classcbdc_1_1client.html#a58036746b09bae0a0a5684f3c7b17ce0">cbdc::client::sign_transaction</a></div><div class="ttdeci">void sign_transaction(transaction::full_tx &amp;tx)</div><div class="ttdoc">Signs the given transaction for as far as client's wallet contains the transaction's keys.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00070">client/client.cpp:70</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a6fec831beb2121296dff646a5b33301e"><div class="ttname"><a href="classcbdc_1_1client.html#a6fec831beb2121296dff646a5b33301e">cbdc::client::pending_txs</a></div><div class="ttdeci">auto pending_txs() const -&gt; std::unordered_map&lt; hash_t, transaction::full_tx, hashing::null &gt;</div><div class="ttdoc">Returns the set of transactions pending confirmation.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00303">client/client.cpp:303</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a7fb0459cc895eb3c3c20b7223050f16b"><div class="ttname"><a href="classcbdc_1_1client.html#a7fb0459cc895eb3c3c20b7223050f16b">cbdc::client::import_send_input</a></div><div class="ttdeci">void import_send_input(const transaction::input &amp;in)</div><div class="ttdoc">Imports transaction data from a sender.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00165">client/client.cpp:165</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_a86b27aa0a894d10ca06ded3eecb5108f"><div class="ttname"><a href="classcbdc_1_1client.html#a86b27aa0a894d10ca06ded3eecb5108f">cbdc::client::send_transaction</a></div><div class="ttdeci">auto send_transaction(const transaction::full_tx &amp;tx) -&gt; std::optional&lt; cbdc::sentinel::execute_response &gt;</div><div class="ttdoc">Send the given transaction to the sentinel.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00137">client/client.cpp:137</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_aa7d80bfa50ae4444522f1462a1dbd00a"><div class="ttname"><a href="classcbdc_1_1client.html#aa7d80bfa50ae4444522f1462a1dbd00a">cbdc::client::create_transaction</a></div><div class="ttdeci">auto create_transaction(uint32_t value, const pubkey_t &amp;payee) -&gt; std::optional&lt; transaction::full_tx &gt;</div><div class="ttdoc">Create a new transaction.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00083">client/client.cpp:83</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_ab78fb6f2b72e00d461c07618fedea288"><div class="ttname"><a href="classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288">cbdc::client::export_send_inputs</a></div><div class="ttdeci">static auto export_send_inputs(const transaction::full_tx &amp;send_tx, const pubkey_t &amp;payee) -&gt; std::vector&lt; transaction::input &gt;</div><div class="ttdoc">Extracts the transaction data that recipients need from senders to confirm pending transfers.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00159">client/client.cpp:159</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_abcbe8fe61a5418df6e23b09555ca7f1c"><div class="ttname"><a href="classcbdc_1_1client.html#abcbe8fe61a5418df6e23b09555ca7f1c">cbdc::client::utxo_count</a></div><div class="ttdeci">auto utxo_count() -&gt; size_t</div><div class="ttdoc">Returns the number of UTXOs in this client's wallet.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00184">client/client.cpp:184</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_aca3e2a73e6593441ec939e97a01118c8"><div class="ttname"><a href="classcbdc_1_1client.html#aca3e2a73e6593441ec939e97a01118c8">cbdc::client::check_pending</a></div><div class="ttdeci">auto check_pending(const transaction::input &amp;inp) -&gt; bool</div><div class="ttdoc">Checks the client's pending transaction set for the specified transaction.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00201">client/client.cpp:201</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_af150545d409bf0312e5e724c49f89984"><div class="ttname"><a href="classcbdc_1_1client.html#af150545d409bf0312e5e724c49f89984">cbdc::client::pending_input_count</a></div><div class="ttdeci">auto pending_input_count() -&gt; size_t</div><div class="ttdoc">Returns the number of pending received inputs.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00192">client/client.cpp:192</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1client_html_af183f0fc2d53d4185350b6af771c8d5c"><div class="ttname"><a href="classcbdc_1_1client.html#af183f0fc2d53d4185350b6af771c8d5c">cbdc::client::send</a></div><div class="ttdeci">auto send(uint32_t value, const pubkey_t &amp;payee) -&gt; std::pair&lt; std::optional&lt; transaction::full_tx &gt;, std::optional&lt; cbdc::sentinel::execute_response &gt; &gt;</div><div class="ttdoc">Send a specified amount from this client's wallet to a target address.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00095">client/client.cpp:95</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1client_html_afcf817206595b55c80926c6efeb95a86"><div class="ttname"><a href="classcbdc_1_1client.html#afcf817206595b55c80926c6efeb95a86">cbdc::client::mint</a></div><div class="ttdeci">auto mint(size_t n_outputs, uint32_t output_val) -&gt; transaction::full_tx</div><div class="ttdoc">Creates the specified number spendable outputs each with the specified value.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00057">client/client.cpp:57</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1client_html_aff758829cabeed3cb728a468f508082f"><div class="ttname"><a href="classcbdc_1_1client.html#aff758829cabeed3cb728a468f508082f">cbdc::client::print_amount</a></div><div class="ttdeci">static auto print_amount(uint64_t val) -&gt; std::string</div><div class="ttdoc">Format a value given in currency base units as USD.</div><div class="ttdef"><b>Definition:</b> <a href="client_2client_8cpp_source.html#l00050">client/client.cpp:50</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1istream__serializer_html"><div class="ttname"><a href="classcbdc_1_1istream__serializer.html">cbdc::istream_serializer</a></div><div class="ttdoc">Implementation of serializer for reading from a std::istream.</div><div class="ttdef"><b>Definition:</b> <a href="istream__serializer_8hpp_source.html#l00016">istream_serializer.hpp:16</a></div></div>
