@@ -1,7 +1,6 @@
 <map id="cbdc::config::read_atomizer_options" name="cbdc::config::read_atomizer_options">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,132,145"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a8292b9ea9f3c076b4cb7cf721fdb1bb7" title=" " alt="" coords="180,5,351,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#a5bddebc2dacbe954cd429500d25bd773" title=" " alt="" coords="180,71,351,112"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa924d1d331dca2429f56edbf0b338789" title=" " alt="" coords="180,136,351,177"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="206,201,325,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,69,132,109"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a8292b9ea9f3c076b4cb7cf721fdb1bb7" title=" " alt="" coords="180,5,351,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#a5bddebc2dacbe954cd429500d25bd773" title=" " alt="" coords="180,69,351,109"/>
+<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa924d1d331dca2429f56edbf0b338789" title=" " alt="" coords="180,133,351,173"/>
 </map>

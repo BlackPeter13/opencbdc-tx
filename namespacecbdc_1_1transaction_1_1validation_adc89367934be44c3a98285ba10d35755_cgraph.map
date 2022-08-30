@@ -1,6 +1,6 @@
 <map id="cbdc::transaction::validation::check_p2pk_witness_signature" name="cbdc::transaction::validation::check_p2pk_witness_signature">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,159,61"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="207,13,333,54"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="381,20,508,47"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="556,20,696,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,159,60"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="207,13,333,53"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="381,20,508,45"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="556,20,696,45"/>
 </map>

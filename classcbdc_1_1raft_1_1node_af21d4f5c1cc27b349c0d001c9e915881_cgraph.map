@@ -1,4 +1,4 @@
 <map id="cbdc::raft::node::~node" name="cbdc::raft::node::~node">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,156,32"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1raft_1_1node.html#a45216ed81e43300358e0e5f8b9201dba" title="Shut down the NuRaft instance." alt="" coords="204,5,344,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,156,31"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1raft_1_1node.html#a45216ed81e43300358e0e5f8b9201dba" title="Shut down the NuRaft instance." alt="" coords="204,5,344,31"/>
 </map>

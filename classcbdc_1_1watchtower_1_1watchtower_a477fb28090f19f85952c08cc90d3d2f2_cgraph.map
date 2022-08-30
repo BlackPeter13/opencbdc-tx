@@ -1,4 +1,4 @@
 <map id="cbdc::watchtower::watchtower::add_block" name="cbdc::watchtower::watchtower::add_block">
-<area shape="rect" id="node1" title="Adds a new block from the Atomizer to the Watchtower." alt="" coords="5,5,201,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1watchtower_1_1block__cache.html#a0696a5d2d77813afa9604425d68ca075" title="Moves a block into the block cache, evicting the oldest block if the cache has reached its maximum si..." alt="" coords="249,5,409,47"/>
+<area shape="rect" id="node1" title="Adds a new block from the Atomizer to the Watchtower." alt="" coords="5,5,201,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1watchtower_1_1block__cache.html#a0696a5d2d77813afa9604425d68ca075" title="Moves a block into the block cache, evicting the oldest block if the cache has reached its maximum si..." alt="" coords="249,5,409,45"/>
 </map>

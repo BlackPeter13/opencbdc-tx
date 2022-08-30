@@ -1,4 +1,0 @@
-<map id="cbdc::coordinator::controller::init" name="cbdc::coordinator::controller::init">
-<area shape="rect" id="node1" title="Starts the replicated coordinator and associated raft server." alt="" coords="5,5,132,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="180,5,299,47"/>
-</map>

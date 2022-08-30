@@ -1,10 +1,9 @@
 <map id="cbdc::config::read_sentinel_options" name="cbdc::config::read_sentinel_options">
-<area shape="rect" id="node1" title=" " alt="" coords="5,169,128,211"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a26c6481b70e8a63d9ade96344838d50e" title=" " alt="" coords="176,5,343,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#abcec88d37e7e0298bcd244767d639be5" title=" " alt="" coords="176,71,343,112"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#ae4f0a1a6ed533a8434dbbbd00b8af9bb" title=" " alt="" coords="176,136,343,177"/>
-<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#ab293ffa0995cecca448c0756ddadbac7" title=" " alt="" coords="176,201,343,243"/>
-<area shape="rect" id="node7" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="187,267,331,294"/>
-<area shape="rect" id="node8" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="200,319,319,360"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa6d96a1c6792fe174108d3cc5d4585bd" title=" " alt="" coords="391,136,557,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,133,128,173"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a26c6481b70e8a63d9ade96344838d50e" title=" " alt="" coords="176,5,343,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#abcec88d37e7e0298bcd244767d639be5" title=" " alt="" coords="176,69,343,109"/>
+<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#ae4f0a1a6ed533a8434dbbbd00b8af9bb" title=" " alt="" coords="176,133,343,173"/>
+<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#ab293ffa0995cecca448c0756ddadbac7" title=" " alt="" coords="176,197,343,237"/>
+<area shape="rect" id="node7" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="187,262,331,287"/>
+<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa6d96a1c6792fe174108d3cc5d4585bd" title=" " alt="" coords="391,133,557,173"/>
 </map>

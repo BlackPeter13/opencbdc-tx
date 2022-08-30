@@ -1,4 +1,4 @@
 <map id="cbdc::coordinator::rpc::client" name="cbdc::coordinator::rpc::client">
-<area shape="rect" id="node1" title="RPC client for a coordinator." alt="" coords="5,95,132,136"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1coordinator_1_1interface.html" title="Interface for a coordinator." alt="" coords="5,5,132,47"/>
+<area shape="rect" id="node1" title="RPC client for a coordinator." alt="" coords="5,93,132,133"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1coordinator_1_1interface.html" title="Interface for a coordinator." alt="" coords="5,5,132,45"/>
 </map>

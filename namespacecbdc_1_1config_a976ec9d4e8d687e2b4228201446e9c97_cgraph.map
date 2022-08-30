@@ -1,46 +1,45 @@
 <map id="cbdc::config::read_options" name="cbdc::config::read_options">
-<area shape="rect" id="node1" title="Read options from the given config file without checking invariants." alt="" coords="5,1103,127,1144"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a5224eaf079999b3be86212b3f18c77fa" title=" " alt="" coords="185,136,309,177"/>
-<area shape="rect" id="node8" href="$namespacecbdc_1_1config.html#aa2ab6c0bbe70ec89253fa8135e4db533" title=" " alt="" coords="184,332,311,373"/>
-<area shape="rect" id="node12" href="$namespacecbdc_1_1config.html#af453ffb9c9e4719adf487e57313384b1" title=" " alt="" coords="176,561,319,603"/>
-<area shape="rect" id="node18" href="$namespacecbdc_1_1config.html#a4a2fc9ace25796a0de9747699f83d332" title=" " alt="" coords="186,1756,309,1797"/>
-<area shape="rect" id="node21" href="$namespacecbdc_1_1config.html#a5551f168ee7212210a2ec5cec21cbeb5" title=" " alt="" coords="187,1821,308,1863"/>
-<area shape="rect" id="node22" href="$namespacecbdc_1_1config.html#ab6f62c195aafca9a9b4b9862ced75f9a" title=" " alt="" coords="186,855,309,896"/>
-<area shape="rect" id="node29" href="$namespacecbdc_1_1config.html#ab1d556f022779dc9fff160a62edfc913" title=" " alt="" coords="185,1332,309,1373"/>
-<area shape="rect" id="node35" href="$namespacecbdc_1_1config.html#a0cba75d140dc2d6eee6a3e74c47453ec" title=" " alt="" coords="187,1103,308,1144"/>
-<area shape="rect" id="node40" href="$namespacecbdc_1_1config.html#a20e19b15961752edf382e5c429c6b8e4" title=" " alt="" coords="175,1560,320,1601"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#a3589dc0d77cd09d6fa1610f0cba4db0a" title=" " alt="" coords="379,5,545,47"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#a24eb93a145de7af7bdd7411f3e754533" title=" " alt="" coords="379,71,545,112"/>
-<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#a6956a90b162eeb0bde5ebf8449f5a4f7" title=" " alt="" coords="379,136,545,177"/>
-<area shape="rect" id="node7" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="403,855,521,896"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa797deadc7713446b1d93272422ca080" title=" " alt="" coords="615,71,781,112"/>
-<area shape="rect" id="node9" href="$namespacecbdc_1_1config.html#a8292b9ea9f3c076b4cb7cf721fdb1bb7" title=" " alt="" coords="377,201,547,243"/>
-<area shape="rect" id="node10" href="$namespacecbdc_1_1config.html#a5bddebc2dacbe954cd429500d25bd773" title=" " alt="" coords="377,267,547,308"/>
-<area shape="rect" id="node11" href="$namespacecbdc_1_1config.html#aa924d1d331dca2429f56edbf0b338789" title=" " alt="" coords="377,332,547,373"/>
-<area shape="rect" id="node13" href="$namespacecbdc_1_1config.html#a70bb8028d224475bf2d123cee8f1511d" title=" " alt="" coords="369,593,555,635"/>
-<area shape="rect" id="node15" href="$namespacecbdc_1_1config.html#accf219035947c057f15558131b175eb3" title=" " alt="" coords="369,528,555,569"/>
-<area shape="rect" id="node16" href="$namespacecbdc_1_1config.html#a83da6e1b6a8feabdcda3ecd4f8975b5f" title=" " alt="" coords="369,397,555,439"/>
-<area shape="rect" id="node17" href="$namespacecbdc_1_1config.html#a569abd1a831bef46a57d5b997ab03f8d" title=" " alt="" coords="369,463,555,504"/>
-<area shape="rect" id="node14" href="$namespacecbdc_1_1config.html#a23a5998dd5dd1655deb7df78aed58e98" title=" " alt="" coords="605,463,791,504"/>
-<area shape="rect" id="node19" href="$classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434" title="Return the value for the given key if its value is a double." alt="" coords="396,1756,528,1797"/>
-<area shape="rect" id="node20" href="$classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714" title="Return the value for the given key if its value is a long." alt="" coords="396,1821,528,1863"/>
-<area shape="rect" id="node23" href="$namespacecbdc_1_1config.html#a26c6481b70e8a63d9ade96344838d50e" title=" " alt="" coords="379,789,545,831"/>
-<area shape="rect" id="node24" href="$namespacecbdc_1_1config.html#abcec88d37e7e0298bcd244767d639be5" title=" " alt="" coords="379,920,545,961"/>
-<area shape="rect" id="node26" href="$namespacecbdc_1_1config.html#ae4f0a1a6ed533a8434dbbbd00b8af9bb" title=" " alt="" coords="379,659,545,700"/>
-<area shape="rect" id="node27" href="$namespacecbdc_1_1config.html#ab293ffa0995cecca448c0756ddadbac7" title=" " alt="" coords="379,724,545,765"/>
-<area shape="rect" id="node28" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="390,986,534,1013"/>
-<area shape="rect" id="node25" href="$namespacecbdc_1_1config.html#aa6d96a1c6792fe174108d3cc5d4585bd" title=" " alt="" coords="615,724,781,765"/>
-<area shape="rect" id="node30" href="$namespacecbdc_1_1config.html#a156d9dde7e6e6381fa15971202b4d488" title=" " alt="" coords="385,1299,539,1340"/>
-<area shape="rect" id="node32" href="$namespacecbdc_1_1config.html#aa149b3d98e6adb36f8f6d4ecc949b381" title=" " alt="" coords="385,1429,539,1471"/>
-<area shape="rect" id="node33" href="$namespacecbdc_1_1config.html#a5cffbb48060f5b41635f41971f7571d3" title=" " alt="" coords="385,1495,539,1536"/>
-<area shape="rect" id="node34" href="$namespacecbdc_1_1config.html#aa45632ffcad01aa186579dd99dc5bf08" title=" " alt="" coords="382,1364,542,1405"/>
-<area shape="rect" id="node31" href="$namespacecbdc_1_1config.html#aba37c23ae46c6e882f73b50b23c3be73" title=" " alt="" coords="621,1267,775,1308"/>
-<area shape="rect" id="node36" href="$namespacecbdc_1_1config.html#ab094a355e5689cee6bc0d725fea6b2bc" title=" " alt="" coords="385,1037,539,1079"/>
-<area shape="rect" id="node37" href="$namespacecbdc_1_1config.html#a1b6808f780a93ecad31453fef947dff8" title=" " alt="" coords="385,1103,539,1144"/>
-<area shape="rect" id="node38" href="$namespacecbdc_1_1config.html#a617d2476920e04eaa1e598d7d501fd6b" title=" " alt="" coords="385,1168,539,1209"/>
-<area shape="rect" id="node39" href="$namespacecbdc_1_1config.html#ac3ca252988d8109052a8bf75212b4bcc" title=" " alt="" coords="385,1233,539,1275"/>
-<area shape="rect" id="node41" href="$namespacecbdc_1_1config.html#a61b17ddec3b461c48ff0cdc5cb811f3b" title=" " alt="" coords="368,1560,556,1601"/>
-<area shape="rect" id="node43" href="$namespacecbdc_1_1config.html#a89a04621aabd1e76b16726520ab8805f" title=" " alt="" coords="368,1625,556,1667"/>
-<area shape="rect" id="node44" href="$namespacecbdc_1_1config.html#a5319c9a3975b7afa11f5d61eb6b04051" title=" " alt="" coords="368,1691,556,1732"/>
-<area shape="rect" id="node42" href="$namespacecbdc_1_1config.html#a0b5071435c9c99bc37c13eab007e17f4" title=" " alt="" coords="604,1625,792,1667"/>
+<area shape="rect" id="node1" title="Read options from the given config file without checking invariants." alt="" coords="5,741,127,781"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a5224eaf079999b3be86212b3f18c77fa" title=" " alt="" coords="185,101,309,141"/>
+<area shape="rect" id="node7" href="$namespacecbdc_1_1config.html#aa2ab6c0bbe70ec89253fa8135e4db533" title=" " alt="" coords="184,293,311,333"/>
+<area shape="rect" id="node11" href="$namespacecbdc_1_1config.html#af453ffb9c9e4719adf487e57313384b1" title=" " alt="" coords="176,517,319,557"/>
+<area shape="rect" id="node17" href="$namespacecbdc_1_1config.html#a4a2fc9ace25796a0de9747699f83d332" title=" " alt="" coords="186,677,309,717"/>
+<area shape="rect" id="node20" href="$namespacecbdc_1_1config.html#a5551f168ee7212210a2ec5cec21cbeb5" title=" " alt="" coords="187,741,308,781"/>
+<area shape="rect" id="node21" href="$namespacecbdc_1_1config.html#ab6f62c195aafca9a9b4b9862ced75f9a" title=" " alt="" coords="186,869,309,909"/>
+<area shape="rect" id="node28" href="$namespacecbdc_1_1config.html#ab1d556f022779dc9fff160a62edfc913" title=" " alt="" coords="185,1400,309,1440"/>
+<area shape="rect" id="node34" href="$namespacecbdc_1_1config.html#a0cba75d140dc2d6eee6a3e74c47453ec" title=" " alt="" coords="187,1144,308,1184"/>
+<area shape="rect" id="node39" href="$namespacecbdc_1_1config.html#a20e19b15961752edf382e5c429c6b8e4" title=" " alt="" coords="175,1624,320,1664"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#a3589dc0d77cd09d6fa1610f0cba4db0a" title=" " alt="" coords="379,133,545,173"/>
+<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#a24eb93a145de7af7bdd7411f3e754533" title=" " alt="" coords="379,5,545,45"/>
+<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#a6956a90b162eeb0bde5ebf8449f5a4f7" title=" " alt="" coords="379,69,545,109"/>
+<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa797deadc7713446b1d93272422ca080" title=" " alt="" coords="615,69,781,109"/>
+<area shape="rect" id="node8" href="$namespacecbdc_1_1config.html#a8292b9ea9f3c076b4cb7cf721fdb1bb7" title=" " alt="" coords="377,261,547,301"/>
+<area shape="rect" id="node9" href="$namespacecbdc_1_1config.html#a5bddebc2dacbe954cd429500d25bd773" title=" " alt="" coords="377,325,547,365"/>
+<area shape="rect" id="node10" href="$namespacecbdc_1_1config.html#aa924d1d331dca2429f56edbf0b338789" title=" " alt="" coords="377,197,547,237"/>
+<area shape="rect" id="node12" href="$namespacecbdc_1_1config.html#a70bb8028d224475bf2d123cee8f1511d" title=" " alt="" coords="369,517,555,557"/>
+<area shape="rect" id="node14" href="$namespacecbdc_1_1config.html#accf219035947c057f15558131b175eb3" title=" " alt="" coords="369,453,555,493"/>
+<area shape="rect" id="node15" href="$namespacecbdc_1_1config.html#a83da6e1b6a8feabdcda3ecd4f8975b5f" title=" " alt="" coords="369,581,555,621"/>
+<area shape="rect" id="node16" href="$namespacecbdc_1_1config.html#a569abd1a831bef46a57d5b997ab03f8d" title=" " alt="" coords="369,389,555,429"/>
+<area shape="rect" id="node13" href="$namespacecbdc_1_1config.html#a23a5998dd5dd1655deb7df78aed58e98" title=" " alt="" coords="605,517,791,557"/>
+<area shape="rect" id="node18" href="$classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434" title="Return the value for the given key if its value is a double." alt="" coords="396,645,528,685"/>
+<area shape="rect" id="node19" href="$classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714" title="Return the value for the given key if its value is a long." alt="" coords="396,709,528,749"/>
+<area shape="rect" id="node22" href="$namespacecbdc_1_1config.html#a26c6481b70e8a63d9ade96344838d50e" title=" " alt="" coords="379,773,545,813"/>
+<area shape="rect" id="node23" href="$namespacecbdc_1_1config.html#abcec88d37e7e0298bcd244767d639be5" title=" " alt="" coords="379,901,545,941"/>
+<area shape="rect" id="node25" href="$namespacecbdc_1_1config.html#ae4f0a1a6ed533a8434dbbbd00b8af9bb" title=" " alt="" coords="379,965,545,1005"/>
+<area shape="rect" id="node26" href="$namespacecbdc_1_1config.html#ab293ffa0995cecca448c0756ddadbac7" title=" " alt="" coords="379,837,545,877"/>
+<area shape="rect" id="node27" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="390,1030,534,1055"/>
+<area shape="rect" id="node24" href="$namespacecbdc_1_1config.html#aa6d96a1c6792fe174108d3cc5d4585bd" title=" " alt="" coords="615,901,781,941"/>
+<area shape="rect" id="node29" href="$namespacecbdc_1_1config.html#a156d9dde7e6e6381fa15971202b4d488" title=" " alt="" coords="385,1336,539,1376"/>
+<area shape="rect" id="node31" href="$namespacecbdc_1_1config.html#aa149b3d98e6adb36f8f6d4ecc949b381" title=" " alt="" coords="385,1400,539,1440"/>
+<area shape="rect" id="node32" href="$namespacecbdc_1_1config.html#a5cffbb48060f5b41635f41971f7571d3" title=" " alt="" coords="385,1464,539,1504"/>
+<area shape="rect" id="node33" href="$namespacecbdc_1_1config.html#aa45632ffcad01aa186579dd99dc5bf08" title=" " alt="" coords="382,1528,542,1568"/>
+<area shape="rect" id="node30" href="$namespacecbdc_1_1config.html#aba37c23ae46c6e882f73b50b23c3be73" title=" " alt="" coords="621,1304,775,1344"/>
+<area shape="rect" id="node35" href="$namespacecbdc_1_1config.html#ab094a355e5689cee6bc0d725fea6b2bc" title=" " alt="" coords="385,1080,539,1120"/>
+<area shape="rect" id="node36" href="$namespacecbdc_1_1config.html#a1b6808f780a93ecad31453fef947dff8" title=" " alt="" coords="385,1144,539,1184"/>
+<area shape="rect" id="node37" href="$namespacecbdc_1_1config.html#a617d2476920e04eaa1e598d7d501fd6b" title=" " alt="" coords="385,1208,539,1248"/>
+<area shape="rect" id="node38" href="$namespacecbdc_1_1config.html#ac3ca252988d8109052a8bf75212b4bcc" title=" " alt="" coords="385,1272,539,1312"/>
+<area shape="rect" id="node40" href="$namespacecbdc_1_1config.html#a61b17ddec3b461c48ff0cdc5cb811f3b" title=" " alt="" coords="368,1720,556,1760"/>
+<area shape="rect" id="node42" href="$namespacecbdc_1_1config.html#a89a04621aabd1e76b16726520ab8805f" title=" " alt="" coords="368,1592,556,1632"/>
+<area shape="rect" id="node43" href="$namespacecbdc_1_1config.html#a5319c9a3975b7afa11f5d61eb6b04051" title=" " alt="" coords="368,1656,556,1696"/>
+<area shape="rect" id="node41" href="$namespacecbdc_1_1config.html#a0b5071435c9c99bc37c13eab007e17f4" title=" " alt="" coords="604,1656,792,1696"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="cbdc::sentinel_2pc::controller::init" name="cbdc::sentinel_2pc::controller::init">
-<area shape="rect" id="node1" title="Initializes the controller." alt="" coords="5,49,135,90"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1client.html#a05671135bb0528d7c97d0c2085c5e8bc" title="Initializes the client." alt="" coords="217,5,327,32"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aef77ae84c0c1123602cdfad838489b50" title="Generates a public key from the specified private key." alt="" coords="183,56,361,83"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="219,107,325,133"/>
+<area shape="rect" id="node1" title="Initializes the controller." alt="" coords="5,47,135,87"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1client.html#a05671135bb0528d7c97d0c2085c5e8bc" title="Initializes the client." alt="" coords="217,5,327,31"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#aef77ae84c0c1123602cdfad838489b50" title="Generates a public key from the specified private key." alt="" coords="183,55,361,80"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="219,104,325,129"/>
 </map>

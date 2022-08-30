@@ -1,7 +1,7 @@
 <map id="cbdc::transaction::wallet::seed" name="cbdc::transaction::wallet::seed">
-<area shape="rect" id="node1" title="Marks the wallet as having pre&#45;seeded outputs to spend." alt="" coords="5,57,132,98"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="193,16,346,72"/>
-<area shape="rect" id="node5" href="$namespacecbdc.html#aef77ae84c0c1123602cdfad838489b50" title="Generates a public key from the specified private key." alt="" coords="180,96,359,123"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="407,5,523,32"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="409,56,520,83"/>
+<area shape="rect" id="node1" title="Marks the wallet as having pre&#45;seeded outputs to spend." alt="" coords="5,54,132,94"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="193,15,346,69"/>
+<area shape="rect" id="node5" href="$namespacecbdc.html#aef77ae84c0c1123602cdfad838489b50" title="Generates a public key from the specified private key." alt="" coords="180,93,359,119"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="407,5,523,31"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="409,55,520,80"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="cbdc::locking_shard::locking_shard" name="cbdc::locking_shard::locking_shard">
-<area shape="rect" id="node1" title="In&#45;memory implementation of interface and status_interface." alt="" coords="85,95,221,136"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1interface.html" title="Interface for a locking shard." alt="" coords="5,5,141,47"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1locking__shard_1_1status__interface.html" title="Interface for querying the read&#45;only state of a locking shard." alt="" coords="165,5,301,47"/>
+<area shape="rect" id="node1" title="In&#45;memory implementation of interface and status_interface." alt="" coords="85,93,221,133"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1interface.html" title="Interface for a locking shard." alt="" coords="5,5,141,45"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1locking__shard_1_1status__interface.html" title="Interface for querying the read&#45;only state of a locking shard." alt="" coords="165,5,301,45"/>
 </map>

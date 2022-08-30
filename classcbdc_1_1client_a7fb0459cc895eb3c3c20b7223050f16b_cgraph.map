@@ -1,4 +1,4 @@
 <map id="cbdc::client::import_send_input" name="cbdc::client::import_send_input">
-<area shape="rect" id="node1" title="Imports transaction data from a sender." alt="" coords="5,5,135,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1transaction_1_1wallet.html#ac107d98de6e878cd41d9662d42ec494f" title="Checks if the input is spendable by the current wallet." alt="" coords="183,5,321,47"/>
+<area shape="rect" id="node1" title="Imports transaction data from a sender." alt="" coords="5,5,135,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1transaction_1_1wallet.html#ac107d98de6e878cd41d9662d42ec494f" title="Checks if the input is spendable by the current wallet." alt="" coords="183,5,321,45"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="cbdc::config::parser::get_loglevel" name="cbdc::config::parser::get_loglevel">
-<area shape="rect" id="node1" title="Return the value for the given key if its value is a loglevel." alt="" coords="5,5,137,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1logging.html#ac7e6632bd25740fd19af12af6bff31aa" title="Parses a capitalized string into a log level." alt="" coords="185,5,320,47"/>
+<area shape="rect" id="node1" title="Return the value for the given key if its value is a loglevel." alt="" coords="5,5,137,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1logging.html#ac7e6632bd25740fd19af12af6bff31aa" title="Parses a capitalized string into a log level." alt="" coords="185,5,320,45"/>
 </map>

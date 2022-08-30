@@ -1,11 +1,11 @@
 <map id="random_source.hpp" name="random_source.hpp">
-<area shape="rect" id="node1" title="Pseudorandom number generator (PRNG) for generating random data from a given entropy source." alt="" coords="201,5,336,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,119,107"/>
-<area shape="rect" id="node3" href="$hash_8hpp.html" title=" " alt="" coords="143,80,218,107"/>
-<area shape="rect" id="node7" title=" " alt="" coords="242,80,295,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="320,80,377,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="401,80,459,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="15,155,131,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="155,155,206,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="230,155,299,181"/>
+<area shape="rect" id="node1" title="Pseudorandom number generator (PRNG) for generating random data from a given entropy source." alt="" coords="201,5,336,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,119,104"/>
+<area shape="rect" id="node3" href="$hash_8hpp.html" title=" " alt="" coords="143,79,218,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="242,79,295,104"/>
+<area shape="rect" id="node8" title=" " alt="" coords="320,79,377,104"/>
+<area shape="rect" id="node9" title=" " alt="" coords="401,79,459,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="15,152,131,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="155,152,206,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="230,152,299,177"/>
 </map>

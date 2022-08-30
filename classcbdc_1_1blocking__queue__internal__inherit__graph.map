@@ -1,0 +1,8 @@
+<map id="cbdc::blocking_queue_internal&lt; T, Q &gt;" name="cbdc::blocking_queue_internal&lt; T, Q &gt;">
+<area shape="rect" id="node1" title="Thread&#45;safe producer&#45;consumer FIFO queue supporting multiple concurrent producers and consumers." alt="" coords="5,163,152,203"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1blocking__queue__internal.html" title=" " alt="" coords="386,5,551,60"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1blocking__queue__internal.html" title=" " alt="" coords="395,84,542,139"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1blocking__queue__internal.html" title=" " alt="" coords="385,163,552,203"/>
+<area shape="rect" id="node5" href="$classcbdc_1_1blocking__queue__internal.html" title=" " alt="" coords="387,228,550,283"/>
+<area shape="rect" id="node6" href="$classcbdc_1_1blocking__queue__internal.html" title=" " alt="" coords="391,307,547,377"/>
+</map>

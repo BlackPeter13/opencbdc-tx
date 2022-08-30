@@ -1,5 +1,5 @@
 <map id="cbdc::raft::log_store::entry_at" name="cbdc::raft::log_store::entry_at">
-<area shape="rect" id="node1" title="Return the log entry at the given index." alt="" coords="5,39,140,80"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a76b3019e4ab57d5f76ea0b272f26667a" title=" " alt="" coords="191,5,318,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1raft.html#a5f85615ea5d2afb447d328a0db008119" title=" " alt="" coords="188,71,321,112"/>
+<area shape="rect" id="node1" title="Return the log entry at the given index." alt="" coords="5,37,140,77"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a76b3019e4ab57d5f76ea0b272f26667a" title=" " alt="" coords="191,5,318,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1raft.html#a5f85615ea5d2afb447d328a0db008119" title=" " alt="" coords="188,69,321,109"/>
 </map>

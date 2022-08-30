@@ -1,12 +1,12 @@
 <map id="hashmap.hpp" name="hashmap.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="375,5,473,32"/>
-<area shape="rect" id="node2" href="$buffer_8hpp.html" title=" " alt="" coords="126,80,205,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="259,155,375,181"/>
-<area shape="rect" id="node7" href="$hash_8hpp.html" title=" " alt="" coords="387,80,461,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="493,155,544,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="536,80,597,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,155,72,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="97,155,151,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="176,155,235,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="400,155,469,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="375,5,473,31"/>
+<area shape="rect" id="node2" href="$buffer_8hpp.html" title=" " alt="" coords="126,79,205,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="259,152,375,177"/>
+<area shape="rect" id="node7" href="$hash_8hpp.html" title=" " alt="" coords="387,79,461,104"/>
+<area shape="rect" id="node8" title=" " alt="" coords="493,152,544,177"/>
+<area shape="rect" id="node10" title=" " alt="" coords="536,79,597,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,152,72,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="97,152,151,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="176,152,235,177"/>
+<area shape="rect" id="node9" title=" " alt="" coords="400,152,469,177"/>
 </map>

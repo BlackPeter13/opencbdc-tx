@@ -1,4 +1,4 @@
 <map id="cbdc::operator&gt;&gt;" name="cbdc::operator&gt;&gt;">
-<area shape="rect" id="node1" title="Deserializes the array of integral values in&#45;order." alt="" coords="5,5,124,32"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1serializer.html#adece15a2c01b07454bd10773cb3e8b3e" title="Attempts to read the requested number of bytes from the current cursor position into the given memory..." alt="" coords="172,5,311,32"/>
+<area shape="rect" id="node1" title="Deserializes the array of integral values in&#45;order." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1serializer.html#adece15a2c01b07454bd10773cb3e8b3e" title="Attempts to read the requested number of bytes from the current cursor position into the given memory..." alt="" coords="172,5,311,31"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="cbdc::transaction::wallet::sign" name="cbdc::transaction::wallet::sign">
-<area shape="rect" id="node1" title="Signs each of the transaction&#39;s inputs using Schnorr signatures." alt="" coords="5,5,132,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="180,5,307,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="355,13,481,39"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="529,13,669,39"/>
+<area shape="rect" id="node1" title="Signs each of the transaction&#39;s inputs using Schnorr signatures." alt="" coords="5,5,132,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="180,5,307,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="355,13,481,38"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="529,13,669,38"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="cbdc::transaction::compact_tx::compact_tx" name="cbdc::transaction::compact_tx::compact_tx">
-<area shape="rect" id="node1" title=" " alt="" coords="5,39,168,80"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="221,5,347,47"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1transaction.html#a05f9ed2f69c427eaf1e5a8e7bbffa012" title=" " alt="" coords="216,71,352,112"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="400,46,527,73"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="575,46,715,73"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,37,168,77"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="221,5,347,45"/>
+<area shape="rect" id="node5" href="$namespacecbdc_1_1transaction.html#a05f9ed2f69c427eaf1e5a8e7bbffa012" title=" " alt="" coords="216,69,352,109"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="400,45,527,70"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="575,45,715,70"/>
 </map>

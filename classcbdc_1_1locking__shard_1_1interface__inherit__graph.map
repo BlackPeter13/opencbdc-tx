@@ -1,5 +1,5 @@
 <map id="cbdc::locking_shard::interface" name="cbdc::locking_shard::interface">
-<area shape="rect" id="node1" title="Interface for a locking shard." alt="" coords="85,5,221,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1locking__shard.html" title="In&#45;memory implementation of interface and status_interface." alt="" coords="5,95,141,136"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1locking__shard_1_1rpc_1_1client.html" title="RPC client for the mutable interface to a locking shard raft cluster." alt="" coords="165,95,301,136"/>
+<area shape="rect" id="node1" title="Interface for a locking shard." alt="" coords="85,5,221,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1locking__shard.html" title="In&#45;memory implementation of interface and status_interface." alt="" coords="5,93,141,133"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1locking__shard_1_1rpc_1_1client.html" title="RPC client for the mutable interface to a locking shard raft cluster." alt="" coords="165,93,301,133"/>
 </map>

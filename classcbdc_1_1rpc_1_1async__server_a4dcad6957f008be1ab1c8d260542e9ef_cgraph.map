@@ -1,5 +1,5 @@
 <map id="cbdc::rpc::async_server::async_call" name="cbdc::rpc::async_server::async_call">
-<area shape="rect" id="node1" title="Deserializes an RPC request, then calls the registered request handler function." alt="" coords="5,39,163,80"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1server.html#ab2562ea21975c38ae466a694e65a91c9" title="Deserializes a request from a buffer." alt="" coords="222,5,355,47"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1server.html#a7620f8aa9f9ae67b187aacd95e7d1f32" title="Serialize a failure response buffer from the given request buffer." alt="" coords="211,71,367,112"/>
+<area shape="rect" id="node1" title="Deserializes an RPC request, then calls the registered request handler function." alt="" coords="5,37,163,77"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1server.html#ab2562ea21975c38ae466a694e65a91c9" title="Deserializes a request from a buffer." alt="" coords="222,5,355,45"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1server.html#a7620f8aa9f9ae67b187aacd95e7d1f32" title="Serialize a failure response buffer from the given request buffer." alt="" coords="211,69,367,109"/>
 </map>

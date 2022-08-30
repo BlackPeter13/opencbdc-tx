@@ -1,9 +1,8 @@
 <map id="cbdc::locking_shard::state_machine" name="cbdc::locking_shard::state_machine">
-<area shape="rect" id="node1" title="Raft state machine for handling locking shard RPC requests." alt="" coords="1216,38,1352,79"/>
-<area shape="rect" id="node2" title=" " alt="" coords="1020,5,1167,32"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1blocking__server.html" title=" " alt="" coords="1020,56,1167,141"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1rpc_1_1server.html" title=" " alt="" coords="495,17,648,103"/>
-<area shape="rect" id="node5" href="$classcbdc_1_1rpc_1_1server.html" title="Generic RPC server." alt="" coords="5,65,148,121"/>
-<area shape="rect" id="node7" href="$classcbdc_1_1rpc_1_1server.html" title=" " alt="" coords="328,99,471,155"/>
-<area shape="rect" id="node6" href="$classcbdc_1_1rpc_1_1blocking__server.html" title="Generic synchronous RPC server." alt="" coords="672,108,865,164"/>
+<area shape="rect" id="node1" title="Raft state machine for handling locking shard RPC requests." alt="" coords="741,38,877,78"/>
+<area shape="rect" id="node2" title=" " alt="" coords="545,5,692,31"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1blocking__server.html" title=" " alt="" coords="545,55,692,139"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1rpc_1_1server.html" title="Generic RPC server." alt="" coords="223,29,365,84"/>
+<area shape="rect" id="node5" href="$classcbdc_1_1rpc_1_1blocking__server.html" title="Generic synchronous RPC server." alt="" coords="197,108,391,163"/>
+<area shape="rect" id="node6" href="$classcbdc_1_1rpc_1_1server.html" title="Generic RPC server." alt="" coords="5,108,148,163"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="cbdc::make_shared_buffer" name="cbdc::make_shared_buffer">
-<area shape="rect" id="node1" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="5,5,179,32"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="227,5,367,32"/>
+<area shape="rect" id="node1" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="5,5,179,31"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="227,5,367,31"/>
 </map>

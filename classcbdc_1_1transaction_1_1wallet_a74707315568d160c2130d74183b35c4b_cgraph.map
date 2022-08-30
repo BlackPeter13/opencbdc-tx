@@ -1,6 +1,6 @@
 <map id="cbdc::transaction::wallet::mint_new_coins" name="cbdc::transaction::wallet::mint_new_coins">
-<area shape="rect" id="node1" title="Mints new spendable outputs." alt="" coords="5,23,161,65"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="209,16,363,72"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="411,5,527,32"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="413,56,524,83"/>
+<area shape="rect" id="node1" title="Mints new spendable outputs." alt="" coords="5,23,161,63"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="209,16,363,71"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="411,5,527,31"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="413,55,524,80"/>
 </map>

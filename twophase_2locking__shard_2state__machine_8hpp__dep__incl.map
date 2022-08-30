@@ -1,7 +1,7 @@
 <map id="state_machine.hpp" name="state_machine.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="76,5,207,32"/>
-<area shape="rect" id="node2" href="$twophase_2locking__shard_2controller_8cpp.html" title=" " alt="" coords="5,155,104,181"/>
-<area shape="rect" id="node3" href="$twophase_2locking__shard_2controller_8hpp.html" title=" " alt="" coords="92,80,191,107"/>
-<area shape="rect" id="node5" href="$twophase_2locking__shard_2state__machine_8cpp.html" title=" " alt="" coords="215,80,345,107"/>
-<area shape="rect" id="node4" href="$locking__shardd_8cpp.html" title=" " alt="" coords="128,155,261,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="76,5,207,31"/>
+<area shape="rect" id="node2" href="$twophase_2locking__shard_2controller_8cpp.html" title=" " alt="" coords="5,152,104,177"/>
+<area shape="rect" id="node3" href="$twophase_2locking__shard_2controller_8hpp.html" title=" " alt="" coords="92,79,191,104"/>
+<area shape="rect" id="node5" href="$twophase_2locking__shard_2state__machine_8cpp.html" title=" " alt="" coords="215,79,345,104"/>
+<area shape="rect" id="node4" href="$locking__shardd_8cpp.html" title=" " alt="" coords="128,152,261,177"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="cbdc::transaction::validation::get_p2pk_witness_commitment" name="cbdc::transaction::validation::get_p2pk_witness_commitment">
-<area shape="rect" id="node1" title=" " alt="" coords="5,16,159,72"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="207,5,323,32"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="209,56,320,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,16,159,71"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="207,5,323,31"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="209,55,320,80"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="cbdc::blocking_queue_internal::~blocking_queue_internal" name="cbdc::blocking_queue_internal::~blocking_queue_internal">
+<area shape="rect" id="node1" title="Destructor." alt="" coords="5,5,152,60"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1blocking__queue__internal.html#a367e4450fcee45fcd51e6c351b2d155b" title="Clears the queue and unblocks waiting consumers." alt="" coords="200,13,347,53"/>
+</map>

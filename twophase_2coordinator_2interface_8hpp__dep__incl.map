@@ -1,19 +1,19 @@
 <map id="interface.hpp" name="interface.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="561,5,657,32"/>
-<area shape="rect" id="node2" href="$uhs_2twophase_2coordinator_2client_8hpp.html" title=" " alt="" coords="481,80,558,107"/>
-<area shape="rect" id="node10" href="$twophase_2coordinator_2controller_8hpp.html" title=" " alt="" coords="625,155,723,181"/>
-<area shape="rect" id="node16" href="$uhs_2twophase_2coordinator_2server_8hpp.html" title=" " alt="" coords="646,80,729,107"/>
-<area shape="rect" id="node3" href="$twophase_2coordinator_2client_8cpp.html" title=" " alt="" coords="509,155,586,181"/>
-<area shape="rect" id="node4" href="$twophase_2sentinel__2pc_2controller_8hpp.html" title=" " alt="" coords="386,155,485,181"/>
-<area shape="rect" id="node7" href="$twophase__client_8hpp.html" title=" " alt="" coords="124,155,264,181"/>
-<area shape="rect" id="node5" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="442,304,541,331"/>
-<area shape="rect" id="node6" href="$sentineld__2pc_8cpp.html" title=" " alt="" coords="288,229,415,256"/>
-<area shape="rect" id="node8" href="$client-cli_8cpp.html" title=" " alt="" coords="5,229,100,256"/>
-<area shape="rect" id="node9" href="$twophase__client_8cpp.html" title=" " alt="" coords="124,229,264,256"/>
-<area shape="rect" id="node11" href="$twophase_2coordinator_2controller_8cpp.html" title=" " alt="" coords="838,304,937,331"/>
-<area shape="rect" id="node12" href="$coordinatord_8cpp.html" title=" " alt="" coords="490,229,607,256"/>
-<area shape="rect" id="node13" href="$uhs_2twophase_2coordinator_2format_8cpp.html" title=" " alt="" coords="577,304,659,331"/>
-<area shape="rect" id="node14" href="$uhs_2twophase_2coordinator_2format_8hpp.html" title=" " alt="" coords="682,229,765,256"/>
-<area shape="rect" id="node15" href="$twophase_2coordinator_2state__machine_8cpp.html" title=" " alt="" coords="683,304,814,331"/>
-<area shape="rect" id="node17" href="$twophase_2coordinator_2server_8cpp.html" title=" " alt="" coords="747,155,830,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="561,5,657,31"/>
+<area shape="rect" id="node2" href="$uhs_2twophase_2coordinator_2client_8hpp.html" title=" " alt="" coords="481,79,558,104"/>
+<area shape="rect" id="node10" href="$twophase_2coordinator_2controller_8hpp.html" title=" " alt="" coords="625,152,723,177"/>
+<area shape="rect" id="node16" href="$uhs_2twophase_2coordinator_2server_8hpp.html" title=" " alt="" coords="646,79,729,104"/>
+<area shape="rect" id="node3" href="$twophase_2coordinator_2client_8cpp.html" title=" " alt="" coords="509,152,586,177"/>
+<area shape="rect" id="node4" href="$twophase_2sentinel__2pc_2controller_8hpp.html" title=" " alt="" coords="386,152,485,177"/>
+<area shape="rect" id="node7" href="$twophase__client_8hpp.html" title=" " alt="" coords="124,152,264,177"/>
+<area shape="rect" id="node5" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="442,299,541,324"/>
+<area shape="rect" id="node6" href="$sentineld__2pc_8cpp.html" title=" " alt="" coords="288,225,415,251"/>
+<area shape="rect" id="node8" href="$client-cli_8cpp.html" title=" " alt="" coords="5,225,100,251"/>
+<area shape="rect" id="node9" href="$twophase__client_8cpp.html" title=" " alt="" coords="124,225,264,251"/>
+<area shape="rect" id="node11" href="$twophase_2coordinator_2controller_8cpp.html" title=" " alt="" coords="838,299,937,324"/>
+<area shape="rect" id="node12" href="$coordinatord_8cpp.html" title=" " alt="" coords="490,225,607,251"/>
+<area shape="rect" id="node13" href="$uhs_2twophase_2coordinator_2format_8cpp.html" title=" " alt="" coords="577,299,659,324"/>
+<area shape="rect" id="node14" href="$uhs_2twophase_2coordinator_2format_8hpp.html" title=" " alt="" coords="682,225,765,251"/>
+<area shape="rect" id="node15" href="$twophase_2coordinator_2state__machine_8cpp.html" title=" " alt="" coords="683,299,814,324"/>
+<area shape="rect" id="node17" href="$twophase_2coordinator_2server_8cpp.html" title=" " alt="" coords="747,152,830,177"/>
 </map>

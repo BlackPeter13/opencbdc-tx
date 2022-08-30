@@ -1,9 +1,8 @@
 <map id="cbdc::config::read_shard_endpoints" name="cbdc::config::read_shard_endpoints">
-<area shape="rect" id="node1" title=" " alt="" coords="5,136,129,177"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a156d9dde7e6e6381fa15971202b4d488" title=" " alt="" coords="181,5,334,47"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa149b3d98e6adb36f8f6d4ecc949b381" title=" " alt="" coords="181,71,334,112"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#a5cffbb48060f5b41635f41971f7571d3" title=" " alt="" coords="181,136,334,177"/>
-<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#aa45632ffcad01aa186579dd99dc5bf08" title=" " alt="" coords="177,201,337,243"/>
-<area shape="rect" id="node7" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="198,267,317,308"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#aba37c23ae46c6e882f73b50b23c3be73" title=" " alt="" coords="385,104,539,145"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,101,129,141"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#a156d9dde7e6e6381fa15971202b4d488" title=" " alt="" coords="181,5,334,45"/>
+<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#aa149b3d98e6adb36f8f6d4ecc949b381" title=" " alt="" coords="181,69,334,109"/>
+<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#a5cffbb48060f5b41635f41971f7571d3" title=" " alt="" coords="181,133,334,173"/>
+<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#aa45632ffcad01aa186579dd99dc5bf08" title=" " alt="" coords="177,197,337,237"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#aba37c23ae46c6e882f73b50b23c3be73" title=" " alt="" coords="385,101,539,141"/>
 </map>

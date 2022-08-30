@@ -1,4 +1,4 @@
 <map id="cbdc::locking_shard::state_machine::state_machine" name="cbdc::locking_shard::state_machine::state_machine">
-<area shape="rect" id="node1" title="Constructor." alt="" coords="5,27,153,83"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1blocking__server.html#af5739cba03c654acd4adcffcfeaa0c9f" title="Register a handler callback function for processing requests and returning responses." alt="" coords="201,5,376,105"/>
+<area shape="rect" id="node1" title="Constructor." alt="" coords="5,27,153,82"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1blocking__server.html#af5739cba03c654acd4adcffcfeaa0c9f" title="Register a handler callback function for processing requests and returning responses." alt="" coords="201,5,376,104"/>
 </map>

@@ -1,12 +1,12 @@
 <map id="state_machine.hpp" name="state_machine.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="151,5,281,32"/>
-<area shape="rect" id="node2" href="$twophase_2coordinator_2controller_8hpp.html" title=" " alt="" coords="284,155,383,181"/>
-<area shape="rect" id="node5" href="$uhs_2twophase_2coordinator_2format_8cpp.html" title=" " alt="" coords="5,304,88,331"/>
-<area shape="rect" id="node6" href="$uhs_2twophase_2coordinator_2format_8hpp.html" title=" " alt="" coords="127,229,209,256"/>
-<area shape="rect" id="node8" href="$twophase_2coordinator_2state__machine_8cpp.html" title=" " alt="" coords="373,304,504,331"/>
-<area shape="rect" id="node9" href="$distributed__tx_8hpp.html" title=" " alt="" coords="155,80,277,107"/>
-<area shape="rect" id="node3" href="$twophase_2coordinator_2controller_8cpp.html" title=" " alt="" coords="235,304,333,331"/>
-<area shape="rect" id="node4" href="$coordinatord_8cpp.html" title=" " alt="" coords="284,229,401,256"/>
-<area shape="rect" id="node7" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="112,304,211,331"/>
-<area shape="rect" id="node10" href="$distributed__tx_8cpp.html" title=" " alt="" coords="137,155,260,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="151,5,281,31"/>
+<area shape="rect" id="node2" href="$twophase_2coordinator_2controller_8hpp.html" title=" " alt="" coords="284,152,383,177"/>
+<area shape="rect" id="node5" href="$uhs_2twophase_2coordinator_2format_8cpp.html" title=" " alt="" coords="5,299,88,324"/>
+<area shape="rect" id="node6" href="$uhs_2twophase_2coordinator_2format_8hpp.html" title=" " alt="" coords="127,225,209,251"/>
+<area shape="rect" id="node8" href="$twophase_2coordinator_2state__machine_8cpp.html" title=" " alt="" coords="373,299,504,324"/>
+<area shape="rect" id="node9" href="$distributed__tx_8hpp.html" title=" " alt="" coords="155,79,277,104"/>
+<area shape="rect" id="node3" href="$twophase_2coordinator_2controller_8cpp.html" title=" " alt="" coords="235,299,333,324"/>
+<area shape="rect" id="node4" href="$coordinatord_8cpp.html" title=" " alt="" coords="284,225,401,251"/>
+<area shape="rect" id="node7" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="112,299,211,324"/>
+<area shape="rect" id="node10" href="$distributed__tx_8cpp.html" title=" " alt="" coords="137,152,260,177"/>
 </map>

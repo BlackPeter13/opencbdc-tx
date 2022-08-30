@@ -1,4 +1,4 @@
 <map id="cbdc::config::parser::get_endpoint" name="cbdc::config::parser::get_endpoint">
-<area shape="rect" id="node1" title="Return the value for the given key if its value is an endpoint." alt="" coords="5,5,137,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#accaa4cb73d417461fc01989e12a4adda" title=" " alt="" coords="185,5,313,47"/>
+<area shape="rect" id="node1" title="Return the value for the given key if its value is an endpoint." alt="" coords="5,5,137,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#accaa4cb73d417461fc01989e12a4adda" title=" " alt="" coords="185,5,313,45"/>
 </map>

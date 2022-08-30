@@ -1,4 +1,4 @@
 <map id="cbdc::coordinator::distributed_tx::execute" name="cbdc::coordinator::distributed_tx::execute">
-<area shape="rect" id="node1" title="Executes the dtx batch to completion or failure, either from start, or an intermediate state if one o..." alt="" coords="5,5,156,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="204,13,311,39"/>
+<area shape="rect" id="node1" title="Executes the dtx batch to completion or failure, either from start, or an intermediate state if one o..." alt="" coords="5,5,156,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="204,13,311,38"/>
 </map>

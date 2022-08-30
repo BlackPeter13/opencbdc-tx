@@ -1,4 +1,4 @@
 <map id="cbdc::buffer::append" name="cbdc::buffer::append">
-<area shape="rect" id="node1" title="Adds the given number of bytes from the given pointer to the end of the buffer." alt="" coords="5,5,141,32"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1buffer.html#a06b7affff5f9d9cd9845c7a78d72ec76" title="Returns a raw pointer to the start of the buffer data." alt="" coords="189,5,308,32"/>
+<area shape="rect" id="node1" title="Adds the given number of bytes from the given pointer to the end of the buffer." alt="" coords="5,5,141,31"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1buffer.html#a06b7affff5f9d9cd9845c7a78d72ec76" title="Returns a raw pointer to the start of the buffer data." alt="" coords="189,5,308,31"/>
 </map>

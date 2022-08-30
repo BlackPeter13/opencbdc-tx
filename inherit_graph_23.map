@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classcbdc_1_1client.html" title="External client for sending new transactions to the system." alt="" coords="5,31,92,57"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1atomizer__client.html" title="Client for interacting with the atomizer architecture." alt="" coords="144,5,287,32"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1twophase__client.html" title="Client for interacting with the 2PC architecture." alt="" coords="140,56,291,83"/>
+<area shape="rect" id="node1" href="$classcbdc_1_1client.html" title="External client for sending new transactions to the system." alt="" coords="5,31,92,56"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1atomizer__client.html" title="Client for interacting with the atomizer architecture." alt="" coords="144,5,287,31"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1twophase__client.html" title="Client for interacting with the 2PC architecture." alt="" coords="140,55,291,80"/>
 </map>

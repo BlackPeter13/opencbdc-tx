@@ -1,6 +1,6 @@
 <map id="cbdc::raft::log_store::apply_pack" name="cbdc::raft::log_store::apply_pack">
-<area shape="rect" id="node1" title="Deserialize the given log entries and write them starting at the given log index." alt="" coords="5,71,140,112"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a76b3019e4ab57d5f76ea0b272f26667a" title=" " alt="" coords="193,5,320,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1raft.html#a19ef1c717df3ff0e1601e589d0e7c822" title=" " alt="" coords="188,71,325,112"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1raft_1_1log__store.html#a31d64d43afb067f6f1ddcb5368aba898" title="Serialize the given number of log entries from the given index." alt="" coords="189,136,324,177"/>
+<area shape="rect" id="node1" title="Deserialize the given log entries and write them starting at the given log index." alt="" coords="5,69,140,109"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a76b3019e4ab57d5f76ea0b272f26667a" title=" " alt="" coords="193,5,320,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1raft.html#a19ef1c717df3ff0e1601e589d0e7c822" title=" " alt="" coords="188,69,325,109"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1raft_1_1log__store.html#a31d64d43afb067f6f1ddcb5368aba898" title="Serialize the given number of log entries from the given index." alt="" coords="189,133,324,173"/>
 </map>

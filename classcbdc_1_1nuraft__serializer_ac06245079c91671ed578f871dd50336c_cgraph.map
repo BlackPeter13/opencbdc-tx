@@ -1,4 +1,4 @@
 <map id="cbdc::nuraft_serializer::nuraft_serializer" name="cbdc::nuraft_serializer::nuraft_serializer">
-<area shape="rect" id="node1" title="Constructor." alt="" coords="5,5,152,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1nuraft__serializer.html#a160ab8e5dba68abb7de5e2d3d3834e14" title="Resets the cursor to the start of the buffer." alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node1" title="Constructor." alt="" coords="5,5,152,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1nuraft__serializer.html#a160ab8e5dba68abb7de5e2d3d3834e14" title="Resets the cursor to the start of the buffer." alt="" coords="200,5,347,45"/>
 </map>

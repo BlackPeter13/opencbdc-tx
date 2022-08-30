@@ -15,12 +15,12 @@ var hierarchy =
     [ "cbdc::atomizer::block", "structcbdc_1_1atomizer_1_1block.html", null ],
     [ "cbdc::watchtower::block_cache", "classcbdc_1_1watchtower_1_1block__cache.html", null ],
     [ "cbdc::watchtower::blocking_client", "classcbdc_1_1watchtower_1_1blocking__client.html", null ],
-    [ "cbdc::blocking_queue< T >", "classcbdc_1_1blocking__queue.html", null ],
-    [ "cbdc::blocking_queue< cbdc::atomizer::tx_notify_request >", "classcbdc_1_1blocking__queue.html", null ],
-    [ "cbdc::blocking_queue< cbdc::network::message_t >", "classcbdc_1_1blocking__queue.html", null ],
-    [ "cbdc::blocking_queue< request_type >", "classcbdc_1_1blocking__queue.html", null ],
-    [ "cbdc::blocking_queue< std::shared_ptr< cbdc::buffer > >", "classcbdc_1_1blocking__queue.html", null ],
-    [ "cbdc::blocking_queue< std::shared_ptr< cbdc::watchtower::response > >", "classcbdc_1_1blocking__queue.html", null ],
+    [ "cbdc::blocking_queue_internal< T, Q >", "classcbdc_1_1blocking__queue__internal.html", null ],
+    [ "cbdc::blocking_queue_internal< cbdc::atomizer::tx_notify_request >", "classcbdc_1_1blocking__queue__internal.html", null ],
+    [ "cbdc::blocking_queue_internal< cbdc::network::message_t >", "classcbdc_1_1blocking__queue__internal.html", null ],
+    [ "cbdc::blocking_queue_internal< request_type >", "classcbdc_1_1blocking__queue__internal.html", null ],
+    [ "cbdc::blocking_queue_internal< std::shared_ptr< cbdc::buffer > >", "classcbdc_1_1blocking__queue__internal.html", null ],
+    [ "cbdc::blocking_queue_internal< std::shared_ptr< cbdc::watchtower::response > >", "classcbdc_1_1blocking__queue__internal.html", null ],
     [ "cbdc::buffer", "classcbdc_1_1buffer.html", null ],
     [ "cbdc::cache_set< K, H >", "classcbdc_1_1cache__set.html", null ],
     [ "cbdc::cache_set< hash_t, cbdc::hashing::null >", "classcbdc_1_1cache__set.html", null ],
@@ -30,11 +30,10 @@ var hierarchy =
       [ "cbdc::twophase_client", "classcbdc_1_1twophase__client.html", null ]
     ] ],
     [ "cbdc::rpc::client< Request, Response >", "classcbdc_1_1rpc_1_1client.html", [
+      [ "cbdc::rpc::tcp_client< request, response >", "classcbdc_1_1rpc_1_1tcp__client.html", null ],
       [ "cbdc::rpc::tcp_client< Request, Response >", "classcbdc_1_1rpc_1_1tcp__client.html", null ]
     ] ],
-    [ "cbdc::rpc::client< request, response >", "classcbdc_1_1rpc_1_1client.html", [
-      [ "cbdc::rpc::tcp_client< request, response >", "classcbdc_1_1rpc_1_1tcp__client.html", null ]
-    ] ],
+    [ "cbdc::rpc::client< request, response >", "classcbdc_1_1rpc_1_1client.html", null ],
     [ "cbdc::transaction::compact_tx", "structcbdc_1_1transaction_1_1compact__tx.html", null ],
     [ "cbdc::transaction::compact_tx_hasher", "structcbdc_1_1transaction_1_1compact__tx__hasher.html", null ],
     [ "leveldb::Comparator", null, [
@@ -116,22 +115,21 @@ var hierarchy =
       ] ]
     ] ],
     [ "cbdc::coordinator::rpc::server", "classcbdc_1_1coordinator_1_1rpc_1_1server.html", null ],
-    [ "cbdc::rpc::server< Request, Response, InBuffer, OutBuffer >", "classcbdc_1_1rpc_1_1server.html", null ],
-    [ "cbdc::sentinel::rpc::server", "classcbdc_1_1sentinel_1_1rpc_1_1server.html", null ],
-    [ "Server", null, [
-      [ "cbdc::rpc::tcp_server< Server >", "classcbdc_1_1rpc_1_1tcp__server.html", null ]
-    ] ],
-    [ "cbdc::rpc::server< Request, Response, buffer, buffer >", "classcbdc_1_1rpc_1_1server.html", [
+    [ "cbdc::rpc::server< Request, Response, InBuffer, OutBuffer >", "classcbdc_1_1rpc_1_1server.html", [
+      [ "cbdc::rpc::blocking_server< rpc::request, rpc::response, nuraft::buffer &, nuraft::ptr< nuraft::buffer > >", "classcbdc_1_1rpc_1_1blocking__server.html", [
+        [ "cbdc::locking_shard::state_machine", "classcbdc_1_1locking__shard_1_1state__machine.html", null ]
+      ] ],
       [ "cbdc::rpc::async_server< Request, Response, InBuffer, OutBuffer >", "classcbdc_1_1rpc_1_1async__server.html", [
         [ "cbdc::raft::rpc::server", "classcbdc_1_1raft_1_1rpc_1_1server.html", null ]
       ] ],
       [ "cbdc::rpc::blocking_server< Request, Response, InBuffer, OutBuffer >", "classcbdc_1_1rpc_1_1blocking__server.html", null ]
     ] ],
-    [ "cbdc::rpc::server< rpc::request, rpc::response, nuraft::buffer &, nuraft::ptr< nuraft::buffer > >", "classcbdc_1_1rpc_1_1server.html", [
-      [ "cbdc::rpc::blocking_server< rpc::request, rpc::response, nuraft::buffer &, nuraft::ptr< nuraft::buffer > >", "classcbdc_1_1rpc_1_1blocking__server.html", [
-        [ "cbdc::locking_shard::state_machine", "classcbdc_1_1locking__shard_1_1state__machine.html", null ]
-      ] ]
+    [ "cbdc::sentinel::rpc::server", "classcbdc_1_1sentinel_1_1rpc_1_1server.html", null ],
+    [ "Server", null, [
+      [ "cbdc::rpc::tcp_server< Server >", "classcbdc_1_1rpc_1_1tcp__server.html", null ]
     ] ],
+    [ "cbdc::rpc::server< Request, Response, buffer, buffer >", "classcbdc_1_1rpc_1_1server.html", null ],
+    [ "cbdc::rpc::server< rpc::request, rpc::response, nuraft::buffer &, nuraft::ptr< nuraft::buffer > >", "classcbdc_1_1rpc_1_1server.html", null ],
     [ "cbdc::shard::shard", "classcbdc_1_1shard_1_1shard.html", null ],
     [ "cbdc::sentinel::shard_info", "structcbdc_1_1sentinel_1_1shard__info.html", null ],
     [ "cbdc::coordinator::controller::sm_command", "structcbdc_1_1coordinator_1_1controller_1_1sm__command.html", null ],

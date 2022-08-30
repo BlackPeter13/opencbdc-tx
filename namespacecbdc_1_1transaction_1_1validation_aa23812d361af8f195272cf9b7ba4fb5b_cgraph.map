@@ -1,10 +1,10 @@
 <map id="cbdc::transaction::validation::check_p2pk_witness" name="cbdc::transaction::validation::check_p2pk_witness">
-<area shape="rect" id="node1" title=" " alt="" coords="5,85,159,141"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1259a10b7c4d5708040a9c6d332f6589" title=" " alt="" coords="207,5,360,61"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1transaction_1_1validation.html#ae0bd11e125718e02af61645696f5e8cd" title=" " alt="" coords="207,85,360,141"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1transaction_1_1validation.html#adc89367934be44c3a98285ba10d35755" title=" " alt="" coords="207,165,360,221"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="413,20,529,47"/>
-<area shape="rect" id="node6" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="408,173,535,214"/>
-<area shape="rect" id="node7" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="583,180,709,207"/>
-<area shape="rect" id="node8" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="757,180,897,207"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,84,159,139"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1259a10b7c4d5708040a9c6d332f6589" title=" " alt="" coords="207,5,360,60"/>
+<area shape="rect" id="node4" href="$namespacecbdc_1_1transaction_1_1validation.html#ae0bd11e125718e02af61645696f5e8cd" title=" " alt="" coords="207,84,360,139"/>
+<area shape="rect" id="node5" href="$namespacecbdc_1_1transaction_1_1validation.html#adc89367934be44c3a98285ba10d35755" title=" " alt="" coords="207,163,360,217"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="413,20,529,45"/>
+<area shape="rect" id="node6" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="408,170,535,210"/>
+<area shape="rect" id="node7" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="583,177,709,203"/>
+<area shape="rect" id="node8" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="757,177,897,203"/>
 </map>

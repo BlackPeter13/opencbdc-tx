@@ -1,7 +1,7 @@
 <map id="server.hpp" name="server.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="139,5,221,32"/>
-<area shape="rect" id="node2" href="$twophase_2sentinel__2pc_2controller_8hpp.html" title=" " alt="" coords="73,80,172,107"/>
-<area shape="rect" id="node5" href="$twophase_2sentinel__2pc_2server_8cpp.html" title=" " alt="" coords="196,80,279,107"/>
-<area shape="rect" id="node3" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="5,155,104,181"/>
-<area shape="rect" id="node4" href="$sentineld__2pc_8cpp.html" title=" " alt="" coords="129,155,255,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="139,5,221,31"/>
+<area shape="rect" id="node2" href="$twophase_2sentinel__2pc_2controller_8hpp.html" title=" " alt="" coords="73,79,172,104"/>
+<area shape="rect" id="node5" href="$twophase_2sentinel__2pc_2server_8cpp.html" title=" " alt="" coords="196,79,279,104"/>
+<area shape="rect" id="node3" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="5,152,104,177"/>
+<area shape="rect" id="node4" href="$sentineld__2pc_8cpp.html" title=" " alt="" coords="129,152,255,177"/>
 </map>

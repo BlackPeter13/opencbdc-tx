@@ -1,4 +1,4 @@
 <map id="cbdc::sentinel::execute_request" name="cbdc::sentinel::execute_request">
-<area shape="rect" id="node1" title="Sentinel request message." alt="" coords="5,95,157,136"/>
-<area shape="rect" id="node2" href="$structcbdc_1_1transaction_1_1full__tx.html" title="A complete transaction." alt="" coords="18,5,145,47"/>
+<area shape="rect" id="node1" title="Sentinel request message." alt="" coords="5,93,157,133"/>
+<area shape="rect" id="node2" href="$structcbdc_1_1transaction_1_1full__tx.html" title="A complete transaction." alt="" coords="18,5,145,45"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="cbdc::atomizer::get_block_response" name="cbdc::atomizer::get_block_response">
-<area shape="rect" id="node1" title="Atomizer state machine response from get block request." alt="" coords="12,95,141,136"/>
-<area shape="rect" id="node2" href="$structcbdc_1_1atomizer_1_1block.html" title="Batch of compact transactions settled by the atomizer." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node1" title="Atomizer state machine response from get block request." alt="" coords="12,93,141,133"/>
+<area shape="rect" id="node2" href="$structcbdc_1_1atomizer_1_1block.html" title="Batch of compact transactions settled by the atomizer." alt="" coords="5,5,148,31"/>
 </map>

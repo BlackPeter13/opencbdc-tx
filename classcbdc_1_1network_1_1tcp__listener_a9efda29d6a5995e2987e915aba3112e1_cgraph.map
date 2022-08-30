@@ -1,3 +1,3 @@
 <map id="cbdc::network::tcp_listener::close" name="cbdc::network::tcp_listener::close">
-<area shape="rect" id="node1" title="Stops the listener and unblocks any blocking calls associated with this listener." alt="" coords="5,29,132,71"/>
+<area shape="rect" id="node1" title="Stops the listener and unblocks any blocking calls associated with this listener." alt="" coords="5,29,132,69"/>
 </map>

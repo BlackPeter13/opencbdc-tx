@@ -1,7 +1,7 @@
 <map id="cbdc::transaction::input_from_output" name="cbdc::transaction::input_from_output">
-<area shape="rect" id="node1" title="Calls input_from_output after calculating the TXID." alt="" coords="5,39,132,80"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860" title="Converts the output at the specified index to an input." alt="" coords="180,5,307,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="180,71,307,112"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="355,78,481,105"/>
-<area shape="rect" id="node5" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="529,78,669,105"/>
+<area shape="rect" id="node1" title="Calls input_from_output after calculating the TXID." alt="" coords="5,37,132,77"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860" title="Converts the output at the specified index to an input." alt="" coords="180,5,307,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="180,69,307,109"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="355,77,481,102"/>
+<area shape="rect" id="node5" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="529,77,669,102"/>
 </map>

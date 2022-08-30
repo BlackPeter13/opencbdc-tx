@@ -1,11 +1,10 @@
 <map id="cbdc::config::read_shard_options" name="cbdc::config::read_shard_options">
-<area shape="rect" id="node1" title=" " alt="" coords="5,201,127,243"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#ab094a355e5689cee6bc0d725fea6b2bc" title=" " alt="" coords="175,5,328,47"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#a1b6808f780a93ecad31453fef947dff8" title=" " alt="" coords="175,71,328,112"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#a156d9dde7e6e6381fa15971202b4d488" title=" " alt="" coords="175,136,328,177"/>
-<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#a617d2476920e04eaa1e598d7d501fd6b" title=" " alt="" coords="175,201,328,243"/>
-<area shape="rect" id="node7" href="$namespacecbdc_1_1config.html#ac3ca252988d8109052a8bf75212b4bcc" title=" " alt="" coords="175,267,328,308"/>
-<area shape="rect" id="node8" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="179,333,323,359"/>
-<area shape="rect" id="node9" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="192,384,311,425"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#aba37c23ae46c6e882f73b50b23c3be73" title=" " alt="" coords="376,136,529,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,165,127,205"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#ab094a355e5689cee6bc0d725fea6b2bc" title=" " alt="" coords="175,5,328,45"/>
+<area shape="rect" id="node4" href="$namespacecbdc_1_1config.html#a1b6808f780a93ecad31453fef947dff8" title=" " alt="" coords="175,69,328,109"/>
+<area shape="rect" id="node5" href="$namespacecbdc_1_1config.html#a156d9dde7e6e6381fa15971202b4d488" title=" " alt="" coords="175,133,328,173"/>
+<area shape="rect" id="node6" href="$namespacecbdc_1_1config.html#a617d2476920e04eaa1e598d7d501fd6b" title=" " alt="" coords="175,197,328,237"/>
+<area shape="rect" id="node7" href="$namespacecbdc_1_1config.html#ac3ca252988d8109052a8bf75212b4bcc" title=" " alt="" coords="175,261,328,301"/>
+<area shape="rect" id="node8" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="179,326,323,351"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1config.html#aba37c23ae46c6e882f73b50b23c3be73" title=" " alt="" coords="376,133,529,173"/>
 </map>

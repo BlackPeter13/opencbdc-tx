@@ -1,17 +1,17 @@
 <map id="fan_command" name="fan_command">
-<area shape="rect" id="node1" title=" " alt="" coords="5,187,109,213"/>
-<area shape="rect" id="node2" href="$client-cli_8cpp.html#ac1723efebee1f37b0b8f4ff1787cf34e" title=" " alt="" coords="157,161,275,188"/>
-<area shape="rect" id="node3" href="$client-cli_8cpp.html#afdc2f698f7384cbc9b825c591371f599" title=" " alt="" coords="165,212,267,239"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="325,58,453,99"/>
-<area shape="rect" id="node10" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="507,164,633,191"/>
-<area shape="rect" id="node12" href="$namespacecbdc_1_1transaction_1_1validation.html#a52fdff156ea9b66122ad1e02b03c84f5" title=" " alt="" coords="323,175,456,217"/>
-<area shape="rect" id="node13" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="336,241,443,268"/>
-<area shape="rect" id="node14" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="330,293,449,334"/>
-<area shape="rect" id="node15" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="326,358,453,399"/>
-<area shape="rect" id="node5" href="$classcbdc_1_1transaction_1_1wallet.html#a7e3e385aa81e513f3010869375cb8942" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="504,51,636,107"/>
-<area shape="rect" id="node6" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="684,16,837,72"/>
-<area shape="rect" id="node9" href="$namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860" title="Converts the output at the specified index to an input." alt="" coords="697,95,824,137"/>
-<area shape="rect" id="node7" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="885,5,1001,32"/>
-<area shape="rect" id="node8" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="888,56,999,83"/>
-<area shape="rect" id="node11" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="691,164,831,191"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,184,109,209"/>
+<area shape="rect" id="node2" href="$client-cli_8cpp.html#ac1723efebee1f37b0b8f4ff1787cf34e" title=" " alt="" coords="157,159,275,184"/>
+<area shape="rect" id="node3" href="$client-cli_8cpp.html#afdc2f698f7384cbc9b825c591371f599" title=" " alt="" coords="165,208,267,233"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1client.html#ab78fb6f2b72e00d461c07618fedea288" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="325,57,453,97"/>
+<area shape="rect" id="node10" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="507,161,633,187"/>
+<area shape="rect" id="node12" href="$namespacecbdc_1_1transaction_1_1validation.html#a52fdff156ea9b66122ad1e02b03c84f5" title=" " alt="" coords="323,171,456,211"/>
+<area shape="rect" id="node13" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="336,236,443,261"/>
+<area shape="rect" id="node14" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="330,286,449,326"/>
+<area shape="rect" id="node15" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="326,350,453,390"/>
+<area shape="rect" id="node5" href="$classcbdc_1_1transaction_1_1wallet.html#a7e3e385aa81e513f3010869375cb8942" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="504,49,636,104"/>
+<area shape="rect" id="node6" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="684,15,837,69"/>
+<area shape="rect" id="node9" href="$namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860" title="Converts the output at the specified index to an input." alt="" coords="697,94,824,134"/>
+<area shape="rect" id="node7" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="885,5,1001,31"/>
+<area shape="rect" id="node8" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="888,55,999,80"/>
+<area shape="rect" id="node11" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="691,161,831,187"/>
 </map>

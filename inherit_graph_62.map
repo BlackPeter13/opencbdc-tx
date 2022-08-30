@@ -1,7 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classcbdc_1_1sentinel_1_1async__interface.html" title="Interface for an asynchronous sentinel." alt="" coords="13,41,155,83"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1sentinel_1_1rpc_1_1client.html" title="TCP RPC client for sentinels." alt="" coords="228,71,353,112"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1sentinel__2pc_1_1controller.html" title="Manages a sentinel server for the two&#45;phase commit architecture." alt="" coords="226,5,355,47"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1sentinel_1_1interface.html" title="Interface for a sentinel." alt="" coords="5,107,163,134"/>
-<area shape="rect" id="node5" href="$classcbdc_1_1sentinel_1_1controller.html" title="Sentinel implementation." alt="" coords="211,137,371,163"/>
+<area shape="rect" id="node1" href="$classcbdc_1_1sentinel_1_1async__interface.html" title="Interface for an asynchronous sentinel." alt="" coords="13,41,155,81"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1sentinel_1_1rpc_1_1client.html" title="TCP RPC client for sentinels." alt="" coords="228,69,353,109"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1sentinel__2pc_1_1controller.html" title="Manages a sentinel server for the two&#45;phase commit architecture." alt="" coords="226,5,355,45"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1sentinel_1_1interface.html" title="Interface for a sentinel." alt="" coords="5,106,163,131"/>
+<area shape="rect" id="node5" href="$classcbdc_1_1sentinel_1_1controller.html" title="Sentinel implementation." alt="" coords="211,134,371,159"/>
 </map>

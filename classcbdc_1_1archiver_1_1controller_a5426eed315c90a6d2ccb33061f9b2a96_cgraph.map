@@ -1,6 +1,5 @@
 <map id="cbdc::archiver::controller::digest_block" name="cbdc::archiver::controller::digest_block">
-<area shape="rect" id="node1" title="Adds a block to the archiver database." alt="" coords="5,29,167,71"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="215,7,341,34"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="219,59,337,100"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="389,7,529,34"/>
+<area shape="rect" id="node1" title="Adds a block to the archiver database." alt="" coords="5,29,167,69"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="215,37,341,62"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="389,37,529,62"/>
 </map>

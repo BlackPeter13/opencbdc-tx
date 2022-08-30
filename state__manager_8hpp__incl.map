@@ -1,14 +1,14 @@
 <map id="state_manager.hpp" name="state_manager.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="559,5,691,32"/>
-<area shape="rect" id="node2" href="$log__store_8hpp.html" title=" " alt="" coords="317,80,415,107"/>
-<area shape="rect" id="node8" href="$socket_8hpp.html" title=" " alt="" coords="547,80,703,107"/>
-<area shape="rect" id="node12" title=" " alt="" coords="727,80,853,107"/>
-<area shape="rect" id="node3" href="$index__comparator_8hpp.html" title=" " alt="" coords="5,155,153,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="178,155,269,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="293,155,439,181"/>
-<area shape="rect" id="node7" title=" " alt="" coords="464,155,521,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="8,229,151,256"/>
-<area shape="rect" id="node9" title=" " alt="" coords="545,155,613,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="638,155,702,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="727,155,781,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="559,5,691,31"/>
+<area shape="rect" id="node2" href="$log__store_8hpp.html" title=" " alt="" coords="317,79,415,104"/>
+<area shape="rect" id="node8" href="$socket_8hpp.html" title=" " alt="" coords="547,79,703,104"/>
+<area shape="rect" id="node12" title=" " alt="" coords="727,79,853,104"/>
+<area shape="rect" id="node3" href="$index__comparator_8hpp.html" title=" " alt="" coords="5,152,153,177"/>
+<area shape="rect" id="node5" title=" " alt="" coords="178,152,269,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="293,152,439,177"/>
+<area shape="rect" id="node7" title=" " alt="" coords="464,152,521,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="8,225,151,251"/>
+<area shape="rect" id="node9" title=" " alt="" coords="545,152,613,177"/>
+<area shape="rect" id="node10" title=" " alt="" coords="638,152,702,177"/>
+<area shape="rect" id="node11" title=" " alt="" coords="727,152,781,177"/>
 </map>

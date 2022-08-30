@@ -1,5 +1,5 @@
 <map id="cbdc::watchtower::blocking_client::request_status_update" name="cbdc::watchtower::blocking_client::request_status_update">
-<area shape="rect" id="node1" title="Sends a StatusUpdateRequest to the Watchtower." alt="" coords="5,5,204,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="252,13,425,39"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="473,13,613,39"/>
+<area shape="rect" id="node1" title="Sends a StatusUpdateRequest to the Watchtower." alt="" coords="5,5,204,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="252,13,425,38"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="473,13,613,38"/>
 </map>

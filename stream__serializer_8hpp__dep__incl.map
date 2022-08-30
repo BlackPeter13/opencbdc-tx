@@ -1,12 +1,12 @@
 <map id="stream_serializer.hpp" name="stream_serializer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="405,5,549,32"/>
-<area shape="rect" id="node2" href="$istream__serializer_8hpp.html" title=" " alt="" coords="403,80,550,107"/>
-<area shape="rect" id="node8" href="$ostream__serializer_8hpp.html" title=" " alt="" coords="228,80,379,107"/>
-<area shape="rect" id="node10" href="$stream__serializer_8cpp.html" title=" " alt="" coords="574,80,718,107"/>
-<area shape="rect" id="node3" href="$client_2client_8cpp.html" title=" " alt="" coords="181,155,258,181"/>
-<area shape="rect" id="node4" href="$istream__serializer_8cpp.html" title=" " alt="" coords="541,155,687,181"/>
-<area shape="rect" id="node5" href="$locking__shard_8cpp.html" title=" " alt="" coords="712,155,839,181"/>
-<area shape="rect" id="node6" href="$atomizer_2atomizer_2state__machine_8cpp.html" title=" " alt="" coords="282,155,413,181"/>
-<area shape="rect" id="node7" href="$wallet_8cpp.html" title=" " alt="" coords="437,155,517,181"/>
-<area shape="rect" id="node9" href="$ostream__serializer_8cpp.html" title=" " alt="" coords="5,155,156,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="405,5,549,31"/>
+<area shape="rect" id="node2" href="$istream__serializer_8hpp.html" title=" " alt="" coords="403,79,550,104"/>
+<area shape="rect" id="node8" href="$ostream__serializer_8hpp.html" title=" " alt="" coords="228,79,379,104"/>
+<area shape="rect" id="node10" href="$stream__serializer_8cpp.html" title=" " alt="" coords="574,79,718,104"/>
+<area shape="rect" id="node3" href="$client_2client_8cpp.html" title=" " alt="" coords="181,152,258,177"/>
+<area shape="rect" id="node4" href="$istream__serializer_8cpp.html" title=" " alt="" coords="541,152,687,177"/>
+<area shape="rect" id="node5" href="$locking__shard_8cpp.html" title=" " alt="" coords="712,152,839,177"/>
+<area shape="rect" id="node6" href="$atomizer_2atomizer_2state__machine_8cpp.html" title=" " alt="" coords="282,152,413,177"/>
+<area shape="rect" id="node7" href="$wallet_8cpp.html" title=" " alt="" coords="437,152,517,177"/>
+<area shape="rect" id="node9" href="$ostream__serializer_8cpp.html" title=" " alt="" coords="5,152,156,177"/>
 </map>

@@ -1,4 +1,0 @@
-<map id="cbdc::archiver::controller::init_best_block" name="cbdc::archiver::controller::init_best_block">
-<area shape="rect" id="node1" title="Initializes the best block value." alt="" coords="5,5,167,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="215,5,333,47"/>
-</map>

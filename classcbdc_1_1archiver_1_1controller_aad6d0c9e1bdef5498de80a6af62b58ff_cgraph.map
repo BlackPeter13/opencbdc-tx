@@ -1,5 +1,5 @@
 <map id="cbdc::archiver::controller::server_handler" name="cbdc::archiver::controller::server_handler">
-<area shape="rect" id="node1" title="Receives a request for an archived block and returns the block." alt="" coords="5,5,167,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="215,13,341,39"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="389,13,529,39"/>
+<area shape="rect" id="node1" title="Receives a request for an archived block and returns the block." alt="" coords="5,5,167,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="215,13,341,38"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="389,13,529,38"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="cbdc::client::sign_transaction" name="cbdc::client::sign_transaction">
-<area shape="rect" id="node1" title="Signs the given transaction for as far as client&#39;s wallet contains the transaction&#39;s keys." alt="" coords="5,5,123,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1transaction_1_1wallet.html#aa75ad269110e2b216c9e834d1dcd4da4" title="Signs each of the transaction&#39;s inputs using Schnorr signatures." alt="" coords="171,5,297,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="345,5,472,47"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="520,13,647,39"/>
-<area shape="rect" id="node5" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="695,13,835,39"/>
+<area shape="rect" id="node1" title="Signs the given transaction for as far as client&#39;s wallet contains the transaction&#39;s keys." alt="" coords="5,5,123,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1transaction_1_1wallet.html#aa75ad269110e2b216c9e834d1dcd4da4" title="Signs each of the transaction&#39;s inputs using Schnorr signatures." alt="" coords="171,5,297,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="345,5,472,45"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="520,13,647,38"/>
+<area shape="rect" id="node5" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="695,13,835,38"/>
 </map>

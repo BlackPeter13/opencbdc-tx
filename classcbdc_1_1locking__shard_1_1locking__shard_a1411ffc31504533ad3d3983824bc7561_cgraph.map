@@ -1,5 +1,4 @@
 <map id="cbdc::locking_shard::locking_shard::apply_outputs" name="cbdc::locking_shard::locking_shard::apply_outputs">
-<area shape="rect" id="node1" title="Selectively applies the transactions from a previous lock operation." alt="" coords="5,27,149,83"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e" title="Checks if a hash is in the given range handled." alt="" coords="197,5,321,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="206,71,313,98"/>
+<area shape="rect" id="node1" title="Selectively applies the transactions from a previous lock operation." alt="" coords="5,5,149,60"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="197,20,304,45"/>
 </map>

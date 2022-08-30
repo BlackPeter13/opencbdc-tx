@@ -1,13 +1,13 @@
 <map id="status_update.hpp" name="status_update.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="216,5,344,32"/>
-<area shape="rect" id="node2" href="$atomizer_2watchtower_2controller_8cpp.html" title=" " alt="" coords="192,229,291,256"/>
-<area shape="rect" id="node3" href="$status__update_8cpp.html" title=" " alt="" coords="31,80,159,107"/>
-<area shape="rect" id="node4" href="$status__update__messages_8cpp.html" title=" " alt="" coords="183,80,377,107"/>
-<area shape="rect" id="node5" href="$watchtower_8cpp.html" title=" " alt="" coords="175,155,289,181"/>
-<area shape="rect" id="node6" href="$watchtower_8hpp.html" title="Watchtower core functionality." alt="" coords="453,80,566,107"/>
-<area shape="rect" id="node7" href="$atomizer__client_8cpp.html" title=" " alt="" coords="313,155,447,181"/>
-<area shape="rect" id="node8" href="$atomizer_2watchtower_2client_8cpp.html" title=" " alt="" coords="471,155,548,181"/>
-<area shape="rect" id="node9" href="$atomizer_2watchtower_2controller_8hpp.html" title=" " alt="" coords="572,155,671,181"/>
-<area shape="rect" id="node11" href="$uhs_2atomizer_2watchtower_2messages_8cpp.html" title=" " alt="" coords="695,155,801,181"/>
-<area shape="rect" id="node10" href="$watchtowerd_8cpp.html" title=" " alt="" coords="561,229,681,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="216,5,344,31"/>
+<area shape="rect" id="node2" href="$atomizer_2watchtower_2controller_8cpp.html" title=" " alt="" coords="192,225,290,251"/>
+<area shape="rect" id="node3" href="$status__update_8cpp.html" title=" " alt="" coords="30,79,158,104"/>
+<area shape="rect" id="node4" href="$status__update__messages_8cpp.html" title=" " alt="" coords="182,79,377,104"/>
+<area shape="rect" id="node5" href="$watchtower_8cpp.html" title=" " alt="" coords="175,152,288,177"/>
+<area shape="rect" id="node6" href="$watchtower_8hpp.html" title="Watchtower core functionality." alt="" coords="452,79,566,104"/>
+<area shape="rect" id="node7" href="$atomizer__client_8cpp.html" title=" " alt="" coords="313,152,446,177"/>
+<area shape="rect" id="node8" href="$atomizer_2watchtower_2client_8cpp.html" title=" " alt="" coords="470,152,548,177"/>
+<area shape="rect" id="node9" href="$atomizer_2watchtower_2controller_8hpp.html" title=" " alt="" coords="572,152,670,177"/>
+<area shape="rect" id="node11" href="$uhs_2atomizer_2watchtower_2messages_8cpp.html" title=" " alt="" coords="694,152,801,177"/>
+<area shape="rect" id="node10" href="$watchtowerd_8cpp.html" title=" " alt="" coords="561,225,681,251"/>
 </map>

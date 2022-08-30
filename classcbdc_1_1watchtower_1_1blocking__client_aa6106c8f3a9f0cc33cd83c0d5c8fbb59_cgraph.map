@@ -1,5 +1,5 @@
 <map id="cbdc::watchtower::blocking_client::request_best_block_height" name="cbdc::watchtower::blocking_client::request_best_block_height">
-<area shape="rect" id="node1" title="Sends a request_best_block_height to the Watchtower." alt="" coords="5,5,227,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="275,13,448,39"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="496,13,636,39"/>
+<area shape="rect" id="node1" title="Sends a request_best_block_height to the Watchtower." alt="" coords="5,5,227,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="275,13,448,38"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="496,13,636,38"/>
 </map>

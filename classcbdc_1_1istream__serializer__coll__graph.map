@@ -1,5 +1,5 @@
 <map id="cbdc::istream_serializer" name="cbdc::istream_serializer">
-<area shape="rect" id="node1" title="Implementation of serializer for reading from a std::istream." alt="" coords="5,155,163,181"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1stream__serializer.html" title="Implementation of serializer for std::ios." alt="" coords="7,80,161,107"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1serializer.html" title="Interface for serializing objects into and out of raw bytes representations." alt="" coords="31,5,137,32"/>
+<area shape="rect" id="node1" title="Implementation of serializer for reading from a std::istream." alt="" coords="5,152,163,177"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1stream__serializer.html" title="Implementation of serializer for std::ios." alt="" coords="7,79,161,104"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1serializer.html" title="Interface for serializing objects into and out of raw bytes representations." alt="" coords="31,5,137,31"/>
 </map>

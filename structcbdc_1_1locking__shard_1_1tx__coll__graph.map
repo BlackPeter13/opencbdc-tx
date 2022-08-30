@@ -1,4 +1,4 @@
 <map id="cbdc::locking_shard::tx" name="cbdc::locking_shard::tx">
-<area shape="rect" id="node1" title="Transaction type processed by locking shards." alt="" coords="5,109,157,136"/>
-<area shape="rect" id="node2" href="$structcbdc_1_1transaction_1_1compact__tx.html" title="A condensed, hash&#45;only transaction representation." alt="" coords="18,5,145,47"/>
+<area shape="rect" id="node1" title="Transaction type processed by locking shards." alt="" coords="5,108,157,133"/>
+<area shape="rect" id="node2" href="$structcbdc_1_1transaction_1_1compact__tx.html" title="A condensed, hash&#45;only transaction representation." alt="" coords="18,5,145,45"/>
 </map>

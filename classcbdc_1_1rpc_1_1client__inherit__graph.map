@@ -1,6 +1,6 @@
 <map id="cbdc::rpc::client&lt; Request, Response &gt;" name="cbdc::rpc::client&lt; Request, Response &gt;">
-<area shape="rect" id="node1" title="Generic RPC client." alt="" coords="95,5,244,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1tcp__client.html" title="Implements an RPC client over TCP sockets." alt="" coords="5,109,163,151"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1rpc_1_1client.html" title=" " alt="" coords="187,109,325,151"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1tcp__client.html" title=" " alt="" coords="96,213,243,255"/>
+<area shape="rect" id="node1" title="Generic RPC client." alt="" coords="5,35,155,75"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1tcp__client.html" title=" " alt="" coords="667,5,813,45"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1tcp__client.html" title="Implements an RPC client over TCP sockets." alt="" coords="332,35,489,75"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1rpc_1_1client.html" title=" " alt="" coords="341,99,480,139"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="cbdc::atomizer::atomizer_raft" name="cbdc::atomizer::atomizer_raft">
-<area shape="rect" id="node1" title="Manager for an atomizer raft node." alt="" coords="5,80,192,107"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1raft_1_1node.html" title="A node in a raft cluster." alt="" coords="44,5,153,32"/>
+<area shape="rect" id="node1" title="Manager for an atomizer raft node." alt="" coords="5,79,192,104"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1raft_1_1node.html" title="A node in a raft cluster." alt="" coords="44,5,153,31"/>
 </map>

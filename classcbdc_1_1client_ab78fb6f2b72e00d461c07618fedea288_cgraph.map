@@ -1,8 +1,8 @@
 <map id="cbdc::client::export_send_inputs" name="cbdc::client::export_send_inputs">
-<area shape="rect" id="node1" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="5,59,133,101"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1transaction_1_1wallet.html#a7e3e385aa81e513f3010869375cb8942" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="181,52,313,108"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="361,16,515,72"/>
-<area shape="rect" id="node6" href="$namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860" title="Converts the output at the specified index to an input." alt="" coords="375,95,501,137"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="563,5,679,32"/>
-<area shape="rect" id="node5" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="565,56,676,83"/>
+<area shape="rect" id="node1" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="5,58,133,98"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1transaction_1_1wallet.html#a7e3e385aa81e513f3010869375cb8942" title="Extracts the transaction data that recipients need from senders to confirm pending transfers." alt="" coords="181,51,313,105"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="361,15,515,69"/>
+<area shape="rect" id="node6" href="$namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860" title="Converts the output at the specified index to an input." alt="" coords="375,94,501,134"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="563,5,679,31"/>
+<area shape="rect" id="node5" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="565,55,676,80"/>
 </map>

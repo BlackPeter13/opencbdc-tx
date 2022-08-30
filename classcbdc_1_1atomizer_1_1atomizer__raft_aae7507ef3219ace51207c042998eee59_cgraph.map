@@ -1,5 +1,5 @@
 <map id="cbdc::atomizer::atomizer_raft::tx_notify" name="cbdc::atomizer::atomizer_raft::tx_notify">
-<area shape="rect" id="node1" title="Add the given transaction notification to the set of pending notifications." alt="" coords="5,35,165,76"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a6036a137d32c6ee72a9d6dd33588a81f" title="Validates the sentinel attestations attached to a compact transaction." alt="" coords="213,5,407,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="257,71,363,98"/>
+<area shape="rect" id="node1" title="Add the given transaction notification to the set of pending notifications." alt="" coords="5,35,165,75"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a6036a137d32c6ee72a9d6dd33588a81f" title="Validates the sentinel attestations attached to a compact transaction." alt="" coords="213,5,407,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="257,70,363,95"/>
 </map>

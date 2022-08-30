@@ -1,5 +1,5 @@
 <map id="cbdc::sentinel::async_interface" name="cbdc::sentinel::async_interface">
-<area shape="rect" id="node1" title="Interface for an asynchronous sentinel." alt="" coords="73,5,215,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1sentinel_1_1rpc_1_1client.html" title="TCP RPC client for sentinels." alt="" coords="5,95,131,136"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1sentinel__2pc_1_1controller.html" title="Manages a sentinel server for the two&#45;phase commit architecture." alt="" coords="155,95,285,136"/>
+<area shape="rect" id="node1" title="Interface for an asynchronous sentinel." alt="" coords="73,5,215,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1sentinel_1_1rpc_1_1client.html" title="TCP RPC client for sentinels." alt="" coords="5,93,131,133"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1sentinel__2pc_1_1controller.html" title="Manages a sentinel server for the two&#45;phase commit architecture." alt="" coords="155,93,285,133"/>
 </map>

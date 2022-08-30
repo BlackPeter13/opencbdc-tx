@@ -1,4 +1,4 @@
 <map id="cbdc::network::socket_selector::~socket_selector" name="cbdc::network::socket_selector::~socket_selector">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,185,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1socket__selector.html#abdfae01b7d5bb06cd0431f6780f33d8b" title="Unblocks a blocked wait() call." alt="" coords="233,5,380,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,185,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1socket__selector.html#abdfae01b7d5bb06cd0431f6780f33d8b" title="Unblocks a blocked wait() call." alt="" coords="233,5,380,45"/>
 </map>

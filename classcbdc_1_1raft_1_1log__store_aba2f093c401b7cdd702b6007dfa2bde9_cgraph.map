@@ -1,4 +1,4 @@
 <map id="cbdc::raft::log_store::last_entry" name="cbdc::raft::log_store::last_entry">
-<area shape="rect" id="node1" title="Return the last log entry in the log store." alt="" coords="5,29,140,71"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a5f85615ea5d2afb447d328a0db008119" title=" " alt="" coords="188,29,321,71"/>
+<area shape="rect" id="node1" title="Return the last log entry in the log store." alt="" coords="5,29,140,69"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a5f85615ea5d2afb447d328a0db008119" title=" " alt="" coords="188,29,321,69"/>
 </map>

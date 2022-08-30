@@ -1,4 +1,4 @@
 <map id="cbdc::raft::state_manager" name="cbdc::raft::state_manager">
-<area shape="rect" id="node1" title="Implementation of nuraft::state_mgr using a file." alt="" coords="5,80,172,107"/>
-<area shape="rect" id="node2" title=" " alt="" coords="29,5,148,32"/>
+<area shape="rect" id="node1" title="Implementation of nuraft::state_mgr using a file." alt="" coords="5,79,172,104"/>
+<area shape="rect" id="node2" title=" " alt="" coords="29,5,148,31"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="cbdc::transaction::validation::check_p2pk_witness_commitment" name="cbdc::transaction::validation::check_p2pk_witness_commitment">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,159,61"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="207,20,323,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,159,60"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="207,20,323,45"/>
 </map>

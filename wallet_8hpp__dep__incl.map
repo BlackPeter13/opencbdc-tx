@@ -1,11 +1,11 @@
 <map id="wallet.hpp" name="wallet.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="133,5,213,32"/>
-<area shape="rect" id="node2" href="$client_2client_8cpp.html" title=" " alt="" coords="5,155,83,181"/>
-<area shape="rect" id="node3" href="$uhs_2client_2client_8hpp.html" title=" " alt="" coords="135,80,212,107"/>
-<area shape="rect" id="node9" href="$wallet_8cpp.html" title=" " alt="" coords="236,80,316,107"/>
-<area shape="rect" id="node4" href="$atomizer__client_8hpp.html" title=" " alt="" coords="107,155,240,181"/>
-<area shape="rect" id="node6" href="$client-cli_8cpp.html" title=" " alt="" coords="230,229,325,256"/>
-<area shape="rect" id="node7" href="$twophase__client_8hpp.html" title=" " alt="" coords="315,155,455,181"/>
-<area shape="rect" id="node5" href="$atomizer__client_8cpp.html" title=" " alt="" coords="72,229,205,256"/>
-<area shape="rect" id="node8" href="$twophase__client_8cpp.html" title=" " alt="" coords="349,229,489,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="133,5,213,31"/>
+<area shape="rect" id="node2" href="$client_2client_8cpp.html" title=" " alt="" coords="5,152,83,177"/>
+<area shape="rect" id="node3" href="$uhs_2client_2client_8hpp.html" title=" " alt="" coords="135,79,212,104"/>
+<area shape="rect" id="node9" href="$wallet_8cpp.html" title=" " alt="" coords="236,79,316,104"/>
+<area shape="rect" id="node4" href="$atomizer__client_8hpp.html" title=" " alt="" coords="107,152,240,177"/>
+<area shape="rect" id="node6" href="$client-cli_8cpp.html" title=" " alt="" coords="230,225,325,251"/>
+<area shape="rect" id="node7" href="$twophase__client_8hpp.html" title=" " alt="" coords="315,152,455,177"/>
+<area shape="rect" id="node5" href="$atomizer__client_8cpp.html" title=" " alt="" coords="72,225,205,251"/>
+<area shape="rect" id="node8" href="$twophase__client_8cpp.html" title=" " alt="" coords="349,225,489,251"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="cbdc::coordinator::controller::execute_transaction" name="cbdc::coordinator::controller::execute_transaction">
-<area shape="rect" id="node1" title="Coordinates a transaction among locking shards." alt="" coords="5,27,132,83"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a6036a137d32c6ee72a9d6dd33588a81f" title="Validates the sentinel attestations attached to a compact transaction." alt="" coords="180,5,373,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="223,71,330,98"/>
+<area shape="rect" id="node1" title="Coordinates a transaction among locking shards." alt="" coords="5,27,132,82"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a6036a137d32c6ee72a9d6dd33588a81f" title="Validates the sentinel attestations attached to a compact transaction." alt="" coords="180,5,373,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="223,70,330,95"/>
 </map>

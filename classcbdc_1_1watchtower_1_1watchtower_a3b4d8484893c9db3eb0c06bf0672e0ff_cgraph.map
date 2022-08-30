@@ -1,9 +1,6 @@
 <map id="cbdc::watchtower::watchtower::add_errors" name="cbdc::watchtower::watchtower::add_errors">
-<area shape="rect" id="node1" title="Adds an error from an internal component to the Watchtower&#39;s error cache." alt="" coords="5,104,201,145"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1watchtower_1_1block__cache.html#a94561aeeb9a06f32c09d9e7195323c50" title="Checks to see if the given UHS ID has been spent according to the blocks in the cache." alt="" coords="249,5,409,47"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1watchtower_1_1block__cache.html#a3879bb092cade4c91eb0ac7c696fa455" title="Checks to see if the given UHS ID is spendable according to the blocks in the cache." alt="" coords="249,71,409,112"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1watchtower_1_1error__cache.html#a6c3dbfe9c94c0779cc56ae337b32f423" title="Moves an error into the error cache, evicting the oldest error if the cache has reached its maximum s..." alt="" coords="252,136,407,177"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="266,201,393,243"/>
-<area shape="rect" id="node6" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="457,209,584,235"/>
-<area shape="rect" id="node7" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="632,209,772,235"/>
+<area shape="rect" id="node1" title="Adds an error from an internal component to the Watchtower&#39;s error cache." alt="" coords="5,69,201,109"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1watchtower_1_1block__cache.html#a94561aeeb9a06f32c09d9e7195323c50" title="Checks to see if the given UHS ID has been spent according to the blocks in the cache." alt="" coords="249,5,409,45"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1watchtower_1_1block__cache.html#a3879bb092cade4c91eb0ac7c696fa455" title="Checks to see if the given UHS ID is spendable according to the blocks in the cache." alt="" coords="249,69,409,109"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1watchtower_1_1error__cache.html#a6c3dbfe9c94c0779cc56ae337b32f423" title="Moves an error into the error cache, evicting the oldest error if the cache has reached its maximum s..." alt="" coords="252,133,407,173"/>
 </map>

@@ -1,4 +1,0 @@
-<map id="cbdc::blocking_queue::~blocking_queue" name="cbdc::blocking_queue::~blocking_queue">
-<area shape="rect" id="node1" title="Destructor." alt="" coords="5,5,152,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1blocking__queue.html#a8827ae97fc8e820bd61175697105dbe9" title="Clears the queue and unblocks waiting consumers." alt="" coords="200,5,347,47"/>
-</map>

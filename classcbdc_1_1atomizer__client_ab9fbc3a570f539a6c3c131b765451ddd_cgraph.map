@@ -1,7 +1,4 @@
 <map id="cbdc::atomizer_client::sync" name="cbdc::atomizer_client::sync">
-<area shape="rect" id="node1" title="Update the client with the latest state from the watchtower." alt="" coords="5,27,148,69"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="206,5,313,32"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="196,57,323,98"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="371,64,497,91"/>
-<area shape="rect" id="node5" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="545,64,685,91"/>
+<area shape="rect" id="node1" title="Update the client with the latest state from the watchtower." alt="" coords="5,5,148,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="196,13,303,38"/>
 </map>

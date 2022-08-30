@@ -1,15 +1,15 @@
 <map id="util.hpp" name="util.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="131,5,193,32"/>
-<area shape="rect" id="node2" href="$serialization_8hpp.html" title=" " alt="" coords="30,87,145,114"/>
-<area shape="rect" id="node6" href="$serialization_2util_8hpp.html" title=" " alt="" coords="260,80,371,121"/>
-<area shape="rect" id="node3" href="$serializer_8hpp.html" title=" " alt="" coords="173,244,284,285"/>
-<area shape="rect" id="node5" title=" " alt="" coords="24,169,151,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="191,333,256,360"/>
-<area shape="rect" id="node7" href="$buffer__serializer_8hpp.html" title=" " alt="" coords="326,169,462,196"/>
-<area shape="rect" id="node12" href="$size__serializer_8hpp.html" title=" " alt="" coords="175,169,301,196"/>
-<area shape="rect" id="node13" title=" " alt="" coords="485,169,553,196"/>
-<area shape="rect" id="node8" href="$buffer_8hpp.html" title=" " alt="" coords="320,251,473,278"/>
-<area shape="rect" id="node9" title=" " alt="" coords="281,333,347,360"/>
-<area shape="rect" id="node10" title=" " alt="" coords="372,333,427,360"/>
-<area shape="rect" id="node11" title=" " alt="" coords="451,333,510,360"/>
+<area shape="rect" id="node1" title=" " alt="" coords="131,5,193,31"/>
+<area shape="rect" id="node2" href="$serialization_8hpp.html" title=" " alt="" coords="30,86,145,111"/>
+<area shape="rect" id="node6" href="$serialization_2util_8hpp.html" title=" " alt="" coords="260,79,371,119"/>
+<area shape="rect" id="node3" href="$serializer_8hpp.html" title=" " alt="" coords="173,240,284,280"/>
+<area shape="rect" id="node5" title=" " alt="" coords="24,167,151,192"/>
+<area shape="rect" id="node4" title=" " alt="" coords="191,328,256,353"/>
+<area shape="rect" id="node7" href="$buffer__serializer_8hpp.html" title=" " alt="" coords="326,167,462,192"/>
+<area shape="rect" id="node12" href="$size__serializer_8hpp.html" title=" " alt="" coords="175,167,301,192"/>
+<area shape="rect" id="node13" title=" " alt="" coords="485,167,553,192"/>
+<area shape="rect" id="node8" href="$buffer_8hpp.html" title=" " alt="" coords="320,247,473,273"/>
+<area shape="rect" id="node9" title=" " alt="" coords="281,328,347,353"/>
+<area shape="rect" id="node10" title=" " alt="" coords="372,328,427,353"/>
+<area shape="rect" id="node11" title=" " alt="" coords="451,328,510,353"/>
 </map>

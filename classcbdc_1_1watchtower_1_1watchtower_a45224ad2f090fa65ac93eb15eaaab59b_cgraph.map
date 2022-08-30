@@ -1,6 +1,0 @@
-<map id="cbdc::watchtower::watchtower::handle_status_update_request" name="cbdc::watchtower::watchtower::handle_status_update_request">
-<area shape="rect" id="node1" title="Composes a response to a status update request based on the data available." alt="" coords="5,5,211,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="259,5,385,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="433,13,560,39"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="608,13,748,39"/>
-</map>

@@ -1,12 +1,12 @@
 <map id="util.hpp" name="util.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="193,5,256,32"/>
-<area shape="rect" id="node2" href="$buffer__serializer_8hpp.html" title=" " alt="" coords="157,80,293,107"/>
-<area shape="rect" id="node9" href="$size__serializer_8hpp.html" title=" " alt="" coords="5,80,132,107"/>
-<area shape="rect" id="node10" title=" " alt="" coords="316,80,384,107"/>
-<area shape="rect" id="node3" href="$serializer_8hpp.html" title=" " alt="" coords="20,155,117,181"/>
-<area shape="rect" id="node5" href="$buffer_8hpp.html" title=" " alt="" coords="153,155,307,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="27,229,92,256"/>
-<area shape="rect" id="node6" title=" " alt="" coords="117,229,183,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="208,229,263,256"/>
-<area shape="rect" id="node8" title=" " alt="" coords="287,229,346,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="193,5,256,31"/>
+<area shape="rect" id="node2" href="$buffer__serializer_8hpp.html" title=" " alt="" coords="157,79,293,104"/>
+<area shape="rect" id="node9" href="$size__serializer_8hpp.html" title=" " alt="" coords="5,79,132,104"/>
+<area shape="rect" id="node10" title=" " alt="" coords="316,79,384,104"/>
+<area shape="rect" id="node3" href="$serializer_8hpp.html" title=" " alt="" coords="20,152,117,177"/>
+<area shape="rect" id="node5" href="$buffer_8hpp.html" title=" " alt="" coords="153,152,307,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="27,225,92,251"/>
+<area shape="rect" id="node6" title=" " alt="" coords="117,225,183,251"/>
+<area shape="rect" id="node7" title=" " alt="" coords="208,225,263,251"/>
+<area shape="rect" id="node8" title=" " alt="" coords="287,225,346,251"/>
 </map>

@@ -1,17 +1,17 @@
 <map id="client.hpp" name="client.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="436,5,513,32"/>
-<area shape="rect" id="node2" href="$sentinel_2client_8cpp.html" title=" " alt="" coords="196,80,273,107"/>
-<area shape="rect" id="node3" href="$uhs_2client_2client_8hpp.html" title=" " alt="" coords="297,80,375,107"/>
-<area shape="rect" id="node10" href="$atomizer_2sentinel_2controller_8hpp.html" title=" " alt="" coords="497,80,596,107"/>
-<area shape="rect" id="node13" href="$twophase_2sentinel__2pc_2controller_8hpp.html" title=" " alt="" coords="743,80,841,107"/>
-<area shape="rect" id="node4" href="$atomizer__client_8hpp.html" title=" " alt="" coords="23,155,156,181"/>
-<area shape="rect" id="node6" href="$client-cli_8cpp.html" title=" " alt="" coords="163,229,258,256"/>
-<area shape="rect" id="node7" href="$client_2client_8cpp.html" title=" " alt="" coords="231,155,308,181"/>
-<area shape="rect" id="node8" href="$twophase__client_8hpp.html" title=" " alt="" coords="333,155,473,181"/>
-<area shape="rect" id="node5" href="$atomizer__client_8cpp.html" title=" " alt="" coords="5,229,139,256"/>
-<area shape="rect" id="node9" href="$twophase__client_8cpp.html" title=" " alt="" coords="333,229,473,256"/>
-<area shape="rect" id="node11" href="$atomizer_2sentinel_2controller_8cpp.html" title=" " alt="" coords="497,155,596,181"/>
-<area shape="rect" id="node12" href="$sentineld_8cpp.html" title=" " alt="" coords="620,155,719,181"/>
-<area shape="rect" id="node14" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="743,155,841,181"/>
-<area shape="rect" id="node15" href="$sentineld__2pc_8cpp.html" title=" " alt="" coords="866,155,993,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="436,5,513,31"/>
+<area shape="rect" id="node2" href="$sentinel_2client_8cpp.html" title=" " alt="" coords="196,79,273,104"/>
+<area shape="rect" id="node3" href="$uhs_2client_2client_8hpp.html" title=" " alt="" coords="297,79,375,104"/>
+<area shape="rect" id="node10" href="$atomizer_2sentinel_2controller_8hpp.html" title=" " alt="" coords="497,79,596,104"/>
+<area shape="rect" id="node13" href="$twophase_2sentinel__2pc_2controller_8hpp.html" title=" " alt="" coords="743,79,841,104"/>
+<area shape="rect" id="node4" href="$atomizer__client_8hpp.html" title=" " alt="" coords="23,152,156,177"/>
+<area shape="rect" id="node6" href="$client-cli_8cpp.html" title=" " alt="" coords="163,225,258,251"/>
+<area shape="rect" id="node7" href="$client_2client_8cpp.html" title=" " alt="" coords="231,152,308,177"/>
+<area shape="rect" id="node8" href="$twophase__client_8hpp.html" title=" " alt="" coords="333,152,473,177"/>
+<area shape="rect" id="node5" href="$atomizer__client_8cpp.html" title=" " alt="" coords="5,225,139,251"/>
+<area shape="rect" id="node9" href="$twophase__client_8cpp.html" title=" " alt="" coords="333,225,473,251"/>
+<area shape="rect" id="node11" href="$atomizer_2sentinel_2controller_8cpp.html" title=" " alt="" coords="497,152,596,177"/>
+<area shape="rect" id="node12" href="$sentineld_8cpp.html" title=" " alt="" coords="620,152,719,177"/>
+<area shape="rect" id="node14" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="743,152,841,177"/>
+<area shape="rect" id="node15" href="$sentineld__2pc_8cpp.html" title=" " alt="" coords="866,152,993,177"/>
 </map>

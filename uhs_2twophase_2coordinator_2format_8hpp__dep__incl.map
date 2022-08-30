@@ -1,7 +1,7 @@
 <map id="format.hpp" name="format.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="193,5,276,32"/>
-<area shape="rect" id="node2" href="$twophase_2coordinator_2controller_8cpp.html" title=" " alt="" coords="5,80,104,107"/>
-<area shape="rect" id="node3" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="128,80,227,107"/>
-<area shape="rect" id="node4" href="$uhs_2twophase_2coordinator_2format_8cpp.html" title=" " alt="" coords="251,80,333,107"/>
-<area shape="rect" id="node5" href="$twophase_2coordinator_2state__machine_8cpp.html" title=" " alt="" coords="357,80,488,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="193,5,276,31"/>
+<area shape="rect" id="node2" href="$twophase_2coordinator_2controller_8cpp.html" title=" " alt="" coords="5,79,104,104"/>
+<area shape="rect" id="node3" href="$twophase_2sentinel__2pc_2controller_8cpp.html" title=" " alt="" coords="128,79,227,104"/>
+<area shape="rect" id="node4" href="$uhs_2twophase_2coordinator_2format_8cpp.html" title=" " alt="" coords="251,79,333,104"/>
+<area shape="rect" id="node5" href="$twophase_2coordinator_2state__machine_8cpp.html" title=" " alt="" coords="357,79,488,104"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="cbdc::transaction::validation::check_tx_structure" name="cbdc::transaction::validation::check_tx_structure">
-<area shape="rect" id="node1" title=" " alt="" coords="5,97,140,153"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#abeb1b2b8bc2fd32358b460bb86b53d34" title=" " alt="" coords="197,5,389,47"/>
-<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction_1_1validation.html#a19a9e7e41435f482b21c5ba94c6c4eef" title=" " alt="" coords="203,71,382,112"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1transaction_1_1validation.html#a7dc53de38884cc9c8cf5a9a79a4e59f0" title=" " alt="" coords="193,136,393,177"/>
-<area shape="rect" id="node5" href="$namespacecbdc_1_1transaction_1_1validation.html#a8cea65acca5e16fecb28d85683d66ae1" title=" " alt="" coords="188,201,397,243"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,94,140,149"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#abeb1b2b8bc2fd32358b460bb86b53d34" title=" " alt="" coords="197,5,389,45"/>
+<area shape="rect" id="node3" href="$namespacecbdc_1_1transaction_1_1validation.html#a19a9e7e41435f482b21c5ba94c6c4eef" title=" " alt="" coords="203,69,382,109"/>
+<area shape="rect" id="node4" href="$namespacecbdc_1_1transaction_1_1validation.html#a7dc53de38884cc9c8cf5a9a79a4e59f0" title=" " alt="" coords="193,133,393,173"/>
+<area shape="rect" id="node5" href="$namespacecbdc_1_1transaction_1_1validation.html#a8cea65acca5e16fecb28d85683d66ae1" title=" " alt="" coords="188,197,397,237"/>
 </map>

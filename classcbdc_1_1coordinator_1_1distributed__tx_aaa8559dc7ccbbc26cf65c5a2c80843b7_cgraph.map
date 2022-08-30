@@ -1,4 +1,4 @@
 <map id="cbdc::coordinator::distributed_tx::recover_prepare" name="cbdc::coordinator::distributed_tx::recover_prepare">
-<area shape="rect" id="node1" title="Sets the state of the dtx to prepare and re&#45;adds all the txs included in the batch." alt="" coords="5,5,153,61"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1coordinator_1_1distributed__tx.html#a8cc25823855f3a4c89162e6ee51990e8" title="Adds a TX to the batch managed by this coordinator and dtx ID." alt="" coords="201,13,344,54"/>
+<area shape="rect" id="node1" title="Sets the state of the dtx to prepare and re&#45;adds all the txs included in the batch." alt="" coords="5,5,153,60"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1coordinator_1_1distributed__tx.html#a8cc25823855f3a4c89162e6ee51990e8" title="Adds a TX to the batch managed by this coordinator and dtx ID." alt="" coords="201,13,344,53"/>
 </map>

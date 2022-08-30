@@ -1,4 +1,0 @@
-<map id="cbdc::archiver::controller::get_block" name="cbdc::archiver::controller::get_block">
-<area shape="rect" id="node1" title="Queries the archiver database for the block at the specified height." alt="" coords="5,5,167,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1sentinel.html#a49451c48c108396eebfdb96a0873541e" title="Return a human&#45;readable string describing a tx_status." alt="" coords="215,5,333,47"/>
-</map>

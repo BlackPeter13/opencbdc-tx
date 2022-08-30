@@ -1,5 +1,4 @@
 <map id="cbdc::rpc::blocking_server&lt; Request, Response, InBuffer, OutBuffer &gt;" name="cbdc::rpc::blocking_server&lt; Request, Response, InBuffer, OutBuffer &gt;">
-<area shape="rect" id="node1" title="Generic synchronous RPC server." alt="" coords="5,244,199,300"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1server.html" title=" " alt="" coords="31,139,173,195"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1server.html" title="Generic RPC server." alt="" coords="31,5,173,61"/>
+<area shape="rect" id="node1" title="Generic synchronous RPC server." alt="" coords="5,108,199,163"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1server.html" title="Generic RPC server." alt="" coords="31,5,173,60"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="cbdc::atomizer::state_machine::state_machine" name="cbdc::atomizer::state_machine::state_machine">
+<area shape="rect" id="node1" title="Constructor." alt="" coords="5,37,175,77"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1atomizer_1_1state__machine.html#abc07963cc52953e94b6108a1f00e67c6" title="Replaces the state of the state machine with the state stored in the snapshot referenced by the given..." alt="" coords="223,5,397,45"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1atomizer_1_1state__machine.html#ae81f026e70b7fd2a956940b94b37eb1b" title="Returns the most recent snapshot metadata." alt="" coords="227,69,393,109"/>
+</map>

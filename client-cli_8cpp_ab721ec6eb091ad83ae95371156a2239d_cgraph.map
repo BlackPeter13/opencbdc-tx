@@ -1,8 +1,5 @@
 <map id="confirmtx_command" name="confirmtx_command">
-<area shape="rect" id="node1" title=" " alt="" coords="5,64,144,91"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="192,5,336,32"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1client.html#aff758829cabeed3cb728a468f508082f" title="Format a value given in currency base units as USD." alt="" coords="205,57,323,98"/>
-<area shape="rect" id="node4" href="$namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892" title="Calculates the unique hash of a full transaction." alt="" coords="201,122,327,163"/>
-<area shape="rect" id="node5" href="$namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b" title="Serialize object into nuraft::buffer using a cbdc::nuraft_serializer." alt="" coords="384,129,511,156"/>
-<area shape="rect" id="node6" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="559,129,699,156"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,144,60"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="192,5,336,31"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1client.html#aff758829cabeed3cb728a468f508082f" title="Format a value given in currency base units as USD." alt="" coords="205,55,323,95"/>
 </map>

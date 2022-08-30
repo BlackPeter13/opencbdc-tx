@@ -1,6 +1,6 @@
 <map id="cbdc::transaction::wallet::load" name="cbdc::transaction::wallet::load">
-<area shape="rect" id="node1" title="Overwrites the current state of the wallet with data loaded from a file saved via the Wallet::save fu..." alt="" coords="5,23,132,65"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="180,16,333,72"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="381,5,497,32"/>
-<area shape="rect" id="node4" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="384,56,495,83"/>
+<area shape="rect" id="node1" title="Overwrites the current state of the wallet with data loaded from a file saved via the Wallet::save fu..." alt="" coords="5,23,132,63"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1transaction_1_1validation.html#a1f44c99a0ee81639bae8c5e0c783fd95" title=" " alt="" coords="180,16,333,71"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a683b1822c4294075ddecf27a8774d76e" title="Calculates the SHA256 hash of the specified data." alt="" coords="381,5,497,31"/>
+<area shape="rect" id="node4" href="$namespacecbdc.html#a533bc462c81fe3193b0d4adb6b686064" title="Converts an std::array into an std::vector of the same size via copy." alt="" coords="384,55,495,80"/>
 </map>

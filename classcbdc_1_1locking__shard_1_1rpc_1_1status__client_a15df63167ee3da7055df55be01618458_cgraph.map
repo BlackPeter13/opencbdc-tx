@@ -1,4 +1,4 @@
 <map id="cbdc::locking_shard::rpc::status_client::init" name="cbdc::locking_shard::rpc::status_client::init">
-<area shape="rect" id="node1" title="Initializes the client by creating a TCP RPC client for each shard cluster." alt="" coords="5,5,155,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1rpc_1_1client.html#a361b5794cbaa2adcaebdfc07b19d2e5d" title="Initializes the RPC client." alt="" coords="203,5,339,47"/>
+<area shape="rect" id="node1" title="Initializes the client by creating a TCP RPC client for each shard cluster." alt="" coords="5,5,155,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1rpc_1_1client.html#a361b5794cbaa2adcaebdfc07b19d2e5d" title="Initializes the RPC client." alt="" coords="203,5,339,45"/>
 </map>

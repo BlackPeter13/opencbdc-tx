@@ -1,9 +1,9 @@
 <map id="format.hpp" name="format.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="152,5,235,32"/>
-<area shape="rect" id="node2" href="$util_2rpc_2messages_8hpp.html" title=" " alt="" coords="73,87,180,114"/>
-<area shape="rect" id="node6" href="$serializer_8hpp.html" title=" " alt="" coords="205,80,315,121"/>
-<area shape="rect" id="node3" href="$header_8hpp.html" title=" " alt="" coords="5,169,91,196"/>
-<area shape="rect" id="node5" title=" " alt="" coords="115,169,181,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="17,244,79,271"/>
-<area shape="rect" id="node7" title=" " alt="" coords="227,169,293,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="152,5,235,31"/>
+<area shape="rect" id="node2" href="$util_2rpc_2messages_8hpp.html" title=" " alt="" coords="73,86,180,111"/>
+<area shape="rect" id="node6" href="$serializer_8hpp.html" title=" " alt="" coords="205,79,315,119"/>
+<area shape="rect" id="node3" href="$header_8hpp.html" title=" " alt="" coords="5,167,91,192"/>
+<area shape="rect" id="node5" title=" " alt="" coords="115,167,181,192"/>
+<area shape="rect" id="node4" title=" " alt="" coords="17,240,79,265"/>
+<area shape="rect" id="node7" title=" " alt="" coords="227,167,293,192"/>
 </map>

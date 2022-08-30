@@ -1,4 +1,4 @@
 <map id="cbdc::locking_shard::rpc::client::~client" name="cbdc::locking_shard::rpc::client::~client">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,141,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1rpc_1_1client.html#a039eeb53c034b4b2a20d7ee950d50db6" title="Shuts down the client and unblocks any existing requests waiting for a response." alt="" coords="189,5,325,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,141,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1rpc_1_1client.html#a039eeb53c034b4b2a20d7ee950d50db6" title="Shuts down the client and unblocks any existing requests waiting for a response." alt="" coords="189,5,325,45"/>
 </map>

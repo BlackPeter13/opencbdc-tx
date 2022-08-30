@@ -1,4 +1,4 @@
 <map id="cbdc::config::read_raft_options" name="cbdc::config::read_raft_options">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,127,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714" title="Return the value for the given key if its value is a long." alt="" coords="175,5,307,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,127,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714" title="Return the value for the given key if its value is a long." alt="" coords="175,5,307,45"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="cbdc::watchtower::blocking_client::~blocking_client" name="cbdc::watchtower::blocking_client::~blocking_client">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,183,136"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1connection__manager.html#a7be9b6b8c582cb5f3fdea1a9a34210a9" title="Shuts down the network listener and all existing peer connections." alt="" coords="231,95,401,136"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1network_1_1tcp__listener.html#a9efda29d6a5995e2987e915aba3112e1" title="Stops the listener and unblocks any blocking calls associated with this listener." alt="" coords="459,29,586,71"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1peer.html#ad1121cc2946655fec2e53cb4704cc3cc" title="Clears any packets in the pending send queue." alt="" coords="456,95,589,136"/>
-<area shape="rect" id="node5" href="$classcbdc_1_1network_1_1socket__selector.html#abdfae01b7d5bb06cd0431f6780f33d8b" title="Unblocks a blocked wait() call." alt="" coords="449,160,596,201"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,93,183,133"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1connection__manager.html#a7be9b6b8c582cb5f3fdea1a9a34210a9" title="Shuts down the network listener and all existing peer connections." alt="" coords="231,93,401,133"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1network_1_1tcp__listener.html#a9efda29d6a5995e2987e915aba3112e1" title="Stops the listener and unblocks any blocking calls associated with this listener." alt="" coords="459,29,586,69"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1peer.html#ad1121cc2946655fec2e53cb4704cc3cc" title="Clears any packets in the pending send queue." alt="" coords="456,93,589,133"/>
+<area shape="rect" id="node5" href="$classcbdc_1_1network_1_1socket__selector.html#abdfae01b7d5bb06cd0431f6780f33d8b" title="Unblocks a blocked wait() call." alt="" coords="449,157,596,197"/>
 </map>

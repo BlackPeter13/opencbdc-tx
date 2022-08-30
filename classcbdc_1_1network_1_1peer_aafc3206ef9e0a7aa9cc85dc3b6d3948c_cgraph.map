@@ -1,4 +1,0 @@
-<map id="cbdc::network::peer::send" name="cbdc::network::peer::send">
-<area shape="rect" id="node1" title="Sends buffered data." alt="" coords="5,5,139,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1blocking__queue.html#a545725ae9c7b4643d91d690b05d9d2f0" title="Pushes an element onto the queue and notifies at most one waiting consumer." alt="" coords="187,5,333,47"/>
-</map>

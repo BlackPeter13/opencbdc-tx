@@ -149,7 +149,7 @@ var annotated_dup =
         [ "watchtower", "classcbdc_1_1watchtower_1_1watchtower.html", "classcbdc_1_1watchtower_1_1watchtower" ]
       ] ],
       [ "atomizer_client", "classcbdc_1_1atomizer__client.html", "classcbdc_1_1atomizer__client" ],
-      [ "blocking_queue", "classcbdc_1_1blocking__queue.html", "classcbdc_1_1blocking__queue" ],
+      [ "blocking_queue_internal", "classcbdc_1_1blocking__queue__internal.html", "classcbdc_1_1blocking__queue__internal" ],
       [ "buffer", "classcbdc_1_1buffer.html", "classcbdc_1_1buffer" ],
       [ "buffer_serializer", "classcbdc_1_1buffer__serializer.html", "classcbdc_1_1buffer__serializer" ],
       [ "cache_set", "classcbdc_1_1cache__set.html", "classcbdc_1_1cache__set" ],

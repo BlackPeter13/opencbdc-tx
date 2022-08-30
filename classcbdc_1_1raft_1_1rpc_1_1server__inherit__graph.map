@@ -1,6 +1,5 @@
 <map id="cbdc::raft::rpc::server" name="cbdc::raft::rpc::server">
-<area shape="rect" id="node1" title="Generic RPC server for raft nodes for which the replicated state machine handles the request processi..." alt="" coords="6,335,147,361"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1async__server.html" title="Generic asynchronous RPC server." alt="" coords="5,244,148,285"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1server.html" title=" " alt="" coords="5,139,148,195"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1rpc_1_1server.html" title="Generic RPC server." alt="" coords="5,5,148,61"/>
+<area shape="rect" id="node1" title="Generic RPC server for raft nodes for which the replicated state machine handles the request processi..." alt="" coords="6,196,147,221"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1async__server.html" title="Generic asynchronous RPC server." alt="" coords="5,108,148,148"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1server.html" title="Generic RPC server." alt="" coords="5,5,148,60"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="cbdc::archiver::controller::~controller" name="cbdc::archiver::controller::~controller">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,167,136"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1connection__manager.html#a7be9b6b8c582cb5f3fdea1a9a34210a9" title="Shuts down the network listener and all existing peer connections." alt="" coords="215,95,385,136"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1network_1_1tcp__listener.html#a9efda29d6a5995e2987e915aba3112e1" title="Stops the listener and unblocks any blocking calls associated with this listener." alt="" coords="443,29,570,71"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1peer.html#ad1121cc2946655fec2e53cb4704cc3cc" title="Clears any packets in the pending send queue." alt="" coords="440,95,573,136"/>
-<area shape="rect" id="node5" href="$classcbdc_1_1network_1_1socket__selector.html#abdfae01b7d5bb06cd0431f6780f33d8b" title="Unblocks a blocked wait() call." alt="" coords="433,160,580,201"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,93,167,133"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1connection__manager.html#a7be9b6b8c582cb5f3fdea1a9a34210a9" title="Shuts down the network listener and all existing peer connections." alt="" coords="215,93,385,133"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1network_1_1tcp__listener.html#a9efda29d6a5995e2987e915aba3112e1" title="Stops the listener and unblocks any blocking calls associated with this listener." alt="" coords="443,29,570,69"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1peer.html#ad1121cc2946655fec2e53cb4704cc3cc" title="Clears any packets in the pending send queue." alt="" coords="440,93,573,133"/>
+<area shape="rect" id="node5" href="$classcbdc_1_1network_1_1socket__selector.html#abdfae01b7d5bb06cd0431f6780f33d8b" title="Unblocks a blocked wait() call." alt="" coords="433,157,580,197"/>
 </map>

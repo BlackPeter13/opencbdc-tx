@@ -1,5 +1,5 @@
 <map id="cbdc::transaction::input" name="cbdc::transaction::input">
-<area shape="rect" id="node1" title="An input for a new transaction." alt="" coords="80,109,207,151"/>
-<area shape="rect" id="node2" href="$structcbdc_1_1transaction_1_1out__point.html" title="The unique identifier of a specific output from a transaction." alt="" coords="5,5,132,47"/>
-<area shape="rect" id="node3" href="$structcbdc_1_1transaction_1_1output.html" title="An output of a transaction." alt="" coords="156,5,283,47"/>
+<area shape="rect" id="node1" title="An input for a new transaction." alt="" coords="80,108,207,148"/>
+<area shape="rect" id="node2" href="$structcbdc_1_1transaction_1_1out__point.html" title="The unique identifier of a specific output from a transaction." alt="" coords="5,5,132,45"/>
+<area shape="rect" id="node3" href="$structcbdc_1_1transaction_1_1output.html" title="An output of a transaction." alt="" coords="156,5,283,45"/>
 </map>

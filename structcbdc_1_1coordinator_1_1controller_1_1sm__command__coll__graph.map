@@ -1,4 +1,4 @@
 <map id="cbdc::coordinator::controller::sm_command" name="cbdc::coordinator::controller::sm_command">
-<area shape="rect" id="node1" title="A full command for the state machine to process." alt="" coords="5,124,168,165"/>
-<area shape="rect" id="node2" href="$structcbdc_1_1coordinator_1_1controller_1_1sm__command__header.html" title="Metadata of a command for the state machine." alt="" coords="5,5,168,61"/>
+<area shape="rect" id="node1" title="A full command for the state machine to process." alt="" coords="5,123,168,163"/>
+<area shape="rect" id="node2" href="$structcbdc_1_1coordinator_1_1controller_1_1sm__command__header.html" title="Metadata of a command for the state machine." alt="" coords="5,5,168,60"/>
 </map>

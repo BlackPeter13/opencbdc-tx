@@ -1,4 +1,4 @@
 <map id="cbdc::rpc::request&lt; T &gt;" name="cbdc::rpc::request&lt; T &gt;">
-<area shape="rect" id="node1" title="RPC request message." alt="" coords="5,95,159,121"/>
-<area shape="rect" id="node2" href="$structcbdc_1_1rpc_1_1header.html" title="RPC request and response header." alt="" coords="23,5,141,32"/>
+<area shape="rect" id="node1" title="RPC request message." alt="" coords="5,93,159,119"/>
+<area shape="rect" id="node2" href="$structcbdc_1_1rpc_1_1header.html" title="RPC request and response header." alt="" coords="23,5,141,31"/>
 </map>

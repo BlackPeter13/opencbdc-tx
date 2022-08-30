@@ -1,5 +1,5 @@
 <map id="cbdc::transaction::full_tx" name="cbdc::transaction::full_tx">
-<area shape="rect" id="node1" title="A complete transaction." alt="" coords="106,5,233,47"/>
-<area shape="rect" id="node2" href="$structcbdc_1_1sentinel_1_1execute__request.html" title="Sentinel request message." alt="" coords="5,95,157,136"/>
-<area shape="rect" id="node3" href="$structcbdc_1_1sentinel_1_1validate__request.html" title="Request type for transaction validation and attestation." alt="" coords="181,95,333,136"/>
+<area shape="rect" id="node1" title="A complete transaction." alt="" coords="106,5,233,45"/>
+<area shape="rect" id="node2" href="$structcbdc_1_1sentinel_1_1execute__request.html" title="Sentinel request message." alt="" coords="5,93,157,133"/>
+<area shape="rect" id="node3" href="$structcbdc_1_1sentinel_1_1validate__request.html" title="Request type for transaction validation and attestation." alt="" coords="181,93,333,133"/>
 </map>

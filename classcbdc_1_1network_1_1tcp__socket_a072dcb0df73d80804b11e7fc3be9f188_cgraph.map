@@ -1,4 +1,4 @@
 <map id="cbdc::network::tcp_socket::~tcp_socket" name="cbdc::network::tcp_socket::~tcp_socket">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,151,47"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1tcp__socket.html#a9df0a38749dc358bfaf99965608d85ec" title="Closes the connection with the remote host and unblocks any blocking calls to this socket." alt="" coords="199,5,336,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,151,45"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1network_1_1tcp__socket.html#a9df0a38749dc358bfaf99965608d85ec" title="Closes the connection with the remote host and unblocks any blocking calls to this socket." alt="" coords="199,5,336,45"/>
 </map>

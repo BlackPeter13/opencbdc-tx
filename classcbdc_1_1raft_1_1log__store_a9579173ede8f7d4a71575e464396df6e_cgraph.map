@@ -1,4 +1,4 @@
 <map id="cbdc::raft::log_store::compact" name="cbdc::raft::log_store::compact">
-<area shape="rect" id="node1" title="Delete log entries from the start of the log up to the given log index." alt="" coords="5,5,140,47"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a76b3019e4ab57d5f76ea0b272f26667a" title=" " alt="" coords="188,5,315,47"/>
+<area shape="rect" id="node1" title="Delete log entries from the start of the log up to the given log index." alt="" coords="5,5,140,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1raft.html#a76b3019e4ab57d5f76ea0b272f26667a" title=" " alt="" coords="188,5,315,45"/>
 </map>

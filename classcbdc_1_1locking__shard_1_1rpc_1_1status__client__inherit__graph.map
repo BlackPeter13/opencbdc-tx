@@ -1,4 +1,4 @@
 <map id="cbdc::locking_shard::rpc::status_client" name="cbdc::locking_shard::rpc::status_client">
-<area shape="rect" id="node1" title="Client for interacting with the read&#45;only port on 2PC shards." alt="" coords="5,95,141,136"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1status__interface.html" title="Interface for querying the read&#45;only state of a locking shard." alt="" coords="5,5,141,47"/>
+<area shape="rect" id="node1" title="Client for interacting with the read&#45;only port on 2PC shards." alt="" coords="5,93,141,133"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1locking__shard_1_1status__interface.html" title="Interface for querying the read&#45;only state of a locking shard." alt="" coords="5,5,141,45"/>
 </map>

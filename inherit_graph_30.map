@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classcbdc_1_1coordinator_1_1interface.html" title="Interface for a coordinator." alt="" coords="5,39,132,80"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1coordinator_1_1controller.html" title="Replicated coordinator node." alt="" coords="180,5,307,47"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1coordinator_1_1rpc_1_1client.html" title="RPC client for a coordinator." alt="" coords="180,71,307,112"/>
+<area shape="rect" id="node1" href="$classcbdc_1_1coordinator_1_1interface.html" title="Interface for a coordinator." alt="" coords="5,37,132,77"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1coordinator_1_1controller.html" title="Replicated coordinator node." alt="" coords="180,5,307,45"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1coordinator_1_1rpc_1_1client.html" title="RPC client for a coordinator." alt="" coords="180,69,307,109"/>
 </map>

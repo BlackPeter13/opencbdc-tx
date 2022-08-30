@@ -1,4 +1,4 @@
 <map id="cbdc::locking_shard::interface::hash_in_shard_range" name="cbdc::locking_shard::interface::hash_in_shard_range">
-<area shape="rect" id="node1" title="Returns whether a given hash is within the shard&#39;s range." alt="" coords="5,5,141,61"/>
-<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e" title="Checks if a hash is in the given range handled." alt="" coords="189,13,313,54"/>
+<area shape="rect" id="node1" title="Returns whether a given hash is within the shard&#39;s range." alt="" coords="5,5,141,60"/>
+<area shape="rect" id="node2" href="$namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e" title="Checks if a hash is in the given range handled." alt="" coords="189,13,313,53"/>
 </map>

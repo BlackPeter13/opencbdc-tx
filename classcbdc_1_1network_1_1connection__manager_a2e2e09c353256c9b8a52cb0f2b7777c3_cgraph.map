@@ -1,6 +1,6 @@
 <map id="cbdc::network::connection_manager::send_to_one" name="cbdc::network::connection_manager::send_to_one">
-<area shape="rect" id="node1" title="Serialize and send the provided data to an online peer managed by this network." alt="" coords="5,27,176,69"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="224,5,397,32"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1connection__manager.html#a84bdb0c0b7d6f5dbc423426ac5e1324f" title="Send the provided data to an online peer managed by this network." alt="" coords="225,57,396,98"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="445,5,585,32"/>
+<area shape="rect" id="node1" title="Serialize and send the provided data to an online peer managed by this network." alt="" coords="5,27,176,67"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="224,5,397,31"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1connection__manager.html#a84bdb0c0b7d6f5dbc423426ac5e1324f" title="Send the provided data to an online peer managed by this network." alt="" coords="225,55,396,95"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="445,5,585,31"/>
 </map>

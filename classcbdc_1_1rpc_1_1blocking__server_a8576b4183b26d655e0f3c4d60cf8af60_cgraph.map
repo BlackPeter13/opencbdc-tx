@@ -1,5 +1,5 @@
 <map id="cbdc::rpc::blocking_server::blocking_call" name="cbdc::rpc::blocking_server::blocking_call">
-<area shape="rect" id="node1" title="Synchronously deserializes an RPC request, calls the request handler function, then serializes and re..." alt="" coords="5,39,152,80"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1server.html#ab2562ea21975c38ae466a694e65a91c9" title="Deserializes a request from a buffer." alt="" coords="200,5,333,47"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1server.html#aa0c383cf6cf9a8fea5e263d832000627" title="Serialize a response into a buffer." alt="" coords="202,71,331,112"/>
+<area shape="rect" id="node1" title="Synchronously deserializes an RPC request, calls the request handler function, then serializes and re..." alt="" coords="5,37,152,77"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1rpc_1_1server.html#ab2562ea21975c38ae466a694e65a91c9" title="Deserializes a request from a buffer." alt="" coords="200,5,333,45"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1rpc_1_1server.html#aa0c383cf6cf9a8fea5e263d832000627" title="Serialize a response into a buffer." alt="" coords="202,69,331,109"/>
 </map>
