@@ -383,9 +383,9 @@ template&lt;typename Request , typename Response &gt; </div>
 </div><div class="memdoc">
 
 <p>Initializes the client. </p>
-<p >Connects to the server endpoints and starts the response handler thread. </p><dl class="section return"><dt>Returns</dt><dd>true. </dd></dl>
+<p >Connects to the server endpoints and starts the response handler thread. </p><dl class="section return"><dt>Returns</dt><dd>false if there is only one endpoint and connecting failed. Otherwise true. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tcp__client_8hpp_source.html#l00057">57</a> of file <a class="el" href="tcp__client_8hpp_source.html">tcp_client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tcp__client_8hpp_source.html#l00058">58</a> of file <a class="el" href="tcp__client_8hpp_source.html">tcp_client.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="connection__manager_8cpp_source.html#l00113">cbdc::network::connection_manager::cluster_connect()</a>, and <a class="el" href="connection__manager_8cpp_source.html#l00161">cbdc::network::connection_manager::start_handler()</a>.</p>
 <div class="dynheader">
