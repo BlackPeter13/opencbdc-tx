@@ -198,207 +198,206 @@ $(document).ready(function(){initNavTree('atomizer_2archiver_2controller_8cpp_so
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#af151418ee640fca534185f0e89551023">  104</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#af151418ee640fca534185f0e89551023">controller::init_atomizer_connection</a>() -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        m_atomizer_network.cluster_connect(m_opts.m_atomizer_endpoints, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span>(!m_atomizer_network.connected_to_one()) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to connect to any atomizers.&quot;</span>);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        m_atomizer_handler_thread</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            = m_atomizer_network.start_handler([&amp;](<span class="keyword">auto</span>&amp;&amp; pkt) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                  <span class="keywordflow">return</span> atomizer_handler(std::forward&lt;<span class="keyword">decltype</span>(pkt)&gt;(pkt));</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>              });</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#aa562f4b3fc9335b3874ad8d588364fca">  119</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#aa562f4b3fc9335b3874ad8d588364fca">controller::init_archiver_server</a>() -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">auto</span> as = m_archiver_network.start_server(</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            m_opts.m_archiver_endpoints[m_archiver_id],</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            [&amp;](<span class="keyword">auto</span>&amp;&amp; pkt) {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                return server_handler(std::forward&lt;decltype(pkt)&gt;(pkt));</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            });</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">if</span>(!as.has_value()) {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to establish shard server.&quot;</span>);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        m_archiver_server = std::move(as.value());</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a26f83c5b0e67cc86a8738d017aabcc33">  136</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a26f83c5b0e67cc86a8738d017aabcc33">controller::running</a>() const -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span> m_running;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#aad6d0c9e1bdef5498de80a6af62b58ff">  140</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#aad6d0c9e1bdef5498de80a6af62b58ff">controller::server_handler</a>(<a class="code hl_struct" href="structcbdc_1_1network_1_1message__t.html">cbdc::network::message_t</a>&amp;&amp; pkt)</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        -&gt; std::optional&lt;cbdc::buffer&gt; {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keyword">auto</span> req = from_buffer&lt;request&gt;(*pkt.m_pkt);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">if</span>(!req.has_value()) {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Invalid request packet&quot;</span>);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keyword">auto</span> blk = get_block(req.value());</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b">cbdc::make_buffer</a>(blk);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a4f791f6fab92357d15e539bb09d61b5d">  151</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a4f791f6fab92357d15e539bb09d61b5d">controller::atomizer_handler</a>(<a class="code hl_struct" href="structcbdc_1_1network_1_1message__t.html">cbdc::network::message_t</a>&amp;&amp; pkt)</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        -&gt; std::optional&lt;cbdc::buffer&gt; {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keyword">auto</span> blk = from_buffer&lt;atomizer::block&gt;(*pkt.m_pkt);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">if</span>(!blk.has_value()) {</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Invalid request packet&quot;</span>);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span>((m_max_samples != 0) &amp;&amp; (m_samples &gt;= m_max_samples)) {</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            m_running = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        }</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        digest_block(blk.value());</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a6c1f6938ff5a5fb576bb9272087e4ed7">  166</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a6c1f6938ff5a5fb576bb9272087e4ed7">controller::best_block_height</a>() const -&gt; uint64_t {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">return</span> m_best_height;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">  170</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">controller::digest_block</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1block.html">cbdc::atomizer::block</a>&amp; blk) {</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordflow">if</span>(m_best_height == 0) {</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="comment">// This is the first call to digest_block. Check if there is</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="comment">// already a best height value in the database and set it if so.</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            std::string bestblock_val;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            <span class="keyword">const</span> <span class="keyword">auto</span> blk_res</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                = m_db-&gt;Get(m_read_options, m_bestblock_key, &amp;bestblock_val);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keywordflow">if</span>(blk_res.ok()) {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                m_best_height</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(std::stoul(bestblock_val));</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            }</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1block.html">cbdc::atomizer::block</a> next_blk;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordtype">bool</span> digest_next{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordflow">if</span>(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> &lt;= m_best_height) {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                m_logger-&gt;warn(<span class="stringliteral">&quot;Not processing duplicate block h:&quot;</span>,</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                               blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <span class="keywordflow">if</span>(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> != m_best_height + 1) {</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                <span class="comment">// Not contiguous, check prev block isn&#39;t deferred already</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <span class="keyword">auto</span> it = m_deferred.find(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> - 1);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                <span class="keywordflow">if</span>(it == m_deferred.end()) {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                    <span class="comment">// Request previous block from atomizer cluster</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                    request_block(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> - 1);</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                }</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                m_deferred.emplace(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>, blk);</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            }</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            leveldb::WriteBatch batch;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            m_logger-&gt;trace(<span class="stringliteral">&quot;Digesting block &quot;</span>, blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>, <span class="stringliteral">&quot;... &quot;</span>);</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            <span class="keyword">auto</span> blk_bytes = <a class="code hl_function" href="namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b">make_buffer</a>(blk);</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            leveldb::Slice blk_slice(blk_bytes.c_str(), blk_bytes.size());</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keyword">const</span> <span class="keyword">auto</span> height_str = std::to_string(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            batch.Put(height_str, blk_slice);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            batch.Put(m_bestblock_key, height_str);</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            m_best_height++;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keyword">const</span> <span class="keyword">auto</span> res = m_db-&gt;Write(m_write_options, &amp;batch);</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            assert(res.ok());</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            m_logger-&gt;trace(<span class="stringliteral">&quot;Digested block &quot;</span>, blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="keywordflow">if</span>(m_sample_collection_active) {</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                <span class="keyword">const</span> <span class="keyword">auto</span> old_block_time = m_last_block_time;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                m_last_block_time = std::chrono::high_resolution_clock::now();</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                <span class="keyword">const</span> <span class="keyword">auto</span> s_since_last_block = std::chrono::duration&lt;double&gt;(</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                    m_last_block_time - old_block_time);</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                <span class="keyword">const</span> <span class="keyword">auto</span> tx_throughput</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aa911566ee492a05f66631cdd2f052542">m_transactions</a>.size())</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>                    / s_since_last_block.count();</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                m_tp_sample_file &lt;&lt; tx_throughput &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                m_samples++;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            }</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <span class="comment">// Tell the atomizer cluster to prune all blocks &lt;</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            <span class="comment">// m_best_height</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            request_prune(m_best_height);</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="keyword">auto</span> it = m_deferred.find(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> + 1);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keywordflow">if</span>(it != m_deferred.end()) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                next_blk = it-&gt;second;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                digest_next = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            }</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            m_deferred.erase(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        }</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">if</span>(digest_next) {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="comment">// TODO: this can recurse back to genesis. In a long-running system</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="comment">// we&#39;ll want an alternative method of building a new archiver node</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="comment">// and limit the depth of recursion here.</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">digest_block</a>(next_blk);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        }</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    }</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a08721375557e7c8f0336b8d213ec80bd">  254</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a08721375557e7c8f0336b8d213ec80bd">controller::get_block</a>(uint64_t height)</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        -&gt; std::optional&lt;cbdc::atomizer::block&gt; {</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        m_logger-&gt;trace(__func__, <span class="stringliteral">&quot;(&quot;</span>, height, <span class="stringliteral">&quot;)&quot;</span>);</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        std::string height_str = std::to_string(height);</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        std::string blk_str;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="comment">// Assume blocks with 100k 256-byte transactions.</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">auto</span> expected_entry_sz = 256 * 100000;</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        blk_str.reserve(expected_entry_sz);</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keyword">auto</span> s = m_db-&gt;Get(m_read_options, height_str, &amp;blk_str);</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">if</span>(!s.ok()) {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;block&quot;</span>, height, <span class="stringliteral">&quot;not found&quot;</span>);</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            m_logger-&gt;trace(<span class="stringliteral">&quot;end&quot;</span>, __func__);</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        }</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keyword">auto</span> buf = <a class="code hl_class" href="classcbdc_1_1buffer.html">cbdc::buffer</a>();</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        buf.append(blk_str.data(), blk_str.size());</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keyword">auto</span> blk = from_buffer&lt;atomizer::block&gt;(buf);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        assert(blk.has_value());</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        m_logger-&gt;trace(<span class="stringliteral">&quot;found block&quot;</span>, height, <span class="stringliteral">&quot;-&quot;</span>, blk.value().m_height);</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <span class="keywordflow">return</span> blk.value();</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    }</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordtype">void</span> controller::request_block(uint64_t height) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        m_logger-&gt;trace(<span class="stringliteral">&quot;Requesting block&quot;</span>, height);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keyword">auto</span> req = <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1get__block__request.html">atomizer::get_block_request</a>{height};</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keyword">auto</span> pkt = <a class="code hl_function" href="namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7">make_shared_buffer</a>(<a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a20d57ae6b94122f8978b4aa197475f3a">atomizer::request</a>{req});</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keywordflow">if</span>(!m_atomizer_network.<a class="code hl_function" href="classcbdc_1_1network_1_1connection__manager.html#a84bdb0c0b7d6f5dbc423426ac5e1324f">send_to_one</a>(pkt)) {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to request block&quot;</span>, height);</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        }</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordtype">void</span> controller::request_prune(uint64_t height) {</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        m_logger-&gt;trace(<span class="stringliteral">&quot;Requesting prune h &lt;&quot;</span>, height);</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keyword">auto</span> req = atomizer::prune_request{height};</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keyword">auto</span> pkt = <a class="code hl_function" href="namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7">make_shared_buffer</a>(<a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a20d57ae6b94122f8978b4aa197475f3a">atomizer::request</a>{req});</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        <span class="keywordflow">if</span>(!m_atomizer_network.<a class="code hl_function" href="classcbdc_1_1network_1_1connection__manager.html#a84bdb0c0b7d6f5dbc423426ac5e1324f">send_to_one</a>(pkt)) {</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to request prune&quot;</span>, height);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        }</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    }</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;Failed to connect to any atomizers.&quot;</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        m_atomizer_handler_thread</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            = m_atomizer_network.start_handler([&amp;](<span class="keyword">auto</span>&amp;&amp; pkt) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                  <span class="keywordflow">return</span> atomizer_handler(std::forward&lt;<span class="keyword">decltype</span>(pkt)&gt;(pkt));</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>              });</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#aa562f4b3fc9335b3874ad8d588364fca">  118</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#aa562f4b3fc9335b3874ad8d588364fca">controller::init_archiver_server</a>() -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keyword">auto</span> as = m_archiver_network.start_server(</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            m_opts.m_archiver_endpoints[m_archiver_id],</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            [&amp;](<span class="keyword">auto</span>&amp;&amp; pkt) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                return server_handler(std::forward&lt;decltype(pkt)&gt;(pkt));</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            });</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span>(!as.has_value()) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to establish shard server.&quot;</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        m_archiver_server = std::move(as.value());</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a26f83c5b0e67cc86a8738d017aabcc33">  135</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a26f83c5b0e67cc86a8738d017aabcc33">controller::running</a>() const -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">return</span> m_running;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#aad6d0c9e1bdef5498de80a6af62b58ff">  139</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#aad6d0c9e1bdef5498de80a6af62b58ff">controller::server_handler</a>(<a class="code hl_struct" href="structcbdc_1_1network_1_1message__t.html">cbdc::network::message_t</a>&amp;&amp; pkt)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        -&gt; std::optional&lt;cbdc::buffer&gt; {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keyword">auto</span> req = from_buffer&lt;request&gt;(*pkt.m_pkt);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">if</span>(!req.has_value()) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Invalid request packet&quot;</span>);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keyword">auto</span> blk = get_block(req.value());</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b">cbdc::make_buffer</a>(blk);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a4f791f6fab92357d15e539bb09d61b5d">  150</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a4f791f6fab92357d15e539bb09d61b5d">controller::atomizer_handler</a>(<a class="code hl_struct" href="structcbdc_1_1network_1_1message__t.html">cbdc::network::message_t</a>&amp;&amp; pkt)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        -&gt; std::optional&lt;cbdc::buffer&gt; {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keyword">auto</span> blk = from_buffer&lt;atomizer::block&gt;(*pkt.m_pkt);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span>(!blk.has_value()) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Invalid request packet&quot;</span>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">if</span>((m_max_samples != 0) &amp;&amp; (m_samples &gt;= m_max_samples)) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            m_running = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        digest_block(blk.value());</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a6c1f6938ff5a5fb576bb9272087e4ed7">  165</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a6c1f6938ff5a5fb576bb9272087e4ed7">controller::best_block_height</a>() const -&gt; uint64_t {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> m_best_height;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">  169</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">controller::digest_block</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1block.html">cbdc::atomizer::block</a>&amp; blk) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keywordflow">if</span>(m_best_height == 0) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="comment">// This is the first call to digest_block. Check if there is</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="comment">// already a best height value in the database and set it if so.</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            std::string bestblock_val;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keyword">const</span> <span class="keyword">auto</span> blk_res</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                = m_db-&gt;Get(m_read_options, m_bestblock_key, &amp;bestblock_val);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">if</span>(blk_res.ok()) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                m_best_height</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(std::stoul(bestblock_val));</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1block.html">cbdc::atomizer::block</a> next_blk;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordtype">bool</span> digest_next{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordflow">if</span>(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> &lt;= m_best_height) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                m_logger-&gt;warn(<span class="stringliteral">&quot;Not processing duplicate block h:&quot;</span>,</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                               blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordflow">if</span>(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> != m_best_height + 1) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                <span class="comment">// Not contiguous, check prev block isn&#39;t deferred already</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                <span class="keyword">auto</span> it = m_deferred.find(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> - 1);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <span class="keywordflow">if</span>(it == m_deferred.end()) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                    <span class="comment">// Request previous block from atomizer cluster</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                    request_block(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> - 1);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                m_deferred.emplace(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>, blk);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            leveldb::WriteBatch batch;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            m_logger-&gt;trace(<span class="stringliteral">&quot;Digesting block &quot;</span>, blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>, <span class="stringliteral">&quot;... &quot;</span>);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            <span class="keyword">auto</span> blk_bytes = <a class="code hl_function" href="namespacecbdc.html#aed9c6313b2ae6e3d7f01340ab5a3076b">make_buffer</a>(blk);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            leveldb::Slice blk_slice(blk_bytes.c_str(), blk_bytes.size());</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <span class="keyword">const</span> <span class="keyword">auto</span> height_str = std::to_string(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            batch.Put(height_str, blk_slice);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            batch.Put(m_bestblock_key, height_str);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            m_best_height++;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keyword">const</span> <span class="keyword">auto</span> res = m_db-&gt;Write(m_write_options, &amp;batch);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            assert(res.ok());</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            m_logger-&gt;trace(<span class="stringliteral">&quot;Digested block &quot;</span>, blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keywordflow">if</span>(m_sample_collection_active) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                <span class="keyword">const</span> <span class="keyword">auto</span> old_block_time = m_last_block_time;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                m_last_block_time = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                <span class="keyword">const</span> <span class="keyword">auto</span> s_since_last_block = std::chrono::duration&lt;double&gt;(</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                    m_last_block_time - old_block_time);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                <span class="keyword">const</span> <span class="keyword">auto</span> tx_throughput</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                    = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aa911566ee492a05f66631cdd2f052542">m_transactions</a>.size())</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                    / s_since_last_block.count();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                m_tp_sample_file &lt;&lt; tx_throughput &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                m_samples++;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="comment">// Tell the atomizer cluster to prune all blocks &lt;</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <span class="comment">// m_best_height</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            request_prune(m_best_height);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keyword">auto</span> it = m_deferred.find(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a> + 1);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="keywordflow">if</span>(it != m_deferred.end()) {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                next_blk = it-&gt;second;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                digest_next = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            m_deferred.erase(blk.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1block.html#aea202f4cbf6edb784487b9c21f1c2a46">m_height</a>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">if</span>(digest_next) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="comment">// TODO: this can recurse back to genesis. In a long-running system</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="comment">// we&#39;ll want an alternative method of building a new archiver node</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="comment">// and limit the depth of recursion here.</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">digest_block</a>(next_blk);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="classcbdc_1_1archiver_1_1controller.html#a08721375557e7c8f0336b8d213ec80bd">  253</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1archiver_1_1controller.html#a08721375557e7c8f0336b8d213ec80bd">controller::get_block</a>(uint64_t height)</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        -&gt; std::optional&lt;cbdc::atomizer::block&gt; {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        m_logger-&gt;trace(__func__, <span class="stringliteral">&quot;(&quot;</span>, height, <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        std::string height_str = std::to_string(height);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        std::string blk_str;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="comment">// Assume blocks with 100k 256-byte transactions.</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">auto</span> expected_entry_sz = 256 * 100000;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        blk_str.reserve(expected_entry_sz);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keyword">auto</span> s = m_db-&gt;Get(m_read_options, height_str, &amp;blk_str);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">if</span>(!s.ok()) {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;block&quot;</span>, height, <span class="stringliteral">&quot;not found&quot;</span>);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            m_logger-&gt;trace(<span class="stringliteral">&quot;end&quot;</span>, __func__);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <span class="keyword">auto</span> buf = <a class="code hl_class" href="classcbdc_1_1buffer.html">cbdc::buffer</a>();</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        buf.append(blk_str.data(), blk_str.size());</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keyword">auto</span> blk = from_buffer&lt;atomizer::block&gt;(buf);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        assert(blk.has_value());</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        m_logger-&gt;trace(<span class="stringliteral">&quot;found block&quot;</span>, height, <span class="stringliteral">&quot;-&quot;</span>, blk.value().m_height);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">return</span> blk.value();</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordtype">void</span> controller::request_block(uint64_t height) {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        m_logger-&gt;trace(<span class="stringliteral">&quot;Requesting block&quot;</span>, height);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="keyword">auto</span> req = <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1get__block__request.html">atomizer::get_block_request</a>{height};</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keyword">auto</span> pkt = <a class="code hl_function" href="namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7">make_shared_buffer</a>(<a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a20d57ae6b94122f8978b4aa197475f3a">atomizer::request</a>{req});</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keywordflow">if</span>(!m_atomizer_network.<a class="code hl_function" href="classcbdc_1_1network_1_1connection__manager.html#a84bdb0c0b7d6f5dbc423426ac5e1324f">send_to_one</a>(pkt)) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to request block&quot;</span>, height);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keywordtype">void</span> controller::request_prune(uint64_t height) {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        m_logger-&gt;trace(<span class="stringliteral">&quot;Requesting prune h &lt;&quot;</span>, height);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keyword">auto</span> req = atomizer::prune_request{height};</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        <span class="keyword">auto</span> pkt = <a class="code hl_function" href="namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7">make_shared_buffer</a>(<a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a20d57ae6b94122f8978b4aa197475f3a">atomizer::request</a>{req});</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">if</span>(!m_atomizer_network.<a class="code hl_function" href="classcbdc_1_1network_1_1connection__manager.html#a84bdb0c0b7d6f5dbc423426ac5e1324f">send_to_one</a>(pkt)) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to request prune&quot;</span>, height);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
 <div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a02c7f84a73eec85a7440fe31362261df"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a02c7f84a73eec85a7440fe31362261df">cbdc::archiver::controller::controller</a></div><div class="ttdeci">controller()=delete</div></div>
-<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a08721375557e7c8f0336b8d213ec80bd"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a08721375557e7c8f0336b8d213ec80bd">cbdc::archiver::controller::get_block</a></div><div class="ttdeci">auto get_block(uint64_t height) -&gt; std::optional&lt; cbdc::atomizer::block &gt;</div><div class="ttdoc">Queries the archiver database for the block at the specified height.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00254">atomizer/archiver/controller.cpp:254</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a08721375557e7c8f0336b8d213ec80bd"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a08721375557e7c8f0336b8d213ec80bd">cbdc::archiver::controller::get_block</a></div><div class="ttdeci">auto get_block(uint64_t height) -&gt; std::optional&lt; cbdc::atomizer::block &gt;</div><div class="ttdoc">Queries the archiver database for the block at the specified height.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00253">atomizer/archiver/controller.cpp:253</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a0c8f8641a24cacf68f181e96109736c2"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a0c8f8641a24cacf68f181e96109736c2">cbdc::archiver::controller::init</a></div><div class="ttdeci">auto init() -&gt; bool</div><div class="ttdoc">Initializes the controller with all its dependencies.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00040">atomizer/archiver/controller.cpp:40</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a26f83c5b0e67cc86a8738d017aabcc33"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a26f83c5b0e67cc86a8738d017aabcc33">cbdc::archiver::controller::running</a></div><div class="ttdeci">auto running() const -&gt; bool</div><div class="ttdoc">Returns true if this archiver is receiving blocks from the atomizer.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00136">atomizer/archiver/controller.cpp:136</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a26f83c5b0e67cc86a8738d017aabcc33"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a26f83c5b0e67cc86a8738d017aabcc33">cbdc::archiver::controller::running</a></div><div class="ttdeci">auto running() const -&gt; bool</div><div class="ttdoc">Returns true if this archiver is receiving blocks from the atomizer.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00135">atomizer/archiver/controller.cpp:135</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a2c01e59b53e53886bd5c645c4ab60b0f"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a2c01e59b53e53886bd5c645c4ab60b0f">cbdc::archiver::controller::init_sample_collection</a></div><div class="ttdeci">auto init_sample_collection() -&gt; bool</div><div class="ttdoc">Initializes the sample collection.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00094">atomizer/archiver/controller.cpp:94</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a4f791f6fab92357d15e539bb09d61b5d"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a4f791f6fab92357d15e539bb09d61b5d">cbdc::archiver::controller::atomizer_handler</a></div><div class="ttdeci">auto atomizer_handler(cbdc::network::message_t &amp;&amp;pkt) -&gt; std::optional&lt; cbdc::buffer &gt;</div><div class="ttdoc">Receives a serialized block from the atomizer and digests it.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00151">atomizer/archiver/controller.cpp:151</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a5426eed315c90a6d2ccb33061f9b2a96"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">cbdc::archiver::controller::digest_block</a></div><div class="ttdeci">void digest_block(const cbdc::atomizer::block &amp;blk)</div><div class="ttdoc">Adds a block to the archiver database.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00170">atomizer/archiver/controller.cpp:170</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a4f791f6fab92357d15e539bb09d61b5d"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a4f791f6fab92357d15e539bb09d61b5d">cbdc::archiver::controller::atomizer_handler</a></div><div class="ttdeci">auto atomizer_handler(cbdc::network::message_t &amp;&amp;pkt) -&gt; std::optional&lt; cbdc::buffer &gt;</div><div class="ttdoc">Receives a serialized block from the atomizer and digests it.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00150">atomizer/archiver/controller.cpp:150</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a5426eed315c90a6d2ccb33061f9b2a96"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a5426eed315c90a6d2ccb33061f9b2a96">cbdc::archiver::controller::digest_block</a></div><div class="ttdeci">void digest_block(const cbdc::atomizer::block &amp;blk)</div><div class="ttdoc">Adds a block to the archiver database.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00169">atomizer/archiver/controller.cpp:169</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a60b7298032589a1845cc0aa496c9a605"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a60b7298032589a1845cc0aa496c9a605">cbdc::archiver::controller::init_leveldb</a></div><div class="ttdeci">auto init_leveldb() -&gt; bool</div><div class="ttdoc">Initializes the LevelDB database.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00059">atomizer/archiver/controller.cpp:59</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a6c1f6938ff5a5fb576bb9272087e4ed7"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a6c1f6938ff5a5fb576bb9272087e4ed7">cbdc::archiver::controller::best_block_height</a></div><div class="ttdeci">auto best_block_height() const -&gt; uint64_t</div><div class="ttdoc">Returns the archiver's best block height.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00166">atomizer/archiver/controller.cpp:166</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_aa562f4b3fc9335b3874ad8d588364fca"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#aa562f4b3fc9335b3874ad8d588364fca">cbdc::archiver::controller::init_archiver_server</a></div><div class="ttdeci">auto init_archiver_server() -&gt; bool</div><div class="ttdoc">Initializes the archiver server.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00119">atomizer/archiver/controller.cpp:119</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_aad6d0c9e1bdef5498de80a6af62b58ff"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#aad6d0c9e1bdef5498de80a6af62b58ff">cbdc::archiver::controller::server_handler</a></div><div class="ttdeci">auto server_handler(cbdc::network::message_t &amp;&amp;pkt) -&gt; std::optional&lt; cbdc::buffer &gt;</div><div class="ttdoc">Receives a request for an archived block and returns the block.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00140">atomizer/archiver/controller.cpp:140</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_a6c1f6938ff5a5fb576bb9272087e4ed7"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#a6c1f6938ff5a5fb576bb9272087e4ed7">cbdc::archiver::controller::best_block_height</a></div><div class="ttdeci">auto best_block_height() const -&gt; uint64_t</div><div class="ttdoc">Returns the archiver's best block height.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00165">atomizer/archiver/controller.cpp:165</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_aa562f4b3fc9335b3874ad8d588364fca"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#aa562f4b3fc9335b3874ad8d588364fca">cbdc::archiver::controller::init_archiver_server</a></div><div class="ttdeci">auto init_archiver_server() -&gt; bool</div><div class="ttdoc">Initializes the archiver server.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00118">atomizer/archiver/controller.cpp:118</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_aad6d0c9e1bdef5498de80a6af62b58ff"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#aad6d0c9e1bdef5498de80a6af62b58ff">cbdc::archiver::controller::server_handler</a></div><div class="ttdeci">auto server_handler(cbdc::network::message_t &amp;&amp;pkt) -&gt; std::optional&lt; cbdc::buffer &gt;</div><div class="ttdoc">Receives a request for an archived block and returns the block.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00139">atomizer/archiver/controller.cpp:139</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_ad67595e205f03d279702a51ccca9fe5d"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#ad67595e205f03d279702a51ccca9fe5d">cbdc::archiver::controller::~controller</a></div><div class="ttdeci">~controller()</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00025">atomizer/archiver/controller.cpp:25</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_adcd4b97561f6f23430cc0fcf8baf34e2"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#adcd4b97561f6f23430cc0fcf8baf34e2">cbdc::archiver::controller::init_best_block</a></div><div class="ttdeci">auto init_best_block() -&gt; bool</div><div class="ttdoc">Initializes the best block value.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00078">atomizer/archiver/controller.cpp:78</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1archiver_1_1controller_html_af151418ee640fca534185f0e89551023"><div class="ttname"><a href="classcbdc_1_1archiver_1_1controller.html#af151418ee640fca534185f0e89551023">cbdc::archiver::controller::init_atomizer_connection</a></div><div class="ttdeci">auto init_atomizer_connection() -&gt; bool</div><div class="ttdoc">Initializes the connection to the atomizer.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer_2archiver_2controller_8cpp_source.html#l00104">atomizer/archiver/controller.cpp:104</a></div></div>

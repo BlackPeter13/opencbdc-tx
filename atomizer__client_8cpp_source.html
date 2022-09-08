@@ -120,87 +120,85 @@ $(document).ready(function(){initNavTree('atomizer__client_8cpp_source.html','')
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer__client.html#a72189504ae494ac6ceff07ea245d5a6a">   26</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer__client.html#a72189504ae494ac6ceff07ea245d5a6a">atomizer_client::init_derived</a>() -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        m_atomizer_network.cluster_connect(m_opts.m_atomizer_endpoints);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">if</span>(!m_atomizer_network.connected_to_one()) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to connect to any atomizers&quot;</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">if</span>(!m_wc.init()) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            m_logger-&gt;error(<span class="stringliteral">&quot;Failed to initialize watchtower client&quot;</span>);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer__client.html#ab9fbc3a570f539a6c3c131b765451ddd">   41</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer__client.html#ab9fbc3a570f539a6c3c131b765451ddd">atomizer_client::sync</a>() -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">auto</span> tus = <a class="code hl_typedef" href="namespacecbdc_1_1watchtower.html#a92c7fab50f8fc28900349c0a77795e60">cbdc::watchtower::tx_id_uhs_ids</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [tx_id, tx] : pending_txs()) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keyword">auto</span> ctx = <a class="code hl_struct" href="structcbdc_1_1transaction_1_1compact__tx.html">transaction::compact_tx</a>(tx);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keyword">auto</span> [it, success] = tus.insert({ctx.m_id, {}});</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            assert(success);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            it-&gt;second.insert(it-&gt;second.end(),</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                              ctx.m_inputs.begin(),</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                              ctx.m_inputs.end());</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            it-&gt;second.insert(it-&gt;second.end(),</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                              ctx.m_uhs_outputs.begin(),</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                              ctx.m_uhs_outputs.end());</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [tx_id, in] : pending_inputs()) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            tus.insert({tx_id, {in.hash()}});</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;Failed to connect to any atomizers&quot;</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span>(!m_wc.init()) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            m_logger-&gt;warn(<span class="stringliteral">&quot;Failed to initialize watchtower client&quot;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer__client.html#ab9fbc3a570f539a6c3c131b765451ddd">   39</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer__client.html#ab9fbc3a570f539a6c3c131b765451ddd">atomizer_client::sync</a>() -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">auto</span> tus = <a class="code hl_typedef" href="namespacecbdc_1_1watchtower.html#a92c7fab50f8fc28900349c0a77795e60">cbdc::watchtower::tx_id_uhs_ids</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [tx_id, tx] : pending_txs()) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keyword">auto</span> ctx = <a class="code hl_struct" href="structcbdc_1_1transaction_1_1compact__tx.html">transaction::compact_tx</a>(tx);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keyword">auto</span> [it, success] = tus.insert({ctx.m_id, {}});</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            assert(success);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            it-&gt;second.insert(it-&gt;second.end(),</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                              ctx.m_inputs.begin(),</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                              ctx.m_inputs.end());</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            it-&gt;second.insert(it-&gt;second.end(),</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                              ctx.m_uhs_outputs.begin(),</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                              ctx.m_uhs_outputs.end());</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [tx_id, in] : pending_inputs()) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            tus.insert({tx_id, {in.hash()}});</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_class" href="classcbdc_1_1watchtower_1_1status__update__request.html">cbdc::watchtower::status_update_request</a> req{tus};</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_class" href="classcbdc_1_1watchtower_1_1status__update__request.html">cbdc::watchtower::status_update_request</a> req{tus};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        m_logger-&gt;debug(<span class="stringliteral">&quot;Checking watchtower state...&quot;</span>);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        m_logger-&gt;debug(<span class="stringliteral">&quot;Checking watchtower state...&quot;</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">auto</span> res = m_wc.request_status_update(req);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">auto</span> res = m_wc.request_status_update(req);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">bool</span> success{<span class="keyword">true</span>};</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [tx_id, uhs_states] : res-&gt;states()) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : uhs_states) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">if</span>((s.status() != <a class="code hl_enumvalue" href="namespacecbdc_1_1watchtower.html#a679b6303144dca836dbae72cd2dc1c94a26ca4209e40072fcfad07fffd7d497a7">cbdc::watchtower::search_status::unspent</a>)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                   &amp;&amp; (s.status() != <a class="code hl_enumvalue" href="namespacecbdc_1_1watchtower.html#a679b6303144dca836dbae72cd2dc1c94a167b8c8551bde922de1487106e31489c">cbdc::watchtower::search_status::spent</a>)) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                    m_logger-&gt;warn(<span class="stringliteral">&quot;Tx ID:&quot;</span>,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                   <a class="code hl_function" href="namespacecbdc.html#aeca0663c5237402736e3127369854cb5">to_string</a>(tx_id),</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                   <span class="stringliteral">&quot;, UHS ID:&quot;</span>,</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                   <a class="code hl_function" href="namespacecbdc.html#aeca0663c5237402736e3127369854cb5">to_string</a>(s.uhs_id()),</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                   <span class="stringliteral">&quot;, status:&quot;</span>,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                   <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(s.status()));</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    success = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">if</span>(!success) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            success = confirm_transaction(tx_id);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">return</span> success;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer__client.html#afcd91a22ad285501b829f26b361d6646">   90</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer__client.html#afcd91a22ad285501b829f26b361d6646">atomizer_client::send_mint_tx</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; mint_tx)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1tx__notify__request.html">atomizer::tx_notify_request</a> msg;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">auto</span> ctx = <a class="code hl_struct" href="structcbdc_1_1transaction_1_1compact__tx.html">transaction::compact_tx</a>(mint_tx);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; m_opts.m_attestation_threshold; i++) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keyword">auto</span> att</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                = ctx.sign(m_secp.get(), m_opts.m_sentinel_private_keys[i]);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            ctx.m_attestations.insert(att);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        msg.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1tx__notify__request.html#abeeee7752f1391148e859d7963411a4e">m_tx</a> = std::move(ctx);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        msg.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1tx__notify__request.html#ac3798513fc54146465667f882b1c9733">m_block_height</a> = m_wc.request_best_block_height()-&gt;height();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> m_atomizer_network.send_to_one(<a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a20d57ae6b94122f8978b4aa197475f3a">atomizer::request</a>{msg});</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">bool</span> success{<span class="keyword">true</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [tx_id, uhs_states] : res-&gt;states()) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : uhs_states) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <span class="keywordflow">if</span>((s.status() != <a class="code hl_enumvalue" href="namespacecbdc_1_1watchtower.html#a679b6303144dca836dbae72cd2dc1c94a26ca4209e40072fcfad07fffd7d497a7">cbdc::watchtower::search_status::unspent</a>)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                   &amp;&amp; (s.status() != <a class="code hl_enumvalue" href="namespacecbdc_1_1watchtower.html#a679b6303144dca836dbae72cd2dc1c94a167b8c8551bde922de1487106e31489c">cbdc::watchtower::search_status::spent</a>)) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    m_logger-&gt;warn(<span class="stringliteral">&quot;Tx ID:&quot;</span>,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                   <a class="code hl_function" href="namespacecbdc.html#aeca0663c5237402736e3127369854cb5">to_string</a>(tx_id),</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                   <span class="stringliteral">&quot;, UHS ID:&quot;</span>,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                   <a class="code hl_function" href="namespacecbdc.html#aeca0663c5237402736e3127369854cb5">to_string</a>(s.uhs_id()),</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                                   <span class="stringliteral">&quot;, status:&quot;</span>,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                                   <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(s.status()));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    success = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">if</span>(!success) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            success = confirm_transaction(tx_id);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> success;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classcbdc_1_1atomizer__client.html#afcd91a22ad285501b829f26b361d6646">   88</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1atomizer__client.html#afcd91a22ad285501b829f26b361d6646">atomizer_client::send_mint_tx</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a>&amp; mint_tx)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_struct" href="structcbdc_1_1atomizer_1_1tx__notify__request.html">atomizer::tx_notify_request</a> msg;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keyword">auto</span> ctx = <a class="code hl_struct" href="structcbdc_1_1transaction_1_1compact__tx.html">transaction::compact_tx</a>(mint_tx);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; m_opts.m_attestation_threshold; i++) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keyword">auto</span> att</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                = ctx.sign(m_secp.get(), m_opts.m_sentinel_private_keys[i]);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            ctx.m_attestations.insert(att);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        msg.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1tx__notify__request.html#abeeee7752f1391148e859d7963411a4e">m_tx</a> = std::move(ctx);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        msg.<a class="code hl_variable" href="structcbdc_1_1atomizer_1_1tx__notify__request.html#ac3798513fc54146465667f882b1c9733">m_block_height</a> = m_wc.request_best_block_height()-&gt;height();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">return</span> m_atomizer_network.send_to_one(<a class="code hl_typedef" href="namespacecbdc_1_1atomizer.html#a20d57ae6b94122f8978b4aa197475f3a">atomizer::request</a>{msg});</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
 <div class="ttc" id="aatomizer__client_8hpp_html"><div class="ttname"><a href="atomizer__client_8hpp.html">atomizer_client.hpp</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1atomizer__client_html_a392afb747ba19a87a28d8f1f10e90b8b"><div class="ttname"><a href="classcbdc_1_1atomizer__client.html#a392afb747ba19a87a28d8f1f10e90b8b">cbdc::atomizer_client::~atomizer_client</a></div><div class="ttdeci">~atomizer_client() override</div><div class="ttdef"><b>Definition:</b> <a href="atomizer__client_8cpp_source.html#l00022">atomizer_client.cpp:22</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1atomizer__client_html_a72189504ae494ac6ceff07ea245d5a6a"><div class="ttname"><a href="classcbdc_1_1atomizer__client.html#a72189504ae494ac6ceff07ea245d5a6a">cbdc::atomizer_client::init_derived</a></div><div class="ttdeci">auto init_derived() -&gt; bool override</div><div class="ttdoc">Initializes the atomizer client.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer__client_8cpp_source.html#l00026">atomizer_client.cpp:26</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1atomizer__client_html_a98e31659f4f9cf9eb4b89bab2fafaa62"><div class="ttname"><a href="classcbdc_1_1atomizer__client.html#a98e31659f4f9cf9eb4b89bab2fafaa62">cbdc::atomizer_client::atomizer_client</a></div><div class="ttdeci">atomizer_client()=delete</div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer__client_html_ab9fbc3a570f539a6c3c131b765451ddd"><div class="ttname"><a href="classcbdc_1_1atomizer__client.html#ab9fbc3a570f539a6c3c131b765451ddd">cbdc::atomizer_client::sync</a></div><div class="ttdeci">auto sync() -&gt; bool override</div><div class="ttdoc">Update the client with the latest state from the watchtower.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer__client_8cpp_source.html#l00041">atomizer_client.cpp:41</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1atomizer__client_html_afcd91a22ad285501b829f26b361d6646"><div class="ttname"><a href="classcbdc_1_1atomizer__client.html#afcd91a22ad285501b829f26b361d6646">cbdc::atomizer_client::send_mint_tx</a></div><div class="ttdeci">auto send_mint_tx(const transaction::full_tx &amp;mint_tx) -&gt; bool override</div><div class="ttdoc">Sends the given transaction directly to the atomizer cluster.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer__client_8cpp_source.html#l00090">atomizer_client.cpp:90</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer__client_html_ab9fbc3a570f539a6c3c131b765451ddd"><div class="ttname"><a href="classcbdc_1_1atomizer__client.html#ab9fbc3a570f539a6c3c131b765451ddd">cbdc::atomizer_client::sync</a></div><div class="ttdeci">auto sync() -&gt; bool override</div><div class="ttdoc">Update the client with the latest state from the watchtower.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer__client_8cpp_source.html#l00039">atomizer_client.cpp:39</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1atomizer__client_html_afcd91a22ad285501b829f26b361d6646"><div class="ttname"><a href="classcbdc_1_1atomizer__client.html#afcd91a22ad285501b829f26b361d6646">cbdc::atomizer_client::send_mint_tx</a></div><div class="ttdeci">auto send_mint_tx(const transaction::full_tx &amp;mint_tx) -&gt; bool override</div><div class="ttdoc">Sends the given transaction directly to the atomizer cluster.</div><div class="ttdef"><b>Definition:</b> <a href="atomizer__client_8cpp_source.html#l00088">atomizer_client.cpp:88</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1client_html"><div class="ttname"><a href="classcbdc_1_1client.html">cbdc::client</a></div><div class="ttdoc">External client for sending new transactions to the system.</div><div class="ttdef"><b>Definition:</b> <a href="uhs_2client_2client_8hpp_source.html#l00015">uhs/client/client.hpp:15</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1network_1_1connection__manager_html_a7be9b6b8c582cb5f3fdea1a9a34210a9"><div class="ttname"><a href="classcbdc_1_1network_1_1connection__manager.html#a7be9b6b8c582cb5f3fdea1a9a34210a9">cbdc::network::connection_manager::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Shuts down the network listener and all existing peer connections.</div><div class="ttdef"><b>Definition:</b> <a href="connection__manager_8cpp_source.html#l00184">connection_manager.cpp:184</a></div></div>
 <div class="ttc" id="aclasscbdc_1_1watchtower_1_1status__update__request_html"><div class="ttname"><a href="classcbdc_1_1watchtower_1_1status__update__request.html">cbdc::watchtower::status_update_request</a></div><div class="ttdoc">Network request to interact with the Watchtower's status update service.</div><div class="ttdef"><b>Definition:</b> <a href="status__update_8hpp_source.html#l00051">status_update.hpp:51</a></div></div>
