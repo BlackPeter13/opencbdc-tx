@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"namespacecbdc_1_1transaction_1_1validation.html":[0,0,0,13,0],
+"namespacecbdc_1_1transaction_1_1validation.html#a08a3e15a0c8fb6468ba1bf99c324957e":[0,0,0,13,0,13],
 "namespacecbdc_1_1transaction_1_1validation.html#a1259a10b7c4d5708040a9c6d332f6589":[0,0,0,13,0,17],
 "namespacecbdc_1_1transaction_1_1validation.html#a19a9e7e41435f482b21c5ba94c6c4eef":[0,0,0,13,0,12],
 "namespacecbdc_1_1transaction_1_1validation.html#a1d6036ed3690d95fec5b7fb1d9985644":[0,0,0,13,0,31],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "structcbdc_1_1atomizer_1_1make__block__request.html":[1,0,0,1,8],
 "structcbdc_1_1atomizer_1_1make__block__request.html":[0,0,0,1,8],
 "structcbdc_1_1atomizer_1_1make__block__response.html":[0,0,0,1,9],
-"structcbdc_1_1atomizer_1_1make__block__response.html":[1,0,0,1,9],
-"structcbdc_1_1atomizer_1_1make__block__response.html#a2e7cfdd907600fa912d726214c574894":[0,0,0,1,9,0],
-"structcbdc_1_1atomizer_1_1make__block__response.html#a2e7cfdd907600fa912d726214c574894":[1,0,0,1,9,0]
+"structcbdc_1_1atomizer_1_1make__block__response.html":[1,0,0,1,9]
 };

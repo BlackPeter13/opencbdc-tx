@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"logging_8hpp.html#a71a306e5ac8234a66ce25bb5aed18254acb5e100e5a9a3e7f6d1fd97512215282":[2,0,0,1,0,13,2,4],
+"logging_8hpp.html#a71a306e5ac8234a66ce25bb5aed18254adf6402fd9ecc60f5a2159fdf45711cd4":[2,0,0,1,0,13,2,5],
 "logging_8hpp.html#ac7e6632bd25740fd19af12af6bff31aa":[2,0,0,1,0,13,3],
 "logging_8hpp_source.html":[2,0,0,1,0,13],
 "namespacecbdc.html":[0,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "namespacecbdc_1_1transaction.html#a05f9ed2f69c427eaf1e5a8e7bbffa012":[0,0,0,13,12],
 "namespacecbdc_1_1transaction.html#a3156c1db13a82c955dcd53f78939b422":[0,0,0,13,8],
 "namespacecbdc_1_1transaction.html#a43a4b189920471ef5363e91bc908a892":[0,0,0,13,11],
-"namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860":[0,0,0,13,10],
-"namespacecbdc_1_1transaction_1_1validation.html":[0,0,0,13,0],
-"namespacecbdc_1_1transaction_1_1validation.html#a08a3e15a0c8fb6468ba1bf99c324957e":[0,0,0,13,0,13]
+"namespacecbdc_1_1transaction.html#a565b4f45e6f928ae432420f675fd3860":[0,0,0,13,10]
 };
