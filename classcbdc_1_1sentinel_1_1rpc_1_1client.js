@@ -9,7 +9,7 @@ var classcbdc_1_1sentinel_1_1rpc_1_1client =
     [ "client", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#a0705fcbfc1f96e6fd8cb64ec7b373cca", null ],
     [ "execute_transaction", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#ad220fe7bc2563327c2ca12d9af0cade6", null ],
     [ "execute_transaction", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#a06b13449e9d3e93b5cf829b2b7b3d1b3", null ],
-    [ "init", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#aa2fbd688d1e0cbeabe20666422fe319c", null ],
+    [ "init", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#a637016d12f2ce6497495dabf59813191", null ],
     [ "operator=", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#a94b5c587f758831eae8563c1f5d4f427", null ],
     [ "operator=", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#a457e55d85f23966f7213b8bff116f73e", null ],
     [ "validate_transaction", "classcbdc_1_1sentinel_1_1rpc_1_1client.html#a453603cdba6a1d81c02b653464efff6a", null ],

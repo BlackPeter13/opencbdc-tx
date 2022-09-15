@@ -149,9 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a06a4c7f1849180bf99c5ffda9ea2d75d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1rpc_1_1tcp__client.html#a06a4c7f1849180bf99c5ffda9ea2d75d">~tcp_client</a> () override</td></tr>
 <tr class="memdesc:a06a4c7f1849180bf99c5ffda9ea2d75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="classcbdc_1_1rpc_1_1tcp__client.html#a06a4c7f1849180bf99c5ffda9ea2d75d">More...</a><br /></td></tr>
 <tr class="separator:a06a4c7f1849180bf99c5ffda9ea2d75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5a4bab7ec4256cdd197030e6ec5b453"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1rpc_1_1tcp__client.html#ac5a4bab7ec4256cdd197030e6ec5b453">init</a> () -&gt; bool</td></tr>
-<tr class="memdesc:ac5a4bab7ec4256cdd197030e6ec5b453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the client.  <a href="classcbdc_1_1rpc_1_1tcp__client.html#ac5a4bab7ec4256cdd197030e6ec5b453">More...</a><br /></td></tr>
-<tr class="separator:ac5a4bab7ec4256cdd197030e6ec5b453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64a86306be5e9dfa82d569c759723b75"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1rpc_1_1tcp__client.html#a64a86306be5e9dfa82d569c759723b75">init</a> (std::optional&lt; bool &gt; error_fatal=std::nullopt) -&gt; bool</td></tr>
+<tr class="memdesc:a64a86306be5e9dfa82d569c759723b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the client.  <a href="classcbdc_1_1rpc_1_1tcp__client.html#a64a86306be5e9dfa82d569c759723b75">More...</a><br /></td></tr>
+<tr class="separator:a64a86306be5e9dfa82d569c759723b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcbdc_1_1rpc_1_1client"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcbdc_1_1rpc_1_1client')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcbdc_1_1rpc_1_1client.html">cbdc::rpc::client&lt; Request, Response &gt;</a></td></tr>
 <tr class="memitem:a81dc7620aa3e504efef8b8da8e187a6d inherit pub_methods_classcbdc_1_1rpc_1_1client"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1rpc_1_1client.html#a81dc7620aa3e504efef8b8da8e187a6d">client</a> ()=default</td></tr>
 <tr class="separator:a81dc7620aa3e504efef8b8da8e187a6d inherit pub_methods_classcbdc_1_1rpc_1_1client"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -357,8 +357,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac5a4bab7ec4256cdd197030e6ec5b453" name="ac5a4bab7ec4256cdd197030e6ec5b453"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5a4bab7ec4256cdd197030e6ec5b453">&#9670;&#160;</a></span>init()</h2>
+<a id="a64a86306be5e9dfa82d569c759723b75" name="a64a86306be5e9dfa82d569c759723b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a86306be5e9dfa82d569c759723b75">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +371,8 @@ template&lt;typename Request , typename Response &gt; </div>
         <tr>
           <td class="memname">auto <a class="el" href="classcbdc_1_1rpc_1_1tcp__client.html">cbdc::rpc::tcp_client</a>&lt; Request, Response &gt;::init </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::optional&lt; bool &gt;&#160;</td>
+          <td class="paramname"><em>error_fatal</em> = <code>std::nullopt</code></td><td>)</td>
           <td> -&gt; bool </td>
         </tr>
       </table>
@@ -383,16 +384,22 @@ template&lt;typename Request , typename Response &gt; </div>
 </div><div class="memdoc">
 
 <p>Initializes the client. </p>
-<p >Connects to the server endpoints and starts the response handler thread. </p><dl class="section return"><dt>Returns</dt><dd>false if there is only one endpoint and connecting failed. Otherwise true. </dd></dl>
+<p >Connects to the server endpoints and starts the response handler thread. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error_fatal</td><td>treat connection errors as fatal. If this is set to true, failure to connect to any of the endpoints will result in failure to start the client and return false from this function. If this is set to false, any connection error will be silently ignored and the handler thread will be started. The client will continue to retry connecting in the background. If this is std::nullopt, connection errors are only treated as fatal when there is a single endpoint. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false if there is a fatal connection error, true if the client is connected and ready and the response handler is started. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="tcp__client_8hpp_source.html#l00058">58</a> of file <a class="el" href="tcp__client_8hpp_source.html">tcp_client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="tcp__client_8hpp_source.html#l00071">71</a> of file <a class="el" href="tcp__client_8hpp_source.html">tcp_client.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="connection__manager_8cpp_source.html#l00113">cbdc::network::connection_manager::cluster_connect()</a>, and <a class="el" href="connection__manager_8cpp_source.html#l00161">cbdc::network::connection_manager::start_handler()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classcbdc_1_1rpc_1_1tcp__client_ac5a4bab7ec4256cdd197030e6ec5b453_cgraph.png" border="0" usemap="#aclasscbdc_1_1rpc_1_1tcp__client_ac5a4bab7ec4256cdd197030e6ec5b453_cgraph" alt=""/></div>
-<map name="aclasscbdc_1_1rpc_1_1tcp__client_ac5a4bab7ec4256cdd197030e6ec5b453_cgraph" id="aclasscbdc_1_1rpc_1_1tcp__client_ac5a4bab7ec4256cdd197030e6ec5b453_cgraph">
+<div class="center"><img src="classcbdc_1_1rpc_1_1tcp__client_a64a86306be5e9dfa82d569c759723b75_cgraph.png" border="0" usemap="#aclasscbdc_1_1rpc_1_1tcp__client_a64a86306be5e9dfa82d569c759723b75_cgraph" alt=""/></div>
+<map name="aclasscbdc_1_1rpc_1_1tcp__client_a64a86306be5e9dfa82d569c759723b75_cgraph" id="aclasscbdc_1_1rpc_1_1tcp__client_a64a86306be5e9dfa82d569c759723b75_cgraph">
 <area shape="rect" title="Initializes the client." alt="" coords="5,37,141,77"/>
 <area shape="rect" href="classcbdc_1_1network_1_1connection__manager.html#a3abf1dafbb2003610ba08a0d95f012bf" title="Establishes connections to the provided list of endpoints." alt="" coords="189,5,367,45"/>
 <area shape="rect" href="classcbdc_1_1network_1_1connection__manager.html#a0b17f14e6d100608e2ae14173b412cf5" title="Starts a thread to handle messages from established connections using the specified handler function." alt="" coords="193,69,363,109"/>

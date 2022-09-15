@@ -160,9 +160,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0705fcbfc1f96e6fd8cb64ec7b373cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94b5c587f758831eae8563c1f5d4f427"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#a94b5c587f758831eae8563c1f5d4f427">operator=</a> (<a class="el" href="classcbdc_1_1sentinel_1_1rpc_1_1client.html">client</a> &amp;&amp;) -&gt; <a class="el" href="classcbdc_1_1sentinel_1_1rpc_1_1client.html">client</a> &amp;=delete</td></tr>
 <tr class="separator:a94b5c587f758831eae8563c1f5d4f427"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2fbd688d1e0cbeabe20666422fe319c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#aa2fbd688d1e0cbeabe20666422fe319c">init</a> () -&gt; bool</td></tr>
-<tr class="memdesc:aa2fbd688d1e0cbeabe20666422fe319c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the client.  <a href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#aa2fbd688d1e0cbeabe20666422fe319c">More...</a><br /></td></tr>
-<tr class="separator:aa2fbd688d1e0cbeabe20666422fe319c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637016d12f2ce6497495dabf59813191"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#a637016d12f2ce6497495dabf59813191">init</a> (std::optional&lt; bool &gt; error_fatal=std::nullopt) -&gt; bool</td></tr>
+<tr class="memdesc:a637016d12f2ce6497495dabf59813191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the client.  <a href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#a637016d12f2ce6497495dabf59813191">More...</a><br /></td></tr>
+<tr class="separator:a637016d12f2ce6497495dabf59813191"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad220fe7bc2563327c2ca12d9af0cade6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#ad220fe7bc2563327c2ca12d9af0cade6">execute_transaction</a> (<a class="el" href="structcbdc_1_1transaction_1_1full__tx.html">transaction::full_tx</a> tx) -&gt; <a class="el" href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#a72d3a395a73f51068c2e11dfb89f1268">execute_result_type</a> override</td></tr>
 <tr class="memdesc:ad220fe7bc2563327c2ca12d9af0cade6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a transaction to the sentinel and return the response.  <a href="classcbdc_1_1sentinel_1_1rpc_1_1client.html#ad220fe7bc2563327c2ca12d9af0cade6">More...</a><br /></td></tr>
 <tr class="separator:ad220fe7bc2563327c2ca12d9af0cade6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,7 +233,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Result type from execute_transaction. </p>
 
-<p class="definition">Definition at line <a class="el" href="uhs_2sentinel_2client_8hpp_source.html#l00038">38</a> of file <a class="el" href="uhs_2sentinel_2client_8hpp_source.html">uhs/sentinel/client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uhs_2sentinel_2client_8hpp_source.html#l00041">41</a> of file <a class="el" href="uhs_2sentinel_2client_8hpp_source.html">uhs/sentinel/client.hpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Return type from transaction validation. </p>
 
-<p class="definition">Definition at line <a class="el" href="uhs_2sentinel_2client_8hpp_source.html#l00058">58</a> of file <a class="el" href="uhs_2sentinel_2client_8hpp_source.html">uhs/sentinel/client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uhs_2sentinel_2client_8hpp_source.html#l00061">61</a> of file <a class="el" href="uhs_2sentinel_2client_8hpp_source.html">uhs/sentinel/client.hpp</a>.</p>
 
 </div>
 </div>
@@ -487,8 +487,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa2fbd688d1e0cbeabe20666422fe319c" name="aa2fbd688d1e0cbeabe20666422fe319c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2fbd688d1e0cbeabe20666422fe319c">&#9670;&#160;</a></span>init()</h2>
+<a id="a637016d12f2ce6497495dabf59813191" name="a637016d12f2ce6497495dabf59813191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637016d12f2ce6497495dabf59813191">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -496,14 +496,22 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">auto cbdc::sentinel::rpc::client::init </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::optional&lt; bool &gt;&#160;</td>
+          <td class="paramname"><em>error_fatal</em> = <code>std::nullopt</code></td><td>)</td>
           <td> -&gt; bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Initializes the client. </p>
-<p >Establishes a connection to the sentinel. </p><dl class="section return"><dt>Returns</dt><dd>true if initialization succeeded. </dd></dl>
+<p >Establishes a connection to the sentinel. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error_fatal</td><td>treat connection errors as fatal. See tcp_client::init for further explanation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if initialization succeeded. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcbdc_1_1rpc_1_1tcp__client.html#a64a86306be5e9dfa82d569c759723b75">cbdc::rpc::tcp_client::init(std::optional&lt;bool&gt;)</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="sentinel_2client_8cpp_source.html#l00018">18</a> of file <a class="el" href="sentinel_2client_8cpp_source.html">sentinel/client.cpp</a>.</p>
 
