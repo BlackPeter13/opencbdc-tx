@@ -779,180 +779,185 @@ $(document).ready(function(){initNavTree('config_8cpp_source.html',''); initResi
 <div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Two-phase mode requires at least one configured &quot;</span></div>
 <div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>                       <span class="stringliteral">&quot;sentinel&quot;</span>;</div>
 <div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>            }</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>            <span class="keywordflow">if</span>(opts.m_locking_shard_endpoints.empty()) {</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Two-phase mode requires at least one configured shard&quot;</span>;</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>            }</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>            <span class="keywordflow">if</span>(opts.m_coordinator_endpoints.empty()) {</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Two-phase mode required at least one configured &quot;</span></div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>                       <span class="stringliteral">&quot;coordinator&quot;</span>;</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>            }</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>            <span class="keywordflow">if</span>(opts.m_watchtower_client_endpoints.empty()) {</div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Atomizer mode requires at least one configured &quot;</span></div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>                       <span class="stringliteral">&quot;watchtower&quot;</span>;</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>            <span class="keywordflow">if</span>(opts.m_sentinel_endpoints.size()</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>               &lt; opts.m_attestation_threshold) {</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;The number of required attestations is larger \n&quot;</span></div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>                       <span class="stringliteral">&quot;than the number of sentinels that can provide them.&quot;</span>;</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>            }</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>            <span class="keywordflow">if</span>(opts.m_locking_shard_endpoints.empty()) {</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Two-phase mode requires at least one configured shard&quot;</span>;</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>            }</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>            <span class="keywordflow">if</span>(opts.m_coordinator_endpoints.empty()) {</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Two-phase mode required at least one configured &quot;</span></div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>                       <span class="stringliteral">&quot;coordinator&quot;</span>;</div>
 <div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>            }</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>            <span class="keywordflow">if</span>(opts.m_archiver_endpoints.empty()) {</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Atomizer mode requires at least one configured &quot;</span></div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                       <span class="stringliteral">&quot;archiver&quot;</span>;</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>            }</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>            <span class="keywordflow">if</span>(opts.m_shard_endpoints.empty()</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>               &amp;&amp; !opts.m_sentinel_endpoints.empty()) {</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Sentinels require at least one configured shard&quot;</span>;</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>            }</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>            <span class="keywordflow">if</span>(opts.m_atomizer_endpoints.empty()) {</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Atomizer mode requires at least one configured &quot;</span></div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>                       <span class="stringliteral">&quot;atomizer&quot;</span>;</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>            }</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        }</div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span> </div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        <span class="keywordflow">if</span>(opts.m_seed_from != opts.m_seed_to) {</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>            <span class="keywordflow">if</span>(opts.m_seed_from &gt; opts.m_seed_to) {</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;shard_seed_from &gt; shard_seed_to&quot;</span>;</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>            }</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>            <span class="keywordflow">if</span>(opts.m_seed_value == 0) {</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Seed range defined but value is zero&quot;</span>;</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>            }</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        }</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span> </div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        <span class="keywordflow">if</span>(opts.m_sentinel_public_keys.size() &lt; opts.m_attestation_threshold) {</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Not enough sentinel public keys to reach the attestation &quot;</span></div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>                   <span class="stringliteral">&quot;threshold&quot;</span>;</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>            <span class="keywordflow">if</span>(opts.m_watchtower_client_endpoints.empty()) {</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Atomizer mode requires at least one configured &quot;</span></div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                       <span class="stringliteral">&quot;watchtower&quot;</span>;</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>            }</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>            <span class="keywordflow">if</span>(opts.m_archiver_endpoints.empty()) {</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Atomizer mode requires at least one configured &quot;</span></div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                       <span class="stringliteral">&quot;archiver&quot;</span>;</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>            }</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>            <span class="keywordflow">if</span>(opts.m_shard_endpoints.empty()</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>               &amp;&amp; !opts.m_sentinel_endpoints.empty()) {</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Sentinels require at least one configured shard&quot;</span>;</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>            }</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>            <span class="keywordflow">if</span>(opts.m_atomizer_endpoints.empty()) {</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Atomizer mode requires at least one configured &quot;</span></div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>                       <span class="stringliteral">&quot;atomizer&quot;</span>;</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>            }</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        }</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        <span class="keywordflow">if</span>(opts.m_seed_from != opts.m_seed_to) {</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>            <span class="keywordflow">if</span>(opts.m_seed_from &gt; opts.m_seed_to) {</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;shard_seed_from &gt; shard_seed_to&quot;</span>;</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>            }</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>            <span class="keywordflow">if</span>(opts.m_seed_value == 0) {</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;Seed range defined but value is zero&quot;</span>;</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>            }</div>
 <div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        }</div>
 <div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span> </div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>    }</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno"><a class="line" href="namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e">  731</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e">hash_in_shard_range</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc_1_1config.html#a4d20b83b741e21bdddd4a5cbc95e42a8">shard_range_t</a>&amp; range, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>&amp; val)</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        <span class="keywordflow">return</span> val[0] &gt;= range.first &amp;&amp; val[0] &lt;= range.second;</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        <span class="keywordflow">if</span>(opts.m_sentinel_public_keys.size() &lt; opts.m_attestation_threshold) {</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Not enough sentinel public keys to reach the attestation &quot;</span></div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>                   <span class="stringliteral">&quot;threshold&quot;</span>;</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>        }</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span> </div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        <span class="keywordflow">return</span> std::nullopt;</div>
 <div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>    }</div>
 <div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span> </div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno"><a class="line" href="namespacecbdc_1_1config.html#aef3d396c9afb421e002fc2cc93d0de74">  736</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#aef3d396c9afb421e002fc2cc93d0de74">loadgen_seed_range</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1config_1_1options.html">options</a>&amp; opts, <span class="keywordtype">size_t</span> gen_id)</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>        -&gt; std::pair&lt;size_t, size_t&gt; {</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        assert(gen_id &lt; opts.m_loadgen_count);</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>        <span class="keyword">auto</span> total_seed_range = opts.m_seed_to - opts.m_seed_from;</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        <span class="keyword">auto</span> seed_range_sz = total_seed_range / opts.m_loadgen_count;</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>        <span class="keyword">auto</span> our_range_start = opts.m_seed_from + (gen_id * seed_range_sz);</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        <span class="keyword">auto</span> our_range_end = our_range_start + seed_range_sz - 1;</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>        <span class="keywordflow">return</span> {our_range_start, our_range_end};</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>    }</div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span> </div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno"><a class="line" href="namespacecbdc_1_1config.html#ad4be7fdff41e9407810e53818ecea924">  746</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#ad4be7fdff41e9407810e53818ecea924">get_args</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) -&gt; std::vector&lt;std::string&gt; {</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>        <span class="keyword">auto</span> args = std::vector&lt;char*&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(argc));</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>        std::memcpy(args.data(),</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>                    argv,</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(argc) * <span class="keyword">sizeof</span>(argv));</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>        <span class="keyword">auto</span> ret = std::vector&lt;std::string&gt;();</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        ret.reserve(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(argc));</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>* arg : args) {</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>            <span class="keyword">auto</span> str = std::string(arg);</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>            ret.emplace_back(std::move(str));</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        }</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>    }</div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span> </div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">  760</a></span>    <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">parser::parser</a>(<span class="keyword">const</span> std::string&amp; filename) {</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        std::ifstream file(filename);</div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>        assert(file.good());</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span> </div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        init(file);</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    }</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span> </div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a9c66edda0c23d8f853c42d0cabbbf54f">  767</a></span>    <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">parser::parser</a>(std::istream&amp; stream) {</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>        init(stream);</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    }</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span> </div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    <span class="keywordtype">void</span> parser::init(std::istream&amp; stream) {</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>        std::string line;</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>        <span class="keywordflow">while</span>(std::getline(stream, line)) {</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>            std::istringstream line_stream(line);</div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>            std::string key;</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>            <span class="keywordflow">if</span>(std::getline(line_stream, key, <span class="charliteral">&#39;=&#39;</span>)) {</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>                std::string value;</div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>                <span class="keywordflow">if</span>(std::getline(line_stream, value)) {</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>                    m_options.emplace(key, parse_value(value));</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>                }</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>            }</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>        }</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>    }</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span> </div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a7cda9d6db03854940a3e4ca8c990f8b8">  785</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#a7cda9d6db03854940a3e4ca8c990f8b8">parser::get_string</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>        -&gt; std::optional&lt;std::string&gt; {</div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>        <span class="keywordflow">return</span> get_val&lt;std::string&gt;(key);</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno"><a class="line" href="namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e">  736</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e">hash_in_shard_range</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc_1_1config.html#a4d20b83b741e21bdddd4a5cbc95e42a8">shard_range_t</a>&amp; range, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacecbdc.html#ae259dc3000a4487dd87a2ee9662ba73e">hash_t</a>&amp; val)</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>        -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        <span class="keywordflow">return</span> val[0] &gt;= range.first &amp;&amp; val[0] &lt;= range.second;</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    }</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span> </div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno"><a class="line" href="namespacecbdc_1_1config.html#aef3d396c9afb421e002fc2cc93d0de74">  741</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#aef3d396c9afb421e002fc2cc93d0de74">loadgen_seed_range</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structcbdc_1_1config_1_1options.html">options</a>&amp; opts, <span class="keywordtype">size_t</span> gen_id)</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        -&gt; std::pair&lt;size_t, size_t&gt; {</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>        assert(gen_id &lt; opts.m_loadgen_count);</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>        <span class="keyword">auto</span> total_seed_range = opts.m_seed_to - opts.m_seed_from;</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>        <span class="keyword">auto</span> seed_range_sz = total_seed_range / opts.m_loadgen_count;</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>        <span class="keyword">auto</span> our_range_start = opts.m_seed_from + (gen_id * seed_range_sz);</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>        <span class="keyword">auto</span> our_range_end = our_range_start + seed_range_sz - 1;</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>        <span class="keywordflow">return</span> {our_range_start, our_range_end};</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    }</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span> </div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno"><a class="line" href="namespacecbdc_1_1config.html#ad4be7fdff41e9407810e53818ecea924">  751</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#ad4be7fdff41e9407810e53818ecea924">get_args</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) -&gt; std::vector&lt;std::string&gt; {</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        <span class="keyword">auto</span> args = std::vector&lt;char*&gt;(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(argc));</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>        std::memcpy(args.data(),</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>                    argv,</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>                    <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(argc) * <span class="keyword">sizeof</span>(argv));</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        <span class="keyword">auto</span> ret = std::vector&lt;std::string&gt;();</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>        ret.reserve(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(argc));</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>* arg : args) {</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>            <span class="keyword">auto</span> str = std::string(arg);</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>            ret.emplace_back(std::move(str));</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        }</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>    }</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span> </div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">  765</a></span>    <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">parser::parser</a>(<span class="keyword">const</span> std::string&amp; filename) {</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        std::ifstream file(filename);</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>        assert(file.good());</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span> </div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        init(file);</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    }</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span> </div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a9c66edda0c23d8f853c42d0cabbbf54f">  772</a></span>    <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">parser::parser</a>(std::istream&amp; stream) {</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>        init(stream);</div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    }</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span> </div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>    <span class="keywordtype">void</span> parser::init(std::istream&amp; stream) {</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>        std::string line;</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>        <span class="keywordflow">while</span>(std::getline(stream, line)) {</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>            std::istringstream line_stream(line);</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>            std::string key;</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>            <span class="keywordflow">if</span>(std::getline(line_stream, key, <span class="charliteral">&#39;=&#39;</span>)) {</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>                std::string value;</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>                <span class="keywordflow">if</span>(std::getline(line_stream, value)) {</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>                    m_options.emplace(key, parse_value(value));</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>                }</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>            }</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>        }</div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    }</div>
 <div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span> </div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714">  790</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714">parser::get_ulong</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>        -&gt; std::optional&lt;size_t&gt; {</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        <span class="keywordflow">return</span> get_val&lt;size_t&gt;(key);</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a7cda9d6db03854940a3e4ca8c990f8b8">  790</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#a7cda9d6db03854940a3e4ca8c990f8b8">parser::get_string</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>        -&gt; std::optional&lt;std::string&gt; {</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        <span class="keywordflow">return</span> get_val&lt;std::string&gt;(key);</div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>    }</div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span> </div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a2d05558a2a7c6684b529f41e59c4cb0d">  795</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#a2d05558a2a7c6684b529f41e59c4cb0d">parser::get_endpoint</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>        -&gt; std::optional&lt;network::endpoint_t&gt; {</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>        <span class="keyword">const</span> <span class="keyword">auto</span> val_str = get_string(key);</div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>        <span class="keywordflow">if</span>(!val_str.has_value()) {</div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>        }</div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span> </div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#accaa4cb73d417461fc01989e12a4adda">parse_ip_port</a>(val_str.value());</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>    }</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span> </div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#aede10c36516cd27ad087ad05b6862b47">  805</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#aede10c36516cd27ad087ad05b6862b47">parser::get_loglevel</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>        -&gt; std::optional&lt;logging::log_level&gt; {</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>        <span class="keyword">const</span> <span class="keyword">auto</span> val_str = get_string(key);</div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>        <span class="keywordflow">if</span>(!val_str.has_value()) {</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>            <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>        }</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecbdc_1_1logging.html#ac7e6632bd25740fd19af12af6bff31aa">logging::parse_loglevel</a>(val_str.value());</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    }</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span> </div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434">  814</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434">parser::get_decimal</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>        -&gt; std::optional&lt;double&gt; {</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>        <span class="keywordflow">return</span> get_val&lt;double&gt;(key);</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714">  795</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714">parser::get_ulong</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>        -&gt; std::optional&lt;size_t&gt; {</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>        <span class="keywordflow">return</span> get_val&lt;size_t&gt;(key);</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>    }</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span> </div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a2d05558a2a7c6684b529f41e59c4cb0d">  800</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#a2d05558a2a7c6684b529f41e59c4cb0d">parser::get_endpoint</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>        -&gt; std::optional&lt;network::endpoint_t&gt; {</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>        <span class="keyword">const</span> <span class="keyword">auto</span> val_str = get_string(key);</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>        <span class="keywordflow">if</span>(!val_str.has_value()) {</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>        }</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span> </div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecbdc_1_1config.html#accaa4cb73d417461fc01989e12a4adda">parse_ip_port</a>(val_str.value());</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>    }</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span> </div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#aede10c36516cd27ad087ad05b6862b47">  810</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#aede10c36516cd27ad087ad05b6862b47">parser::get_loglevel</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>        -&gt; std::optional&lt;logging::log_level&gt; {</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>        <span class="keyword">const</span> <span class="keyword">auto</span> val_str = get_string(key);</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>        <span class="keywordflow">if</span>(!val_str.has_value()) {</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>            <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>        }</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecbdc_1_1logging.html#ac7e6632bd25740fd19af12af6bff31aa">logging::parse_loglevel</a>(val_str.value());</div>
 <div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>    }</div>
 <div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span> </div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>    <span class="keyword">auto</span> parser::find_or_env(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>        -&gt; std::optional&lt;value_t&gt; {</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>        <span class="keyword">auto</span> upper_key = key;</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>        std::transform(upper_key.begin(),</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                       upper_key.end(),</div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                       upper_key.begin(),</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>                       [](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c) {</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                           return std::toupper(c);</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                       });</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>        <span class="keywordflow">if</span>(<span class="keyword">const</span> <span class="keyword">auto</span>* env_v = std::getenv(upper_key.c_str())) {</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>            <span class="keyword">auto</span> value = std::string(env_v);</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>            <span class="keywordflow">return</span> parse_value(value);</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>        }</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span> </div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>        <span class="keyword">auto</span> it = m_options.find(key);</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>        <span class="keywordflow">if</span>(it != m_options.end()) {</div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>            <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno"><a class="line" href="classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434">  819</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434">parser::get_decimal</a>(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>        -&gt; std::optional&lt;double&gt; {</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>        <span class="keywordflow">return</span> get_val&lt;double&gt;(key);</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>    }</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span> </div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>    <span class="keyword">auto</span> parser::find_or_env(<span class="keyword">const</span> std::string&amp; key) <span class="keyword">const</span></div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>        -&gt; std::optional&lt;value_t&gt; {</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>        <span class="keyword">auto</span> upper_key = key;</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>        std::transform(upper_key.begin(),</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                       upper_key.end(),</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                       upper_key.begin(),</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                       [](<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> c) {</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                           return std::toupper(c);</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                       });</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>        <span class="keywordflow">if</span>(<span class="keyword">const</span> <span class="keyword">auto</span>* env_v = std::getenv(upper_key.c_str())) {</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>            <span class="keyword">auto</span> value = std::string(env_v);</div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>            <span class="keywordflow">return</span> parse_value(value);</div>
 <div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>        }</div>
 <div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span> </div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>    }</div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span> </div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>    <span class="keyword">auto</span> parser::parse_value(<span class="keyword">const</span> std::string&amp; value) -&gt; value_t {</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>        <span class="keywordflow">if</span>(value[0] != <span class="charliteral">&#39;\&quot;&#39;</span> &amp;&amp; value[value.size() - 1] != <span class="charliteral">&#39;\&quot;&#39;</span>) {</div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>            <span class="keywordflow">if</span>(value.find(<span class="charliteral">&#39;.&#39;</span>) == std::string::npos) {</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>                <span class="keyword">const</span> <span class="keyword">auto</span> as_int = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(std::stoull(value));</div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>                <span class="keywordflow">return</span> as_int;</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>            }</div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>            <span class="keyword">const</span> <span class="keyword">auto</span> as_dbl = std::stod(value);</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>            <span class="keywordflow">return</span> as_dbl;</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>        }</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span> </div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>        <span class="keyword">const</span> <span class="keyword">auto</span> unquoted = value.substr(1, value.size() - 2);</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>        <span class="keywordflow">return</span> unquoted;</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>    }</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>}</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>        <span class="keyword">auto</span> it = m_options.find(key);</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>        <span class="keywordflow">if</span>(it != m_options.end()) {</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>            <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>        }</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span> </div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>    }</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span> </div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>    <span class="keyword">auto</span> parser::parse_value(<span class="keyword">const</span> std::string&amp; value) -&gt; value_t {</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>        <span class="keywordflow">if</span>(value[0] != <span class="charliteral">&#39;\&quot;&#39;</span> &amp;&amp; value[value.size() - 1] != <span class="charliteral">&#39;\&quot;&#39;</span>) {</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>            <span class="keywordflow">if</span>(value.find(<span class="charliteral">&#39;.&#39;</span>) == std::string::npos) {</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>                <span class="keyword">const</span> <span class="keyword">auto</span> as_int = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(std::stoull(value));</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>                <span class="keywordflow">return</span> as_int;</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>            }</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>            <span class="keyword">const</span> <span class="keyword">auto</span> as_dbl = std::stod(value);</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>            <span class="keywordflow">return</span> as_dbl;</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>        }</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span> </div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>        <span class="keyword">const</span> <span class="keyword">auto</span> unquoted = value.substr(1, value.size() - 2);</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>        <span class="keywordflow">return</span> unquoted;</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    }</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>}</div>
 <div class="ttc" id="aclasscbdc_1_1config_1_1parser_html"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html">cbdc::config::parser</a></div><div class="ttdoc">Reads configuration parameters line-by-line from a file.</div><div class="ttdef"><b>Definition:</b> <a href="config_8hpp_source.html#l00323">config.hpp:323</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_a2d05558a2a7c6684b529f41e59c4cb0d"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#a2d05558a2a7c6684b529f41e59c4cb0d">cbdc::config::parser::get_endpoint</a></div><div class="ttdeci">auto get_endpoint(const std::string &amp;key) const -&gt; std::optional&lt; network::endpoint_t &gt;</div><div class="ttdoc">Return the value for the given key if its value is an endpoint.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00795">config.cpp:795</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_a7cda9d6db03854940a3e4ca8c990f8b8"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#a7cda9d6db03854940a3e4ca8c990f8b8">cbdc::config::parser::get_string</a></div><div class="ttdeci">auto get_string(const std::string &amp;key) const -&gt; std::optional&lt; std::string &gt;</div><div class="ttdoc">Returns the given key if its value is a string.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00785">config.cpp:785</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_a951a08be8df7a50407de43a808921434"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434">cbdc::config::parser::get_decimal</a></div><div class="ttdeci">auto get_decimal(const std::string &amp;key) const -&gt; std::optional&lt; double &gt;</div><div class="ttdoc">Return the value for the given key if its value is a double.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00814">config.cpp:814</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_ac6c1367a2fca2350d69a8a17d64bc714"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714">cbdc::config::parser::get_ulong</a></div><div class="ttdeci">auto get_ulong(const std::string &amp;key) const -&gt; std::optional&lt; size_t &gt;</div><div class="ttdoc">Return the value for the given key if its value is a long.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00790">config.cpp:790</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_ac7a489592dc3946a4438770de99996cd"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">cbdc::config::parser::parser</a></div><div class="ttdeci">parser(const std::string &amp;filename)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00760">config.cpp:760</a></div></div>
-<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_aede10c36516cd27ad087ad05b6862b47"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#aede10c36516cd27ad087ad05b6862b47">cbdc::config::parser::get_loglevel</a></div><div class="ttdeci">auto get_loglevel(const std::string &amp;key) const -&gt; std::optional&lt; logging::log_level &gt;</div><div class="ttdoc">Return the value for the given key if its value is a loglevel.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00805">config.cpp:805</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_a2d05558a2a7c6684b529f41e59c4cb0d"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#a2d05558a2a7c6684b529f41e59c4cb0d">cbdc::config::parser::get_endpoint</a></div><div class="ttdeci">auto get_endpoint(const std::string &amp;key) const -&gt; std::optional&lt; network::endpoint_t &gt;</div><div class="ttdoc">Return the value for the given key if its value is an endpoint.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00800">config.cpp:800</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_a7cda9d6db03854940a3e4ca8c990f8b8"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#a7cda9d6db03854940a3e4ca8c990f8b8">cbdc::config::parser::get_string</a></div><div class="ttdeci">auto get_string(const std::string &amp;key) const -&gt; std::optional&lt; std::string &gt;</div><div class="ttdoc">Returns the given key if its value is a string.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00790">config.cpp:790</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_a951a08be8df7a50407de43a808921434"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#a951a08be8df7a50407de43a808921434">cbdc::config::parser::get_decimal</a></div><div class="ttdeci">auto get_decimal(const std::string &amp;key) const -&gt; std::optional&lt; double &gt;</div><div class="ttdoc">Return the value for the given key if its value is a double.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00819">config.cpp:819</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_ac6c1367a2fca2350d69a8a17d64bc714"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#ac6c1367a2fca2350d69a8a17d64bc714">cbdc::config::parser::get_ulong</a></div><div class="ttdeci">auto get_ulong(const std::string &amp;key) const -&gt; std::optional&lt; size_t &gt;</div><div class="ttdoc">Return the value for the given key if its value is a long.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00795">config.cpp:795</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_ac7a489592dc3946a4438770de99996cd"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#ac7a489592dc3946a4438770de99996cd">cbdc::config::parser::parser</a></div><div class="ttdeci">parser(const std::string &amp;filename)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00765">config.cpp:765</a></div></div>
+<div class="ttc" id="aclasscbdc_1_1config_1_1parser_html_aede10c36516cd27ad087ad05b6862b47"><div class="ttname"><a href="classcbdc_1_1config_1_1parser.html#aede10c36516cd27ad087ad05b6862b47">cbdc::config::parser::get_loglevel</a></div><div class="ttdeci">auto get_loglevel(const std::string &amp;key) const -&gt; std::optional&lt; logging::log_level &gt;</div><div class="ttdoc">Return the value for the given key if its value is a loglevel.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00810">config.cpp:810</a></div></div>
 <div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div><div class="ttdoc">Tools for reading options from a configuration file and building application-specific parameter sets ...</div></div>
 <div class="ttc" id="anamespacecbdc_1_1config_html"><div class="ttname"><a href="namespacecbdc_1_1config.html">cbdc::config</a></div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00012">config.cpp:12</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1config_html_a07d2b72eb67ab0fb8041eedcc392d2b1"><div class="ttname"><a href="namespacecbdc_1_1config.html#a07d2b72eb67ab0fb8041eedcc392d2b1">cbdc::config::check_options</a></div><div class="ttdeci">auto check_options(const options &amp;opts) -&gt; std::optional&lt; std::string &gt;</div><div class="ttdoc">Checks a fully populated options struct for invariants.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00680">config.cpp:680</a></div></div>
@@ -996,11 +1001,11 @@ $(document).ready(function(){initNavTree('config_8cpp_source.html',''); initResi
 <div class="ttc" id="anamespacecbdc_1_1config_html_abcec88d37e7e0298bcd244767d639be5"><div class="ttname"><a href="namespacecbdc_1_1config.html#abcec88d37e7e0298bcd244767d639be5">cbdc::config::get_sentinel_loglevel_key</a></div><div class="ttdeci">auto get_sentinel_loglevel_key(size_t sentinel_id) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00128">config.cpp:128</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1config_html_ac3ca252988d8109052a8bf75212b4bcc"><div class="ttname"><a href="namespacecbdc_1_1config.html#ac3ca252988d8109052a8bf75212b4bcc">cbdc::config::get_shard_start_key</a></div><div class="ttdeci">auto get_shard_start_key(size_t shard_id) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00085">config.cpp:85</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1config_html_accaa4cb73d417461fc01989e12a4adda"><div class="ttname"><a href="namespacecbdc_1_1config.html#accaa4cb73d417461fc01989e12a4adda">cbdc::config::parse_ip_port</a></div><div class="ttdeci">auto parse_ip_port(const std::string &amp;in_str) -&gt; network::endpoint_t</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00013">config.cpp:13</a></div></div>
-<div class="ttc" id="anamespacecbdc_1_1config_html_accbad9a301a3d8a1921e60b9a756954e"><div class="ttname"><a href="namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e">cbdc::config::hash_in_shard_range</a></div><div class="ttdeci">auto hash_in_shard_range(const shard_range_t &amp;range, const hash_t &amp;val) -&gt; bool</div><div class="ttdoc">Checks if a hash is in the given range handled.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00731">config.cpp:731</a></div></div>
+<div class="ttc" id="anamespacecbdc_1_1config_html_accbad9a301a3d8a1921e60b9a756954e"><div class="ttname"><a href="namespacecbdc_1_1config.html#accbad9a301a3d8a1921e60b9a756954e">cbdc::config::hash_in_shard_range</a></div><div class="ttdeci">auto hash_in_shard_range(const shard_range_t &amp;range, const hash_t &amp;val) -&gt; bool</div><div class="ttdoc">Checks if a hash is in the given range handled.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00736">config.cpp:736</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1config_html_accf219035947c057f15558131b175eb3"><div class="ttname"><a href="namespacecbdc_1_1config.html#accf219035947c057f15558131b175eb3">cbdc::config::get_coordinator_loglevel_key</a></div><div class="ttdeci">auto get_coordinator_loglevel_key(size_t coordinator_id) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00223">config.cpp:223</a></div></div>
-<div class="ttc" id="anamespacecbdc_1_1config_html_ad4be7fdff41e9407810e53818ecea924"><div class="ttname"><a href="namespacecbdc_1_1config.html#ad4be7fdff41e9407810e53818ecea924">cbdc::config::get_args</a></div><div class="ttdeci">auto get_args(int argc, char **argv) -&gt; std::vector&lt; std::string &gt;</div><div class="ttdoc">Converts c-args from an executable's main function into a vector of strings.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00746">config.cpp:746</a></div></div>
+<div class="ttc" id="anamespacecbdc_1_1config_html_ad4be7fdff41e9407810e53818ecea924"><div class="ttname"><a href="namespacecbdc_1_1config.html#ad4be7fdff41e9407810e53818ecea924">cbdc::config::get_args</a></div><div class="ttdeci">auto get_args(int argc, char **argv) -&gt; std::vector&lt; std::string &gt;</div><div class="ttdoc">Converts c-args from an executable's main function into a vector of strings.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00751">config.cpp:751</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1config_html_ae4f0a1a6ed533a8434dbbbd00b8af9bb"><div class="ttname"><a href="namespacecbdc_1_1config.html#ae4f0a1a6ed533a8434dbbbd00b8af9bb">cbdc::config::get_sentinel_private_key_key</a></div><div class="ttdeci">auto get_sentinel_private_key_key(size_t sentinel_id) -&gt; std::string</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00230">config.cpp:230</a></div></div>
-<div class="ttc" id="anamespacecbdc_1_1config_html_aef3d396c9afb421e002fc2cc93d0de74"><div class="ttname"><a href="namespacecbdc_1_1config.html#aef3d396c9afb421e002fc2cc93d0de74">cbdc::config::loadgen_seed_range</a></div><div class="ttdeci">auto loadgen_seed_range(const options &amp;opts, size_t gen_id) -&gt; std::pair&lt; size_t, size_t &gt;</div><div class="ttdoc">Calculates the sub-range of total seeded outputs for a particular load generator ID.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00736">config.cpp:736</a></div></div>
+<div class="ttc" id="anamespacecbdc_1_1config_html_aef3d396c9afb421e002fc2cc93d0de74"><div class="ttname"><a href="namespacecbdc_1_1config.html#aef3d396c9afb421e002fc2cc93d0de74">cbdc::config::loadgen_seed_range</a></div><div class="ttdeci">auto loadgen_seed_range(const options &amp;opts, size_t gen_id) -&gt; std::pair&lt; size_t, size_t &gt;</div><div class="ttdoc">Calculates the sub-range of total seeded outputs for a particular load generator ID.</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00741">config.cpp:741</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1config_html_af453ffb9c9e4719adf487e57313384b1"><div class="ttname"><a href="namespacecbdc_1_1config.html#af453ffb9c9e4719adf487e57313384b1">cbdc::config::read_coordinator_options</a></div><div class="ttdeci">auto read_coordinator_options(options &amp;opts, const parser &amp;cfg) -&gt; std::optional&lt; std::string &gt;</div><div class="ttdef"><b>Definition:</b> <a href="config_8cpp_source.html#l00362">config.cpp:362</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1logging_html_ac7e6632bd25740fd19af12af6bff31aa"><div class="ttname"><a href="namespacecbdc_1_1logging.html#ac7e6632bd25740fd19af12af6bff31aa">cbdc::logging::parse_loglevel</a></div><div class="ttdeci">auto parse_loglevel(const std::string &amp;level) -&gt; std::optional&lt; log_level &gt;</div><div class="ttdoc">Parses a capitalized string into a log level.</div><div class="ttdef"><b>Definition:</b> <a href="logging_8cpp_source.html#l00070">logging.cpp:70</a></div></div>
 <div class="ttc" id="anamespacecbdc_1_1network_html_a476d6920145a8621fe214be840f79a35"><div class="ttname"><a href="namespacecbdc_1_1network.html#a476d6920145a8621fe214be840f79a35">cbdc::network::endpoint_t</a></div><div class="ttdeci">std::pair&lt; ip_address, port_number_t &gt; endpoint_t</div><div class="ttdoc">[host name, port number].</div><div class="ttdef"><b>Definition:</b> <a href="socket_8hpp_source.html#l00019">socket.hpp:19</a></div></div>
