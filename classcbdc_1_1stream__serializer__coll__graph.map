@@ -1,4 +1,4 @@
 <map id="cbdc::stream_serializer" name="cbdc::stream_serializer">
-<area shape="rect" id="node1" title="Implementation of serializer for std::ios." coords="5,79,160,104"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1serializer.html" title="Interface for serializing objects into and out of raw bytes representations." coords="29,5,136,31"/>
+<area shape="rect" id="node1" title="Implementation of serializer for std::ios." alt="" coords="5,79,160,104"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1serializer.html" title="Interface for serializing objects into and out of raw bytes representations." alt="" coords="29,5,136,31"/>
 </map>

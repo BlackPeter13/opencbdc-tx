@@ -1,4 +1,4 @@
 <map id="cbdc::raft::log_store" name="cbdc::raft::log_store">
-<area shape="rect" id="node1" title="NuRaft log_store implementation using LevelDB." coords="5,79,140,104"/>
-<area shape="rect" id="node2" title=" " coords="15,5,130,31"/>
+<area shape="rect" id="node1" title="NuRaft log_store implementation using LevelDB." alt="" coords="5,79,140,104"/>
+<area shape="rect" id="node2" title=" " alt="" coords="15,5,130,31"/>
 </map>

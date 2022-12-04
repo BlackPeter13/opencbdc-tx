@@ -1,4 +1,4 @@
 <map id="cbdc::locking_shard::locking_shard::apply_outputs" name="cbdc::locking_shard::locking_shard::apply_outputs">
-<area shape="rect" id="node1" title="Selectively applies the transactions from a previous lock operation." coords="5,5,149,60"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." coords="197,20,304,45"/>
+<area shape="rect" id="node1" title="Selectively applies the transactions from a previous lock operation." alt="" coords="5,5,149,60"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="197,20,304,45"/>
 </map>

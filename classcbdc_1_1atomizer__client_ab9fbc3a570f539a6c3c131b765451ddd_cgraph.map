@@ -1,4 +1,4 @@
 <map id="cbdc::atomizer_client::sync" name="cbdc::atomizer_client::sync">
-<area shape="rect" id="node1" title="Update the client with the latest state from the watchtower." coords="5,5,148,45"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." coords="196,13,303,38"/>
+<area shape="rect" id="node1" title="Update the client with the latest state from the watchtower." alt="" coords="5,5,148,45"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aeca0663c5237402736e3127369854cb5" title="Converts a hash to a hexadecimal string." alt="" coords="196,13,303,38"/>
 </map>

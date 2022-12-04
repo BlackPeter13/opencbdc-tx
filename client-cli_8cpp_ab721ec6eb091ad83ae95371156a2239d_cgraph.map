@@ -1,5 +1,5 @@
 <map id="confirmtx_command" name="confirmtx_command">
-<area shape="rect" id="node1" title=" " coords="5,35,144,60"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." coords="192,5,336,31"/>
-<area shape="rect" id="node3" href="$classcbdc_1_1client.html#aff758829cabeed3cb728a468f508082f" title="Format a value given in currency base units as USD." coords="205,55,323,95"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,144,60"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#aafd742f41d950c51068a394340e6d9b0" title="Parses a hexadecimal representation of a hash." alt="" coords="192,5,336,31"/>
+<area shape="rect" id="node3" href="$classcbdc_1_1client.html#aff758829cabeed3cb728a468f508082f" title="Format a value given in currency base units as USD." alt="" coords="205,55,323,95"/>
 </map>

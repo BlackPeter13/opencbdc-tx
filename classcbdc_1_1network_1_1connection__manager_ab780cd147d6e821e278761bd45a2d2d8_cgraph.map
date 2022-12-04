@@ -1,7 +1,7 @@
 <map id="cbdc::network::connection_manager::send" name="cbdc::network::connection_manager::send">
-<area shape="rect" id="node1" title="Serialize the data and transmit it in a packet to the remote host at the specified peer ID." coords="5,27,176,67"/>
-<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." coords="224,5,397,31"/>
-<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1connection__manager.html#ab745bed38e090ede29253f326ddac684" title="Sends the provided data to the specified peer." coords="225,55,396,95"/>
-<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." coords="445,5,585,31"/>
-<area shape="rect" id="node5" href="$classcbdc_1_1network_1_1peer.html#aafc3206ef9e0a7aa9cc85dc3b6d3948c" title="Sends buffered data." coords="449,55,582,95"/>
+<area shape="rect" id="node1" title="Serialize the data and transmit it in a packet to the remote host at the specified peer ID." alt="" coords="5,27,176,67"/>
+<area shape="rect" id="node2" href="$namespacecbdc.html#ae3bea62975afe6c33744795e6456f9b7" title="Serialize object into std::shared_ptr&lt;cbdc::buffer&gt; using a cbdc::buffer_serializer." alt="" coords="224,5,397,31"/>
+<area shape="rect" id="node4" href="$classcbdc_1_1network_1_1connection__manager.html#ab745bed38e090ede29253f326ddac684" title="Sends the provided data to the specified peer." alt="" coords="225,55,396,95"/>
+<area shape="rect" id="node3" href="$namespacecbdc.html#a4dd685b58c8cf66f4489ab808915ab85" title="Calculates the serialized size in bytes of the given object when serialized using serializer." alt="" coords="445,5,585,31"/>
+<area shape="rect" id="node5" href="$classcbdc_1_1network_1_1peer.html#aafc3206ef9e0a7aa9cc85dc3b6d3948c" title="Sends buffered data." alt="" coords="449,55,582,95"/>
 </map>

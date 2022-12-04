@@ -1,4 +1,4 @@
 <map id="cbdc::size_serializer" name="cbdc::size_serializer">
-<area shape="rect" id="node1" title="Utility class for determining the size of a buffer needed to serialize a sequence of objects." coords="5,79,143,104"/>
-<area shape="rect" id="node2" href="$classcbdc_1_1serializer.html" title="Interface for serializing objects into and out of raw bytes representations." coords="21,5,127,31"/>
+<area shape="rect" id="node1" title="Utility class for determining the size of a buffer needed to serialize a sequence of objects." alt="" coords="5,79,143,104"/>
+<area shape="rect" id="node2" href="$classcbdc_1_1serializer.html" title="Interface for serializing objects into and out of raw bytes representations." alt="" coords="21,5,127,31"/>
 </map>
